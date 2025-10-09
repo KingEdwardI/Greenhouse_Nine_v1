@@ -1,0 +1,121 @@
+.gn-ContextMenuTrigger {
+  user-select: none;
+}
+
+.gn-ContextMenuContent {
+  background: var(--color-panel);
+  border: 1px solid var(--gray-6);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-5);
+  padding: var(--space-2);
+  min-width: 200px;
+  z-index: 1000;
+  animation: gn-context-menu-in 150ms ease-out;
+}
+
+.gn-ContextMenuItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-2);
+  cursor: pointer;
+  color: var(--gray-12);
+  font-size: var(--font-size-2);
+  line-height: var(--line-height-1);
+  transition: background-color 0.15s ease;
+  outline: none;
+  user-select: none;
+}
+
+.gn-ContextMenuItem:hover {
+  background-color: var(--gray-3);
+}
+
+.gn-ContextMenuItem:focus-visible {
+  background-color: var(--accent-3);
+  color: var(--accent-11);
+}
+
+.gn-ContextMenuItem[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.gn-ContextMenuItem--destructive {
+  color: var(--red-11);
+}
+
+.gn-ContextMenuItem--destructive:hover {
+  background-color: var(--red-3);
+  color: var(--red-11);
+}
+
+.gn-ContextMenuItem--destructive:focus-visible {
+  background-color: var(--red-3);
+  color: var(--red-11);
+}
+
+.gn-ContextMenuIcon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gn-ContextMenuLabel {
+  flex: 1;
+}
+
+.gn-ContextMenuShortcut {
+  color: var(--gray-9);
+  font-size: var(--font-size-1);
+  margin-left: auto;
+}
+
+.gn-ContextMenuSeparator {
+  height: 1px;
+  background-color: var(--gray-6);
+  margin: var(--space-1) 0;
+}
+
+/* Submenu styling */
+.gn-ContextMenuItem[data-state="open"] {
+  background-color: var(--accent-3);
+  color: var(--accent-11);
+}
+
+.gn-ContextMenuItem[data-state="open"]::after {
+  content: '›';
+  margin-left: auto;
+  font-size: var(--font-size-3);
+  color: inherit;
+}
+
+/* Animation */
+@keyframes gn-context-menu-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .gn-ContextMenuContent {
+    min-width: 180px;
+    max-width: 90vw;
+  }
+  
+  .gn-ContextMenuItem {
+    padding: var(--space-3) var(--space-3);
+    font-size: var(--font-size-3);
+  }
+}

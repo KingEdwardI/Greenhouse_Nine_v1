@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm add:*)",
+      "Bash(rm:*)",
+      "Bash(mkdir:*)",
+      "Bash(pnpm remove:*)",
+      "Bash(pnpm run build:*)",
+      "WebSearch",
+      "Bash(pnpm run:*)",
+      "Bash(pnpm list:*)",
+      "Bash(node:*)",
+      "Bash(npx tsc:*)",
+      "Bash(pnpm install:*)",
+      "Bash(yalc publish:*)",
+      "Read(//Users/eddie/workspace/Highwind/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

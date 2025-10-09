@@ -1,0 +1,224 @@
+.gn-DatePicker {
+  width: 100%;
+}
+
+.gn-DatePickerContent {
+  background: var(--color-panel);
+  border: 1px solid var(--gray-6);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-5);
+  padding: var(--space-3);
+  width: 320px !important;
+  max-width: 320px !important;
+  min-width: 320px !important;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Override react-day-picker styles with high specificity */
+.gn-DatePickerContent .rdp {
+  margin: 0 !important;
+  color: var(--gray-12) !important;
+  font-family: inherit !important;
+  --rdp-accent-color: var(--accent-9) !important;
+  --rdp-accent-color-dark: var(--accent-10) !important;
+  --rdp-background-color: var(--color-panel) !important;
+  display: block !important;
+}
+
+/* Force override any grid or flex layouts that might be interfering */
+.gn-DatePickerContent .rdp * {
+  box-sizing: border-box !important;
+}
+
+.gn-DatePickerContent .rdp-month_grid,
+.gn-DatePickerContent .rdp-weekdays,
+.gn-DatePickerContent .rdp-weeks {
+  display: contents !important;
+}
+
+.gn-DatePickerContent .rdp-months {
+  display: block !important;
+}
+
+.gn-DatePickerContent .rdp-month {
+  margin: 0 !important;
+  display: block !important;
+}
+
+.gn-DatePickerContent .rdp-caption {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: var(--space-2) !important;
+  margin-bottom: var(--space-2) !important;
+}
+
+.gn-DatePickerContent .rdp-caption_label {
+  font-weight: 600 !important;
+  font-size: var(--font-size-3) !important;
+  color: var(--gray-12) !important;
+}
+
+.gn-DatePickerContent .rdp-nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--space-1) !important;
+}
+
+.gn-DatePickerContent .rdp-nav_button,
+.gn-DatePickerContent .rdp-nav_button_previous,
+.gn-DatePickerContent .rdp-nav_button_next {
+  width: 32px !important;
+  height: 32px !important;
+  border: none !important;
+  background: transparent !important;
+  border-radius: var(--radius-2) !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--gray-11) !important;
+  transition: background-color 0.15s ease !important;
+}
+
+.gn-DatePickerContent .rdp-nav_button:hover,
+.gn-DatePickerContent .rdp-nav_button_previous:hover,
+.gn-DatePickerContent .rdp-nav_button_next:hover {
+  background-color: var(--gray-3) !important;
+  color: var(--gray-12) !important;
+}
+
+.gn-DatePickerContent .rdp-nav_button:disabled,
+.gn-DatePickerContent .rdp-nav_button_previous:disabled,
+.gn-DatePickerContent .rdp-nav_button_next:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
+.gn-DatePickerContent .rdp-table {
+  width: 280px !important;
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+  table-layout: fixed !important;
+  display: table !important;
+  margin: 0 auto !important;
+}
+
+.gn-DatePickerContent .rdp-tbody {
+  display: table-row-group !important;
+}
+
+.gn-DatePickerContent .rdp-head {
+  display: table-header-group !important;
+}
+
+.gn-DatePickerContent .rdp-head_row,
+.gn-DatePickerContent .rdp-row {
+  display: table-row !important;
+  width: 100% !important;
+}
+
+.gn-DatePickerContent .rdp-head_cell {
+  display: table-cell !important;
+  padding: 8px 0 !important;
+  text-align: center !important;
+  font-size: var(--font-size-1) !important;
+  font-weight: 500 !important;
+  color: var(--gray-9) !important;
+  width: 40px !important;
+  vertical-align: middle !important;
+}
+
+.gn-DatePickerContent .rdp-cell {
+  display: table-cell !important;
+  padding: 2px !important;
+  text-align: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  vertical-align: middle !important;
+}
+
+.gn-DatePickerContent .rdp-button,
+.gn-DatePickerContent .rdp-button_reset,
+.gn-DatePickerContent .rdp-day {
+  width: 32px !important;
+  height: 32px !important;
+  border: none !important;
+  background: transparent !important;
+  border-radius: var(--radius-2) !important;
+  cursor: pointer !important;
+  font-size: var(--font-size-2) !important;
+  color: var(--gray-12) !important;
+  transition: background-color 0.15s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.gn-DatePickerContent .rdp-button:hover,
+.gn-DatePickerContent .rdp-button_reset:hover,
+.gn-DatePickerContent .rdp-day:hover {
+  background-color: var(--gray-3) !important;
+}
+
+.gn-DatePickerContent .rdp-button:focus-visible,
+.gn-DatePickerContent .rdp-button_reset:focus-visible,
+.gn-DatePickerContent .rdp-day:focus-visible {
+  outline: 2px solid var(--accent-8) !important;
+  outline-offset: 2px !important;
+}
+
+.gn-DatePickerContent .rdp-day_today {
+  font-weight: 600 !important;
+  color: var(--accent-11) !important;
+  background-color: var(--accent-2) !important;
+}
+
+.gn-DatePickerContent .rdp-day_selected,
+.gn-DatePickerContent .rdp-button[aria-pressed="true"],
+.gn-DatePickerContent .rdp-day[aria-selected="true"] {
+  background-color: var(--accent-9) !important;
+  color: var(--accent-contrast) !important;
+}
+
+.gn-DatePickerContent .rdp-day_selected:hover,
+.gn-DatePickerContent .rdp-button[aria-pressed="true"]:hover,
+.gn-DatePickerContent .rdp-day[aria-selected="true"]:hover {
+  background-color: var(--accent-10) !important;
+  color: var(--accent-contrast) !important;
+}
+
+.gn-DatePickerContent .rdp-day_outside {
+  color: var(--gray-8) !important;
+}
+
+.gn-DatePickerContent .rdp-day_disabled,
+.gn-DatePickerContent .rdp-button:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
+.gn-DatePickerContent .rdp-day_hidden {
+  visibility: hidden !important;
+}
+
+/* Additional overrides for any remaining blue styles */
+.gn-DatePickerContent [role="gridcell"] button {
+  background-color: transparent !important;
+  color: var(--gray-12) !important;
+}
+
+.gn-DatePickerContent [role="gridcell"] button:hover {
+  background-color: var(--gray-3) !important;
+}
+
+.gn-DatePickerContent [role="gridcell"] button[aria-selected="true"] {
+  background-color: var(--accent-9) !important;
+  color: var(--accent-contrast) !important;
+}
+
+.gn-DatePickerContent [role="gridcell"] button[aria-selected="true"]:hover {
+  background-color: var(--accent-10) !important;
+}

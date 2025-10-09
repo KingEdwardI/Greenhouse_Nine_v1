@@ -1,0 +1,62 @@
+.gn-MaskedInput {
+  appearance: none;
+  background-color: var(--color-surface);
+  border: 1px solid var(--gray-6);
+  border-radius: var(--radius-2);
+  color: var(--gray-12);
+  font-family: inherit;
+  font-weight: 400;
+  line-height: var(--line-height-1);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gn-MaskedInput::placeholder {
+  color: var(--gray-9);
+}
+
+.gn-MaskedInput:focus {
+  border-color: var(--accent-8);
+  box-shadow: inset 0 0 0 1px var(--accent-8);
+}
+
+.gn-MaskedInput:disabled {
+  background-color: var(--gray-2);
+  color: var(--gray-8);
+  cursor: not-allowed;
+}
+
+.gn-MaskedInput:disabled::placeholder {
+  color: var(--gray-7);
+}
+
+/* Size variants */
+.gn-MaskedInput--sm {
+  height: var(--space-6);
+  padding: 0 var(--space-2);
+  font-size: var(--font-size-1);
+}
+
+.gn-MaskedInput--md {
+  height: var(--space-7);
+  padding: 0 var(--space-3);
+  font-size: var(--font-size-2);
+}
+
+.gn-MaskedInput--lg {
+  height: var(--space-8);
+  padding: 0 var(--space-3);
+  font-size: var(--font-size-3);
+}
+
+/* Error state */
+.gn-MaskedInput[aria-invalid="true"] {
+  border-color: var(--red-8);
+}
+
+.gn-MaskedInput[aria-invalid="true"]:focus {
+  border-color: var(--red-8);
+  box-shadow: inset 0 0 0 1px var(--red-8);
+}

@@ -1,0 +1,92 @@
+.gn-MessageList {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--gray-1);
+  scroll-behavior: smooth;
+}
+
+.gn-MessageList__content {
+  padding: var(--space-3);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.gn-MessageList__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 200px;
+  text-align: center;
+  gap: var(--space-3);
+}
+
+.gn-MessageList__empty-icon {
+  color: var(--gray-8);
+  opacity: 0.8;
+}
+
+.gn-MessageList__empty-text {
+  color: var(--gray-11);
+  font-weight: 500;
+}
+
+.gn-MessageList__empty-subtext {
+  color: var(--gray-9);
+}
+
+.gn-MessageList__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  color: var(--gray-11);
+  font-size: var(--font-size-2);
+}
+
+.gn-MessageList__spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--gray-6);
+  border-top: 2px solid var(--accent-9);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.gn-MessageList__typing {
+  margin-top: var(--space-2);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Custom scrollbar styling */
+.gn-MessageList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.gn-MessageList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gn-MessageList::-webkit-scrollbar-thumb {
+  background: var(--gray-8);
+  border-radius: 3px;
+}
+
+.gn-MessageList::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-9);
+}
+
+/* Firefox scrollbar styling */
+.gn-MessageList {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-8) transparent;
+}

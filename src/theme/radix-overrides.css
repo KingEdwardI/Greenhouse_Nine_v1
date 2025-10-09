@@ -1,0 +1,68 @@
+/* Radix Themes overrides - Auto-generated from colors.ts */
+
+:root, .radix-themes {
+  --color-background: #151515;
+  --color-panel: #1C1C1C;
+  --color-panel-solid: #101010;
+  --accent-1: #000000;
+  --accent-2: #151515;
+  --accent-3: rgba(147, 185, 122, 0.1);
+  --accent-4: rgba(147, 185, 122, 0.2);
+  --accent-5: rgba(147, 185, 122, 0.3);
+  --accent-6: rgba(147, 185, 122, 0.4);
+  --accent-7: rgba(147, 185, 122, 0.5);
+  --accent-8: rgba(147, 185, 122, 0.7);
+  --accent-9: #93B97A;
+  --accent-10: #30A098;
+  --accent-11: #93B97A;
+  --accent-12: #E8E8E3;
+  --green-1: #000000;
+  --green-2: #151515;
+  --green-3: rgba(147, 185, 122, 0.1);
+  --green-4: rgba(147, 185, 122, 0.2);
+  --green-5: rgba(147, 185, 122, 0.3);
+  --green-6: rgba(147, 185, 122, 0.4);
+  --green-7: rgba(147, 185, 122, 0.5);
+  --green-8: rgba(147, 185, 122, 0.7);
+  --green-9: #93B97A;
+  --green-10: #30A098;
+  --green-11: #93B97A;
+  --green-12: #E8E8E3;
+  --red-1: #000000;
+  --red-2: #151515;
+  --red-3: rgba(242, 143, 173, 0.1);
+  --red-4: rgba(242, 143, 173, 0.2);
+  --red-5: rgba(242, 143, 173, 0.3);
+  --red-6: rgba(242, 143, 173, 0.4);
+  --red-7: rgba(242, 143, 173, 0.5);
+  --red-8: rgba(242, 143, 173, 0.7);
+  --red-9: #F28FAD;
+  --red-10: #B3458E;
+  --red-11: #F28FAD;
+  --red-12: #E8E8E3;
+  --gray-1: #000000;
+  --gray-2: #151515;
+  --gray-3: #1C1C1C;
+  --gray-4: #101010;
+  --gray-5: #494848;
+  --gray-6: #888888;
+  --gray-7: #9AA2B1;
+  --gray-8: #A0A0A0;
+  --gray-9: #A2A8A0;
+  --gray-10: #B0B0B3;
+  --gray-11: #D6D6C2;
+  --gray-12: #E8E8E3;
+  --default-font-family: 'FiraCode Mono', 'Fira Code', Monaco, Consolas, monospace;
+  --code-font-family: 'FiraCode Mono', 'Fira Code', 'JetBrains Mono', Monaco, Consolas, monospace;
+  --radius-1: 2px;
+  --radius-2: 4px;
+  --radius-3: 6px;
+  --radius-4: 8px;
+  --radius-5: 12px;
+  --radius-6: 16px;
+}
+
+/* Set dark appearance by default */
+.radix-themes {
+  color-scheme: dark;
+}

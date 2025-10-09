@@ -1,0 +1,63 @@
+.gn-TypingIndicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--gray-3);
+  border-radius: var(--radius-3);
+  max-width: fit-content;
+  animation: fadeIn 0.2s ease-in;
+}
+
+.gn-TypingIndicator__dots {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.gn-TypingIndicator__dot {
+  width: 6px;
+  height: 6px;
+  background: var(--gray-9);
+  border-radius: 50%;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.gn-TypingIndicator__dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.gn-TypingIndicator__dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.gn-TypingIndicator__dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.gn-TypingIndicator__text {
+  color: var(--gray-11);
+  font-style: italic;
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  30% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
