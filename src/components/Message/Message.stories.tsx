@@ -63,3 +63,67 @@ export const Conversation: Story = () => (
     </Message>
   </div>
 );
+
+export const WithMarkdown: Story = () => (
+  <div style={{ padding: '20px', background: 'var(--gray-1)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+    <Message variant="user" timestamp="2:30 PM" status="read">
+      Can you show me how to implement a TypeScript interface?
+    </Message>
+    <Message variant="assistant" timestamp="2:30 PM" username="Assistant" markdown>
+{`Sure! Here's an example of a TypeScript interface:
+
+\`\`\`typescript
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  isActive: boolean;
+}
+\`\`\`
+
+Key points about interfaces:
+
+- They define the **shape** of an object
+- Properties can be *optional* using \`?\`
+- They support readonly properties
+- They can extend other interfaces`}
+    </Message>
+    <Message variant="user" timestamp="2:31 PM" status="read">
+      What about lists and tables?
+    </Message>
+    <Message variant="assistant" timestamp="2:31 PM" username="Assistant" markdown>
+{`Markdown supports both! Here's a comparison:
+
+| Feature | Arrays | Objects |
+|---------|--------|---------|
+| Ordered | Yes | No |
+| Key-Value | No | Yes |
+| Iterable | Yes | Needs Object.keys() |
+
+Unordered list:
+- Arrays are ordered collections
+- Objects are key-value pairs
+- Both are essential in JavaScript
+
+Ordered list:
+1. Define your data structure
+2. Implement the interface
+3. Use it in your code`}
+    </Message>
+  </div>
+);
+
+export const MarkdownComparison: Story = () => (
+  <div style={{ padding: '20px', background: 'var(--gray-1)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+    <Message variant="assistant" timestamp="2:30 PM" username="Plain Text">
+      This is a regular message without markdown. **Bold** and *italic* won't work here.
+    </Message>
+    <Message variant="assistant" timestamp="2:30 PM" username="Markdown" markdown>
+{`This is a message **with markdown**. Now the formatting works!
+
+- You can use lists
+- \`Inline code\`
+- And much more!`}
+    </Message>
+  </div>
+);

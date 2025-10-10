@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "../Card";
 import { Text } from "../Text";
+import { MarkdownRenderer } from "../MarkdownRenderer";
 import "./Message.css";
 
 export interface MessageProps {
@@ -10,6 +11,7 @@ export interface MessageProps {
   status?: "sending" | "sent" | "delivered" | "read";
   username?: string;
   className?: string;
+  markdown?: boolean;
 }
 
 export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
@@ -21,6 +23,7 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
       status,
       username,
       className,
+      markdown = false,
       ...props
     },
     ref,
@@ -46,9 +49,15 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
           size="sm"
           className="gn-Message__bubble"
         >
-          <Text size="md" className="gn-Message__content">
-            {children}
-          </Text>
+          {markdown && typeof children === "string" ? (
+            <MarkdownRenderer className="gn-Message__content">
+              {children}
+            </MarkdownRenderer>
+          ) : (
+            <Text size="md" className="gn-Message__content">
+              {children}
+            </Text>
+          )}
           {status && (
             <div className="gn-Message__status-wrapper">
               <div className="gn-Message__status" data-status={status} />

@@ -1,0 +1,179 @@
+/* Import highlight.js theme for code syntax highlighting */
+@import "highlight.js/styles/github-dark.css";
+
+.gn-MarkdownRenderer {
+  line-height: 1.6;
+  color: var(--gray-12);
+}
+
+/* Headings */
+.gn-MarkdownRenderer h1,
+.gn-MarkdownRenderer h2,
+.gn-MarkdownRenderer h3,
+.gn-MarkdownRenderer h4,
+.gn-MarkdownRenderer h5,
+.gn-MarkdownRenderer h6 {
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--gray-12);
+}
+
+.gn-MarkdownRenderer h1 {
+  font-size: var(--font-size-6);
+  border-bottom: 1px solid var(--gray-6);
+  padding-bottom: var(--space-2);
+}
+
+.gn-MarkdownRenderer h2 {
+  font-size: var(--font-size-5);
+  border-bottom: 1px solid var(--gray-6);
+  padding-bottom: var(--space-2);
+}
+
+.gn-MarkdownRenderer h3 {
+  font-size: var(--font-size-4);
+}
+
+.gn-MarkdownRenderer h4 {
+  font-size: var(--font-size-3);
+}
+
+.gn-MarkdownRenderer h5,
+.gn-MarkdownRenderer h6 {
+  font-size: var(--font-size-2);
+}
+
+/* First heading has no top margin */
+.gn-MarkdownRenderer > :first-child {
+  margin-top: 0;
+}
+
+/* Last element has no bottom margin */
+.gn-MarkdownRenderer > :last-child {
+  margin-bottom: 0;
+}
+
+/* Paragraphs */
+.gn-MarkdownRenderer p {
+  margin-top: 0;
+  margin-bottom: var(--space-3);
+}
+
+/* Links */
+.gn-MarkdownRenderer a {
+  color: var(--accent-11);
+  text-decoration: none;
+}
+
+.gn-MarkdownRenderer a:hover {
+  text-decoration: underline;
+}
+
+/* Lists */
+.gn-MarkdownRenderer ul,
+.gn-MarkdownRenderer ol {
+  margin-top: 0;
+  margin-bottom: var(--space-3);
+  padding-left: var(--space-5);
+}
+
+.gn-MarkdownRenderer li {
+  margin-bottom: var(--space-1);
+}
+
+.gn-MarkdownRenderer li > p {
+  margin-bottom: var(--space-1);
+}
+
+/* Code blocks */
+.gn-MarkdownRenderer pre {
+  background: var(--gray-2);
+  border: 1px solid var(--gray-6);
+  border-radius: var(--radius-2);
+  padding: var(--space-3);
+  overflow-x: auto;
+  margin-top: 0;
+  margin-bottom: var(--space-3);
+}
+
+.gn-MarkdownRenderer code {
+  font-family: var(--code-font-family);
+  font-size: 0.9em;
+}
+
+/* Inline code */
+.gn-MarkdownRenderer :not(pre) > code {
+  background: var(--gray-3);
+  color: var(--accent-11);
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius-1);
+  border: 1px solid var(--gray-6);
+}
+
+/* Blockquotes */
+.gn-MarkdownRenderer blockquote {
+  margin: 0 0 var(--space-3);
+  padding-left: var(--space-3);
+  border-left: 4px solid var(--accent-9);
+  color: var(--gray-11);
+}
+
+.gn-MarkdownRenderer blockquote > :first-child {
+  margin-top: 0;
+}
+
+.gn-MarkdownRenderer blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/* Horizontal rule */
+.gn-MarkdownRenderer hr {
+  height: 1px;
+  border: none;
+  background: var(--gray-6);
+  margin: var(--space-4) 0;
+}
+
+/* Tables (from remark-gfm) */
+.gn-MarkdownRenderer table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: var(--space-3);
+}
+
+.gn-MarkdownRenderer table th,
+.gn-MarkdownRenderer table td {
+  border: 1px solid var(--gray-6);
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+}
+
+.gn-MarkdownRenderer table th {
+  background: var(--gray-3);
+  font-weight: 600;
+}
+
+.gn-MarkdownRenderer table tr:nth-child(even) {
+  background: var(--gray-2);
+}
+
+/* Strikethrough (from remark-gfm) */
+.gn-MarkdownRenderer del {
+  text-decoration: line-through;
+  color: var(--gray-11);
+}
+
+/* Task lists (from remark-gfm) */
+.gn-MarkdownRenderer input[type="checkbox"] {
+  margin-right: var(--space-2);
+}
+
+/* Images */
+.gn-MarkdownRenderer img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-2);
+  margin: var(--space-3) 0;
+}

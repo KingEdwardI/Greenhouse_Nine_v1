@@ -50,6 +50,8 @@ export type { DatePickerProps } from './DatePicker';
 export { Combobox } from './Combobox';
 export type { ComboboxProps, ComboboxOption } from './Combobox';
 
+export { MarkdownRenderer } from './MarkdownRenderer';
+export type { MarkdownRendererProps } from './MarkdownRenderer';
 export { Message } from './Message';
 export type { MessageProps } from './Message';
 export { MessageInput } from './MessageInput';
