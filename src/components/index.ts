@@ -52,8 +52,8 @@ export type { ComboboxProps, ComboboxOption } from './Combobox';
 
 export { MarkdownRenderer } from './MarkdownRenderer';
 export type { MarkdownRendererProps } from './MarkdownRenderer';
-export { Message } from './Message';
-export type { MessageProps } from './Message';
+export { Message, GlassMessage } from './Message';
+export type { MessageProps, GlassMessageProps } from './Message';
 export { MessageInput } from './MessageInput';
 export type { MessageInputProps } from './MessageInput';
 export { MessageList } from './MessageList';

@@ -1,0 +1,177 @@
+.gn-GlassMessage {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-3);
+  max-width: 80%;
+}
+
+.gn-GlassMessage--user {
+  margin-left: auto;
+  align-items: flex-end;
+}
+
+.gn-GlassMessage--system,
+.gn-GlassMessage--assistant {
+  margin-right: auto;
+  align-items: flex-start;
+}
+
+.gn-GlassMessage__bubble {
+  position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-4);
+
+  /* Glassmorphism base */
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+
+  /* Border with gradient effect */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  /* Shadow for depth */
+  box-shadow:
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Color variants - Primary (Sea Green) */
+.gn-GlassMessage--primary .gn-GlassMessage__bubble {
+  background: rgba(46, 139, 87, 0.15);
+  border-color: rgba(46, 139, 87, 0.3);
+}
+
+.gn-GlassMessage--primary.gn-GlassMessage--user .gn-GlassMessage__bubble {
+  background: rgba(46, 139, 87, 0.25);
+  border-color: rgba(46, 139, 87, 0.4);
+}
+
+/* Color variants - Secondary (Cerulean) */
+.gn-GlassMessage--secondary .gn-GlassMessage__bubble {
+  background: rgba(0, 123, 167, 0.15);
+  border-color: rgba(0, 123, 167, 0.3);
+}
+
+.gn-GlassMessage--secondary.gn-GlassMessage--user .gn-GlassMessage__bubble {
+  background: rgba(0, 123, 167, 0.25);
+  border-color: rgba(0, 123, 167, 0.4);
+}
+
+/* Color variants - Accent (Purple) */
+.gn-GlassMessage--accent .gn-GlassMessage__bubble {
+  background: rgba(84, 20, 102, 0.15);
+  border-color: rgba(84, 20, 102, 0.3);
+}
+
+.gn-GlassMessage--accent.gn-GlassMessage--user .gn-GlassMessage__bubble {
+  background: rgba(84, 20, 102, 0.25);
+  border-color: rgba(84, 20, 102, 0.4);
+}
+
+/* Color variants - Success (Mint) */
+.gn-GlassMessage--success .gn-GlassMessage__bubble {
+  background: rgba(147, 233, 190, 0.15);
+  border-color: rgba(147, 233, 190, 0.3);
+}
+
+.gn-GlassMessage--success.gn-GlassMessage--user .gn-GlassMessage__bubble {
+  background: rgba(147, 233, 190, 0.25);
+  border-color: rgba(147, 233, 190, 0.4);
+}
+
+/* Color variants - Info (Blue) */
+.gn-GlassMessage--info .gn-GlassMessage__bubble {
+  background: rgba(35, 59, 163, 0.15);
+  border-color: rgba(35, 59, 163, 0.3);
+}
+
+.gn-GlassMessage--info.gn-GlassMessage--user .gn-GlassMessage__bubble {
+  background: rgba(35, 59, 163, 0.25);
+  border-color: rgba(35, 59, 163, 0.4);
+}
+
+/* Color variants - Warning (Gold) */
+.gn-GlassMessage--warning .gn-GlassMessage__bubble {
+  background: rgba(218, 165, 32, 0.15);
+  border-color: rgba(218, 165, 32, 0.3);
+}
+
+.gn-GlassMessage--warning.gn-GlassMessage--user .gn-GlassMessage__bubble {
+  background: rgba(218, 165, 32, 0.25);
+  border-color: rgba(218, 165, 32, 0.4);
+}
+
+.gn-GlassMessage__content {
+  margin: 0;
+  line-height: 1.4;
+  color: var(--gray-12);
+  position: relative;
+  z-index: 1;
+}
+
+.gn-GlassMessage__status-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-1);
+}
+
+.gn-GlassMessage__username {
+  color: var(--gray-11);
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+  text-align: left;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.gn-GlassMessage__timestamp {
+  opacity: 0.8;
+  font-size: var(--font-size-1);
+  margin-top: var(--space-1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.gn-GlassMessage__status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gray-6);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.gn-GlassMessage__status[data-status="sending"] {
+  background: var(--amber-9);
+  animation: pulse 1s infinite;
+  box-shadow: 0 0 8px rgba(218, 165, 32, 0.6);
+}
+
+.gn-GlassMessage__status[data-status="sent"] {
+  background: var(--gray-9);
+}
+
+.gn-GlassMessage__status[data-status="delivered"] {
+  background: var(--blue-9);
+  box-shadow: 0 0 6px rgba(35, 59, 163, 0.5);
+}
+
+.gn-GlassMessage__status[data-status="read"] {
+  background: var(--green-9);
+  box-shadow: 0 0 6px rgba(46, 139, 87, 0.5);
+}
+
+.gn-GlassMessage--sending {
+  opacity: 0.7;
+}
+
+/* Hover effect for glass */
+.gn-GlassMessage__bubble:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 8px 32px 0 rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

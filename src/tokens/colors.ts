@@ -71,4 +71,13 @@ export const colors = {
   // Base
   white: '#FFFFFF',
   transparent: 'transparent',
+
+  // Brand colors
+  primary: '#2E8B57',
+  secondary: '#007BA7',
+  accent: '#541466',
+  warning: '#DAA520',
+  danger: '#e54709',
+  info: '#233ba3',
+  success: '#93e9be',
 } as const;
