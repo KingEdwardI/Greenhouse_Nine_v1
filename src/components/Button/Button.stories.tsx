@@ -1,7 +1,7 @@
-import { Button } from './Button';
+import { Button } from "./Button";
 
 export default {
-  title: 'Forms/Button'
+  title: "Forms/Button",
 };
 
 export const Default = () => {
@@ -10,7 +10,7 @@ export const Default = () => {
 
 export const Variants = () => {
   return (
-    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+    <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
       <Button variant="solid">Solid</Button>
       <Button variant="soft">Soft</Button>
       <Button variant="outline">Outline</Button>
@@ -21,7 +21,14 @@ export const Variants = () => {
 
 export const Sizes = () => {
   return (
-    <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+    <div
+      style={{
+        display: "flex",
+        gap: "12px",
+        alignItems: "center",
+        flexWrap: "wrap",
+      }}
+    >
       <Button size="sm">Small</Button>
       <Button size="md">Medium</Button>
       <Button size="lg">Large</Button>
@@ -31,7 +38,7 @@ export const Sizes = () => {
 
 export const Colors = () => {
   return (
-    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+    <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
       <Button color="accent">Accent (Theme)</Button>
       <Button color="orange">Orange</Button>
       <Button color="red">Red</Button>
@@ -43,10 +50,11 @@ export const Colors = () => {
 
 export const States = () => {
   return (
-    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+    <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
       <Button>Normal</Button>
       <Button disabled>Disabled</Button>
       <Button loading>Loading</Button>
     </div>
   );
 };
+

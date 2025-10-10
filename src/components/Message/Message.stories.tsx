@@ -1,26 +1,34 @@
-import type { Story } from '@ladle/react';
-import { Message } from './Message';
-import type { MessageProps } from './Message';
+import type { Story } from "@ladle/react";
+import { Message } from "./Message";
+import type { MessageProps } from "./Message";
 
 export default {
-  title: 'Chat/Message'
+  title: "Chat/Message",
 };
 
 export const Default: Story<MessageProps> = (args) => (
-  <div style={{ padding: '20px', background: 'var(--gray-1)' }}>
+  <div style={{ padding: "20px", background: "var(--gray-1)" }}>
     <Message {...args}>Hello, this is a test message!</Message>
   </div>
 );
 
 Default.args = {
-  variant: 'user',
-  timestamp: '2:34 PM',
-  status: 'read',
-  username: 'John Doe'
+  variant: "user",
+  timestamp: "2:34 PM",
+  status: "read",
+  username: "John Doe",
 };
 
 export const UserMessages: Story = () => (
-  <div style={{ padding: '20px', background: 'var(--gray-1)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+  <div
+    style={{
+      padding: "20px",
+      background: "var(--gray-1)",
+      display: "flex",
+      flexDirection: "column",
+      gap: "12px",
+    }}
+  >
     <Message variant="user" timestamp="2:32 PM" status="sending">
       This message is still sending...
     </Message>
@@ -37,40 +45,74 @@ export const UserMessages: Story = () => (
 );
 
 export const SystemMessages: Story = () => (
-  <div style={{ padding: '20px', background: 'var(--gray-1)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+  <div
+    style={{
+      padding: "20px",
+      background: "var(--gray-1)",
+      display: "flex",
+      flexDirection: "column",
+      gap: "12px",
+    }}
+  >
     <Message variant="system" timestamp="2:30 PM">
       System notification message
     </Message>
     <Message variant="assistant" timestamp="2:31 PM" username="Assistant">
-      Assistant response message with some longer content to show how it wraps and handles different lengths of text content.
+      Assistant response message with some longer content to show how it wraps
+      and handles different lengths of text content.
     </Message>
   </div>
 );
 
 export const Conversation: Story = () => (
-  <div style={{ padding: '20px', background: 'var(--gray-1)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+  <div
+    style={{
+      padding: "20px",
+      background: "var(--gray-1)",
+      display: "flex",
+      flexDirection: "column",
+      gap: "12px",
+    }}
+  >
     <Message variant="user" timestamp="2:30 PM" status="read">
-      Hey, can you help me with something?
+      **Hey, can you help me with something?**
     </Message>
     <Message variant="assistant" timestamp="2:30 PM" username="Assistant">
       Of course! What do you need help with?
     </Message>
     <Message variant="user" timestamp="2:31 PM" status="read">
-      I'm trying to understand how to implement a chat interface using React components.
+      I'm trying to understand how to implement a chat interface using React
+      components.
     </Message>
     <Message variant="assistant" timestamp="2:31 PM" username="Assistant">
-      That's a great question! A chat interface typically consists of several key components: message bubbles, an input area, and a scrollable message list. Each message should show who sent it, when it was sent, and potentially the delivery status.
+      That's a great question! A chat interface typically consists of several
+      key components: message bubbles, an input area, and a scrollable message
+      list. Each message should show who sent it, when it was sent, and
+      potentially the delivery status.
     </Message>
   </div>
 );
 
 export const WithMarkdown: Story = () => (
-  <div style={{ padding: '20px', background: 'var(--gray-1)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+  <div
+    style={{
+      padding: "20px",
+      background: "var(--gray-1)",
+      display: "flex",
+      flexDirection: "column",
+      gap: "12px",
+    }}
+  >
     <Message variant="user" timestamp="2:30 PM" status="read">
       Can you show me how to implement a TypeScript interface?
     </Message>
-    <Message variant="assistant" timestamp="2:30 PM" username="Assistant" markdown>
-{`Sure! Here's an example of a TypeScript interface:
+    <Message
+      variant="assistant"
+      timestamp="2:30 PM"
+      username="Assistant"
+      markdown
+    >
+      {`Sure! Here's an example of a TypeScript interface:
 
 \`\`\`typescript
 interface User {
@@ -91,8 +133,13 @@ Key points about interfaces:
     <Message variant="user" timestamp="2:31 PM" status="read">
       What about lists and tables?
     </Message>
-    <Message variant="assistant" timestamp="2:31 PM" username="Assistant" markdown>
-{`Markdown supports both! Here's a comparison:
+    <Message
+      variant="assistant"
+      timestamp="2:31 PM"
+      username="Assistant"
+      markdown
+    >
+      {`Markdown supports both! Here's a comparison:
 
 | Feature | Arrays | Objects |
 |---------|--------|---------|
@@ -114,12 +161,26 @@ Ordered list:
 );
 
 export const MarkdownComparison: Story = () => (
-  <div style={{ padding: '20px', background: 'var(--gray-1)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+  <div
+    style={{
+      padding: "20px",
+      background: "var(--gray-1)",
+      display: "flex",
+      flexDirection: "column",
+      gap: "12px",
+    }}
+  >
     <Message variant="assistant" timestamp="2:30 PM" username="Plain Text">
-      This is a regular message without markdown. **Bold** and *italic* won't work here.
+      This is a regular message without markdown. **Bold** and *italic* won't
+      work here.
     </Message>
-    <Message variant="assistant" timestamp="2:30 PM" username="Markdown" markdown>
-{`This is a message **with markdown**. Now the formatting works!
+    <Message
+      variant="assistant"
+      timestamp="2:30 PM"
+      username="Markdown"
+      markdown
+    >
+      {`This is a message **with markdown**. Now the formatting works!
 
 - You can use lists
 - \`Inline code\`
@@ -127,3 +188,42 @@ export const MarkdownComparison: Story = () => (
     </Message>
   </div>
 );
+
+export const MixedContent: Story = () => (
+  <div
+    style={{
+      padding: "20px",
+      background: "var(--gray-1)",
+      display: "flex",
+      flexDirection: "column",
+      gap: "12px",
+    }}
+  >
+    <Message variant="assistant" timestamp="2:30 PM" username="Assistant">
+      <div style={{ padding: "10px", background: "var(--blue-4)", borderRadius: "4px", marginBottom: "8px" }}>
+        Custom Component Header
+      </div>
+      {`# Some regular markdown
+
+- Lists should render correctly
+- Things like this
+- **Bold** and *italic* work too
+
+Here's some \`inline code\` as well.`}
+      <div style={{ padding: "10px", background: "var(--green-4)", borderRadius: "4px", marginTop: "8px" }}>
+        Custom Component Footer
+      </div>
+    </Message>
+    <Message variant="user" timestamp="2:31 PM">
+      <button style={{ padding: "8px 16px", marginBottom: "8px", cursor: "pointer" }}>
+        Click me!
+      </button>
+      {`You can also mix components with markdown in user messages:
+
+1. First item
+2. Second item
+3. Third item`}
+    </Message>
+  </div>
+);
+
