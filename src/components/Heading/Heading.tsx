@@ -2,24 +2,20 @@ import React from 'react';
 import { Heading as RadixHeading } from '@radix-ui/themes';
 import type { ComponentPropsWithoutRef, ElementRef } from 'react';
 
-type DesignSystemSize = 'sm' | 'md' | 'lg';
-
 type RadixHeadingComponent = typeof RadixHeading;
 type RadixHeadingProps = ComponentPropsWithoutRef<RadixHeadingComponent>;
 type RadixHeadingElement = ElementRef<RadixHeadingComponent>;
 
-export interface HeadingProps extends Omit<RadixHeadingProps, 'size'> {
-  size?: DesignSystemSize;
+export interface HeadingProps extends RadixHeadingProps {
+  /**
+   * Radix numeric size: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+   * If not provided, defaults based on the heading level (h1-h6)
+   */
+  size?: RadixHeadingProps['size'];
 }
 
 export const Heading = React.forwardRef<RadixHeadingElement, HeadingProps>(
   ({ as = 'h2', size, className, children, ...props }, ref) => {
-    const explicitSizeMap: Record<DesignSystemSize, NonNullable<RadixHeadingProps['size']>> = {
-      sm: '3',
-      md: '5',
-      lg: '7',
-    };
-
     const byLevelDefaultSizeMap: Record<NonNullable<RadixHeadingProps['as']>, NonNullable<RadixHeadingProps['size']>> = {
       h1: '8',
       h2: '7',
@@ -30,7 +26,7 @@ export const Heading = React.forwardRef<RadixHeadingElement, HeadingProps>(
     };
 
     const composedClassName = ['gn-Heading', className].filter(Boolean).join(' ');
-    const resolvedSize = size ? explicitSizeMap[size] : byLevelDefaultSizeMap[as ?? 'h2'];
+    const resolvedSize = size ?? byLevelDefaultSizeMap[as ?? 'h2'];
 
     return (
       <RadixHeading ref={ref} as={as} size={resolvedSize} className={composedClassName} {...props}>

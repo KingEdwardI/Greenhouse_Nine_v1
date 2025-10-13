@@ -2,25 +2,20 @@ import React from 'react';
 import { Text as RadixText } from '@radix-ui/themes';
 import type { ComponentPropsWithoutRef } from 'react';
 
-type DesignSystemSize = 'sm' | 'md' | 'lg';
-
 type RadixTextProps = ComponentPropsWithoutRef<typeof RadixText>;
 
 export interface TextProps extends Omit<RadixTextProps, 'size'> {
-  size?: DesignSystemSize;
+  /**
+   * Radix numeric size: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+   */
+  size?: RadixTextProps['size'];
 }
 
-export const Text: React.FC<TextProps> = ({ size = 'md', className, children, ...props }) => {
-    const sizeMap: Record<DesignSystemSize, NonNullable<RadixTextProps['size']>> = {
-      sm: '1',
-      md: '2',
-      lg: '3',
-    };
-
+export const Text: React.FC<TextProps> = ({ size = '2', className, children, ...props }) => {
     const composedClassName = ['gn-Text', className].filter(Boolean).join(' ');
     const forwardedProps = props as RadixTextProps;
     return (
-      <RadixText size={sizeMap[size]} className={composedClassName} {...forwardedProps}>
+      <RadixText size={size} className={composedClassName} {...forwardedProps}>
         {children}
       </RadixText>
     );

@@ -16,9 +16,9 @@ export const Default = () => (
 
 export const Sizes = () => (
   <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-    <Select size="sm" items={items} defaultValue="apple" />
-    <Select size="md" items={items} defaultValue="banana" />
-    <Select size="lg" items={items} defaultValue="cherry" />
+    <Select size="1" items={items} defaultValue="apple" />
+    <Select size="2" items={items} defaultValue="banana" />
+    <Select size="3" items={items} defaultValue="cherry" />
   </div>
 );
 

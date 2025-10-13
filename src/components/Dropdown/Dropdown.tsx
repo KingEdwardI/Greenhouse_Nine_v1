@@ -1,9 +1,8 @@
 import React from 'react';
 import { DropdownMenu as RadixDropdown } from '@radix-ui/themes';
 import { Button as DSButton } from '../Button';
+import type { ButtonProps } from '../Button';
 import './Dropdown.css';
-
-type DesignSystemSize = 'sm' | 'md' | 'lg';
 
 export interface DropdownItem {
   label: string;
@@ -18,7 +17,10 @@ export interface DropdownSection {
 }
 
 export interface DropdownProps extends Omit<React.ComponentPropsWithoutRef<typeof RadixDropdown.Root>, 'children'> {
-  size?: DesignSystemSize;
+  /**
+   * Radix numeric size: "1" | "2" | "3" | "4" - applied to the trigger button
+   */
+  size?: ButtonProps['size'];
   label: React.ReactNode;
   sections: DropdownSection[];
   align?: 'start' | 'center' | 'end';
@@ -26,14 +28,14 @@ export interface DropdownProps extends Omit<React.ComponentPropsWithoutRef<typeo
   sideOffset?: number;
 }
 
-export const Dropdown: React.FC<DropdownProps> = ({ 
-  size = 'md', 
-  label, 
-  sections, 
+export const Dropdown: React.FC<DropdownProps> = ({
+  size = '2',
+  label,
+  sections,
   align = 'start',
   side = 'bottom',
   sideOffset = 4,
-  ...props 
+  ...props
 }) => {
   return (
     <RadixDropdown.Root {...props}>

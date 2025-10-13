@@ -11,9 +11,10 @@ export const Default = () => {
 export const Sizes = () => {
   return (
     <div style={{ display: 'flex', gap: '12px', alignItems: 'baseline', flexWrap: 'wrap' }}>
-      <Heading size="sm">Small</Heading>
-      <Heading size="md">Medium</Heading>
-      <Heading size="lg">Large</Heading>
+      <Heading size="3">Size 3</Heading>
+      <Heading size="5">Size 5</Heading>
+      <Heading size="7">Size 7</Heading>
+      <Heading size="9">Size 9</Heading>
     </div>
   );
 };

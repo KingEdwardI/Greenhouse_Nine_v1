@@ -2,10 +2,11 @@ import React from 'react';
 import { IMaskInput } from 'react-imask';
 import './MaskedInput.css';
 
-type DesignSystemSize = 'sm' | 'md' | 'lg';
-
 export interface MaskedInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'value' | 'defaultValue' | 'onChange' | 'type'> {
-  size?: DesignSystemSize;
+  /**
+   * Radix numeric size: "1" | "2" | "3"
+   */
+  size?: '1' | '2' | '3';
   mask: string | RegExp;
   value?: string;
   defaultValue?: string;
@@ -14,7 +15,7 @@ export interface MaskedInputProps extends Omit<React.InputHTMLAttributes<HTMLInp
 }
 
 export const MaskedInput = React.forwardRef<HTMLInputElement, MaskedInputProps>(
-  ({ size = 'md', mask, value, defaultValue, onChange, unmask, className, ...props }, ref) => {
+  ({ size = '2', mask, value, defaultValue, onChange, unmask, className, ...props }, ref) => {
     const isControlled = value !== undefined;
     const [internal, setInternal] = React.useState<string>(defaultValue ?? '');
     const current = isControlled ? value ?? '' : internal;

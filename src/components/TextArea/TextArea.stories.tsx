@@ -10,9 +10,9 @@ export const Default = () => (
 
 export const Sizes = () => (
   <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-    <TextArea size="sm" placeholder="Small" />
-    <TextArea size="md" placeholder="Medium" />
-    <TextArea size="lg" placeholder="Large" />
+    <TextArea size="1" placeholder="Size 1" />
+    <TextArea size="2" placeholder="Size 2 (default)" />
+    <TextArea size="3" placeholder="Size 3" />
   </div>
 );
 

@@ -25,14 +25,14 @@ export const Default = () => (
 
 export const Sizes = () => (
   <div style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
-    <Dialog title="Small" trigger={<Button size="sm">Open</Button>} size="sm">
-      Small dialog content
+    <Dialog title="Size 1" trigger={<Button size="1">Open</Button>} size="1">
+      Size 1 dialog content
     </Dialog>
-    <Dialog title="Medium" trigger={<Button size="md">Open</Button>} size="md">
-      Medium dialog content
+    <Dialog title="Size 2" trigger={<Button size="2">Open</Button>} size="2">
+      Size 2 dialog content (default)
     </Dialog>
-    <Dialog title="Large" trigger={<Button size="lg">Open</Button>} size="lg">
-      Large dialog content
+    <Dialog title="Size 3" trigger={<Button size="3">Open</Button>} size="3">
+      Size 3 dialog content
     </Dialog>
   </div>
 );

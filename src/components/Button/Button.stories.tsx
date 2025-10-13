@@ -29,9 +29,10 @@ export const Sizes = () => {
         flexWrap: "wrap",
       }}
     >
-      <Button size="sm">Small</Button>
-      <Button size="md">Medium</Button>
-      <Button size="lg">Large</Button>
+      <Button size="1">Size 1</Button>
+      <Button size="2">Size 2 (default)</Button>
+      <Button size="3">Size 3</Button>
+      <Button size="4">Size 4</Button>
     </div>
   );
 };

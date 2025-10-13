@@ -60,3 +60,24 @@ export { MessageList } from './MessageList';
 export type { MessageListProps } from './MessageList';
 export { TypingIndicator } from './TypingIndicator';
 export type { TypingIndicatorProps } from './TypingIndicator';
+
+export {
+  OrbitalSpinner,
+  RingSpinner,
+  DotMatrixSpinner,
+  DotMatrixCircleSpinner,
+  DotMatrixSpiralSpinner,
+  DotMatrixDiamondSpinner,
+  WaveSpinner,
+  VineSpinner
+} from './Spinner';
+export type {
+  OrbitalSpinnerProps,
+  RingSpinnerProps,
+  DotMatrixSpinnerProps,
+  DotMatrixCircleSpinnerProps,
+  DotMatrixSpiralSpinnerProps,
+  DotMatrixDiamondSpinnerProps,
+  WaveSpinnerProps,
+  VineSpinnerProps
+} from './Spinner';

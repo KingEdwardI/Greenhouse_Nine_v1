@@ -17,13 +17,13 @@ export const Widths = () => {
   return (
     <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
       <Tooltip content="Narrow tooltip" maxWidth="120px">
-        <Button size="sm">Narrow</Button>
+        <Button size="1">Narrow</Button>
       </Tooltip>
       <Tooltip content="Default width tooltip">
-        <Button size="md">Default</Button>
+        <Button size="2">Default</Button>
       </Tooltip>
       <Tooltip content="Wider tooltip" maxWidth="320px">
-        <Button size="lg">Wide</Button>
+        <Button size="3">Wide</Button>
       </Tooltip>
     </div>
   );

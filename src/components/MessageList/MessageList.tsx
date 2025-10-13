@@ -53,10 +53,10 @@ export const MessageList = React.forwardRef<HTMLDivElement, MessageListProps>(
     const defaultEmptyState = (
       <div className="gn-MessageList__empty">
         <MessageCircle size={48} className="gn-MessageList__empty-icon" />
-        <Text size="lg" className="gn-MessageList__empty-text">
+        <Text size="3" className="gn-MessageList__empty-text">
           No messages yet
         </Text>
-        <Text size="sm" className="gn-MessageList__empty-subtext">
+        <Text size="1" className="gn-MessageList__empty-subtext">
           Start a conversation!
         </Text>
       </div>

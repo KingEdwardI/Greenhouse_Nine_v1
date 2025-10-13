@@ -33,19 +33,19 @@
 }
 
 /* Size variants */
-.gn-MaskedInput--sm {
+.gn-MaskedInput--1 {
   height: var(--space-6);
   padding: 0 var(--space-2);
   font-size: var(--font-size-1);
 }
 
-.gn-MaskedInput--md {
+.gn-MaskedInput--2 {
   height: var(--space-7);
   padding: 0 var(--space-3);
   font-size: var(--font-size-2);
 }
 
-.gn-MaskedInput--lg {
+.gn-MaskedInput--3 {
   height: var(--space-8);
   padding: 0 var(--space-3);
   font-size: var(--font-size-3);

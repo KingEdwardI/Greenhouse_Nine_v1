@@ -16,9 +16,9 @@ export const Default = () => (
 
 export const Sizes = () => (
   <div style={{ display: 'flex', gap: 24, alignItems: 'flex-start', flexWrap: 'wrap' }}>
-    <RadioGroup size="sm" options={options} defaultValue="a" />
-    <RadioGroup size="md" options={options} defaultValue="b" />
-    <RadioGroup size="lg" options={options} defaultValue="c" />
+    <RadioGroup size="1" options={options} defaultValue="a" />
+    <RadioGroup size="2" options={options} defaultValue="b" />
+    <RadioGroup size="3" options={options} defaultValue="c" />
   </div>
 );
 

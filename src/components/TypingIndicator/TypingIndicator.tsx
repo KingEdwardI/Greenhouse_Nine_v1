@@ -35,7 +35,7 @@ export const TypingIndicator: React.FC<TypingIndicatorProps> = ({
         <div className="gn-TypingIndicator__dot" />
         <div className="gn-TypingIndicator__dot" />
       </div>
-      <Text size="sm" className="gn-TypingIndicator__text">
+      <Text size="1" className="gn-TypingIndicator__text">
         {getTypingText()}...
       </Text>
     </div>

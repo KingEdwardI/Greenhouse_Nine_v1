@@ -34,11 +34,4 @@ export const spacing = {
   72: '18rem',      // 288px
   80: '20rem',      // 320px
   96: '24rem',      // 384px
-  
-  // Convenience sizes
-  xs: '0.25rem',    // 4px (same as 1)
-  sm: '0.5rem',     // 8px (same as 2)
-  md: '1rem',       // 16px (same as 4)
-  lg: '1.5rem',     // 24px (same as 6)
-  xl: '3rem',       // 48px (same as 12)
 } as const;

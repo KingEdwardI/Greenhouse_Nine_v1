@@ -3,14 +3,12 @@ import { Button as RadixButton } from "@radix-ui/themes";
 import type { ButtonProps as RadixButtonProps } from "@radix-ui/themes";
 import "./Button.css";
 
-type DesignSystemSize = "sm" | "md" | "lg" | "xl";
-
-export interface ButtonProps extends Omit<RadixButtonProps, "size" | "color"> {
+export interface ButtonProps extends Omit<RadixButtonProps, "color"> {
   children: React.ReactNode;
   /**
-   * Design system sizes map to Radix sizes 1, 2, 3
+   * Radix numeric size: "1" | "2" | "3" | "4"
    */
-  size?: DesignSystemSize;
+  size?: RadixButtonProps["size"];
   /**
    * Design system color alias; 'accent' maps to theme accent (green)
    */
@@ -25,7 +23,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       variant = "solid",
-      size = "md",
+      size = "2",
       color = "accent",
       loading = false,
       className,
@@ -35,14 +33,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref,
   ) => {
-    const sizeMap: Record<DesignSystemSize, RadixButtonProps["size"]> = {
-      sm: "1",
-      md: "2",
-      lg: "3",
-      xl: "4",
-    };
-
-    const mappedSize = sizeMap[size];
     const composedClassName = ["gn-Button", className]
       .filter(Boolean)
       .join(" ");
@@ -54,7 +44,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <RadixButton
         ref={ref}
         variant={variant}
-        size={mappedSize}
+        size={size}
         color={mappedColor}
         className={composedClassName}
         disabled={disabled || loading}

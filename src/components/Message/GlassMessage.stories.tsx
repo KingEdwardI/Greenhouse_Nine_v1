@@ -156,12 +156,12 @@ export const MixedContent: Story = () => (
 - Components blend seamlessly
 
 Here's some \`inline code\` as well.`}
-      <Button variant="soft" size="sm" style={{ marginTop: "8px" }}>
+      <Button variant="soft" size="1" style={{ marginTop: "8px" }}>
         Click me!
       </Button>
     </GlassMessage>
     <GlassMessage variant="user" glassColor="primary" timestamp="2:31 PM">
-      <Button variant="soft" size="sm" style={{ marginBottom: "8px" }}>
+      <Button variant="soft" size="1" style={{ marginBottom: "8px" }}>
         Interactive Button
       </Button>
       {`You can also mix components with markdown:

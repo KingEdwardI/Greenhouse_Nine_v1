@@ -41,7 +41,7 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
     const renderContent = () => {
       if (!markdown) {
         return (
-          <Text size="md" className="gn-Message__content">
+          <Text size="2" className="gn-Message__content">
             {children}
           </Text>
         );
@@ -94,13 +94,13 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
     return (
       <div ref={ref} className={composedClassName} {...props}>
         {username && variant !== "user" && (
-          <Text size="sm" className="gn-Message__username">
+          <Text size="1" className="gn-Message__username">
             {username}
           </Text>
         )}
         <Card
           variant={variant === "user" ? "classic" : "surface"}
-          size="sm"
+          size="1"
           className="gn-Message__bubble"
         >
           {renderContent()}
@@ -111,7 +111,7 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
           )}
         </Card>
         {timestamp && (
-          <Text size="sm" className="gn-Message__timestamp">
+          <Text size="1" className="gn-Message__timestamp">
             {timestamp}
           </Text>
         )}

@@ -2,27 +2,21 @@ import React from 'react';
 import { Card as RadixCard } from '@radix-ui/themes';
 import type { CardProps as RadixCardProps } from '@radix-ui/themes';
 
-type DesignSystemSize = 'sm' | 'md' | 'lg';
-
-export interface CardProps extends Omit<RadixCardProps, 'size'> {
+export interface CardProps extends RadixCardProps {
+  /**
+   * Radix numeric size: "1" | "2" | "3" | "4" | "5"
+   */
+  size?: RadixCardProps['size'];
   children: React.ReactNode;
-  size?: DesignSystemSize;
 }
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ variant = 'surface', size = 'md', ...props }, ref) => {
-    const sizeMap: Record<DesignSystemSize, RadixCardProps['size']> = {
-      sm: '1',
-      md: '2',
-      lg: '3',
-    };
-
-    const mappedSize = sizeMap[size];
+  ({ variant = 'surface', size = '2', ...props }, ref) => {
     return (
       <RadixCard
         ref={ref}
         variant={variant}
-        size={mappedSize}
+        size={size}
         {...props}
       />
     );

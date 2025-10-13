@@ -1,10 +1,11 @@
 import React from 'react';
 import { TextField as RadixTextField, IconButton } from '@radix-ui/themes';
 
-type DesignSystemSize = 'sm' | 'md' | 'lg';
-
-export interface NumberInputProps extends Omit<React.ComponentProps<typeof RadixTextField.Root>, 'size' | 'type' | 'onChange' | 'value' | 'defaultValue'> {
-  size?: DesignSystemSize;
+export interface NumberInputProps extends Omit<React.ComponentProps<typeof RadixTextField.Root>, 'type' | 'onChange' | 'value' | 'defaultValue'> {
+  /**
+   * Radix numeric size: "1" | "2" | "3"
+   */
+  size?: React.ComponentProps<typeof RadixTextField.Root>['size'];
   step?: number;
   min?: number;
   max?: number;
@@ -22,7 +23,7 @@ function coerceToNumber(value: string): number | undefined {
 export const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
   (
     {
-      size = 'md',
+      size = '2',
       step = 1,
       min,
       max,
@@ -33,12 +34,6 @@ export const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
     },
     ref
   ) => {
-    const sizeMap: Record<DesignSystemSize, '1' | '2' | '3'> = {
-      sm: '1',
-      md: '2',
-      lg: '3',
-    };
-
     const isControlled = value !== undefined;
     const [uncontrolled, setUncontrolled] = React.useState<number | undefined>(defaultValue);
     const current = isControlled ? value : uncontrolled;
@@ -62,7 +57,7 @@ export const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
     return (
       <RadixTextField.Root
         ref={ref}
-        size={sizeMap[size]}
+        size={size}
         type="text"
         inputMode="decimal"
         pattern={"[0-9]*"}

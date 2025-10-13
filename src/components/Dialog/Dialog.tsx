@@ -2,13 +2,11 @@ import React from 'react';
 import { Dialog as RadixDialog, Flex } from '@radix-ui/themes';
 import type { Dialog as RadixDialogNS } from '@radix-ui/themes';
 
-type DesignSystemSize = 'sm' | 'md' | 'lg';
-
 export interface DialogProps extends Omit<RadixDialogNS.RootProps, 'children'> {
   /**
-   * Design system sizes map to Radix sizes 1, 2, 3
+   * Radix numeric size: "1" | "2" | "3" | "4"
    */
-  size?: DesignSystemSize;
+  size?: RadixDialogNS.ContentProps['size'];
   /**
    * Element that opens the dialog when interacted with.
    */
@@ -36,7 +34,7 @@ type DialogComponent = React.FC<DialogProps> & {
 };
 
 const DialogBase: React.FC<DialogProps> = ({
-  size = 'md',
+  size = '2',
   trigger,
   title,
   description,
@@ -44,19 +42,13 @@ const DialogBase: React.FC<DialogProps> = ({
   actions,
   ...rootProps
 }) => {
-  const sizeMap: Record<DesignSystemSize, NonNullable<RadixDialogNS.ContentProps['size']>> = {
-    sm: '1',
-    md: '2',
-    lg: '3',
-  };
-
   return (
     <RadixDialog.Root {...rootProps}>
       <RadixDialog.Trigger>
         {/* Consumers typically pass a Button here */}
         <span>{trigger}</span>
       </RadixDialog.Trigger>
-      <RadixDialog.Content size={sizeMap[size]}>
+      <RadixDialog.Content size={size}>
         {title ? <RadixDialog.Title>{title}</RadixDialog.Title> : null}
         {description ? (
           <RadixDialog.Description>{description}</RadixDialog.Description>

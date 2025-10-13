@@ -31,16 +31,16 @@ export const Variants = () => {
 export const Sizes = () => {
   return (
     <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'flex-start' }}>
-      <Card size="sm" style={{ width: '150px' }}>
-        <p><strong>Small</strong></p>
+      <Card size="1" style={{ width: '150px' }}>
+        <p><strong>Size 1</strong></p>
         <p>Compact card</p>
       </Card>
-      <Card size="md" style={{ width: '200px' }}>
-        <p><strong>Medium</strong></p>
+      <Card size="2" style={{ width: '200px' }}>
+        <p><strong>Size 2 (default)</strong></p>
         <p>Standard card size</p>
       </Card>
-      <Card size="lg" style={{ width: '250px' }}>
-        <p><strong>Large</strong></p>
+      <Card size="3" style={{ width: '250px' }}>
+        <p><strong>Size 3</strong></p>
         <p>Spacious card with more padding</p>
       </Card>
     </div>
@@ -55,8 +55,8 @@ export const WithContent = () => {
         This card contains various content elements including text, buttons, and other components.
       </p>
       <div style={{ display: 'flex', gap: '8px' }}>
-        <Button size="sm">Primary Action</Button>
-        <Button size="sm" variant="outline">Secondary</Button>
+        <Button size="1">Primary Action</Button>
+        <Button size="1" variant="outline">Secondary</Button>
       </div>
     </Card>
   );

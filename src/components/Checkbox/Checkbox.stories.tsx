@@ -12,9 +12,9 @@ export const Default = () => (
 
 export const Sizes = () => (
   <div style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
-    <Checkbox size="sm" label="Small" />
-    <Checkbox size="md" label="Medium" />
-    <Checkbox size="lg" label="Large" />
+    <Checkbox size="1" label="Size 1" />
+    <Checkbox size="2" label="Size 2 (default)" />
+    <Checkbox size="3" label="Size 3" />
   </div>
 );
 

@@ -3,25 +3,19 @@ import { TextField as RadixTextField } from '@radix-ui/themes';
 import type { TextField as RadixTextFieldNS } from '@radix-ui/themes';
 import './Input.css';
 
-type DesignSystemSize = 'sm' | 'md' | 'lg';
-
-export interface InputProps extends Omit<RadixTextFieldNS.RootProps, 'size'> {
-  size?: DesignSystemSize;
+export interface InputProps extends RadixTextFieldNS.RootProps {
+  /**
+   * Radix numeric size: "1" | "2" | "3"
+   */
+  size?: RadixTextFieldNS.RootProps['size'];
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ size = 'md', className, ...props }, ref) => {
-    const sizeMap: Record<DesignSystemSize, RadixTextFieldNS.RootProps['size']> = {
-      sm: '1',
-      md: '2',
-      lg: '3',
-    };
-
-    const mappedSize = sizeMap[size];
+  ({ size = '2', className, ...props }, ref) => {
     const composedClassName = ['gn-Input', className].filter(Boolean).join(' ');
 
     return (
-      <RadixTextField.Root ref={ref} size={mappedSize} className={composedClassName} {...props} />
+      <RadixTextField.Root ref={ref} size={size} className={composedClassName} {...props} />
     );
   }
 );

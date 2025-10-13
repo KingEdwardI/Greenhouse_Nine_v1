@@ -22,7 +22,7 @@ export const generateRadixOverrides = (colors: Record<string, string>) => {
     background: colors.charcoal,
     panel: colors.darkGray,
     panelSolid: colors.mediumGray,
-    
+
     // Primary accent (emerald green)
     primary: colors.emerald,
     primaryHover: colors.teal,
@@ -32,7 +32,7 @@ export const generateRadixOverrides = (colors: Record<string, string>) => {
     danger: colors.coral,
     dangerHover: colors.magenta,
     dangerText: colors.ivory,
-    
+
     // Gray scale progression
     gray1: colors.black,
     gray2: colors.charcoal,

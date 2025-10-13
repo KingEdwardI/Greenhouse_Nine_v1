@@ -43,7 +43,7 @@ export const GlassMessage = React.forwardRef<HTMLDivElement, GlassMessageProps>(
     const renderContent = () => {
       if (!markdown) {
         return (
-          <Text size="md" className="gn-GlassMessage__content">
+          <Text size="2" className="gn-GlassMessage__content">
             {children}
           </Text>
         );
@@ -96,7 +96,7 @@ export const GlassMessage = React.forwardRef<HTMLDivElement, GlassMessageProps>(
     return (
       <div ref={ref} className={composedClassName} {...props}>
         {username && variant !== "user" && (
-          <Text size="sm" className="gn-GlassMessage__username">
+          <Text size="1" className="gn-GlassMessage__username">
             {username}
           </Text>
         )}
@@ -109,7 +109,7 @@ export const GlassMessage = React.forwardRef<HTMLDivElement, GlassMessageProps>(
           )}
         </div>
         {timestamp && (
-          <Text size="sm" className="gn-GlassMessage__timestamp">
+          <Text size="1" className="gn-GlassMessage__timestamp">
             {timestamp}
           </Text>
         )}

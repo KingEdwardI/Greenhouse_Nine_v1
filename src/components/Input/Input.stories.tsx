@@ -8,9 +8,9 @@ export const Default = () => <Input placeholder="Enter text" />;
 
 export const Sizes = () => (
   <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-    <Input size="sm" placeholder="Small" />
-    <Input size="md" placeholder="Medium" />
-    <Input size="lg" placeholder="Large" />
+    <Input size="1" placeholder="Size 1" />
+    <Input size="2" placeholder="Size 2 (default)" />
+    <Input size="3" placeholder="Size 3" />
   </div>
 );
 

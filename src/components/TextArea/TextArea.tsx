@@ -3,25 +3,19 @@ import { TextArea as RadixTextArea } from '@radix-ui/themes';
 import type { TextAreaProps as RadixTextAreaProps } from '@radix-ui/themes';
 import './TextArea.css';
 
-type DesignSystemSize = 'sm' | 'md' | 'lg';
-
-export interface TextAreaProps extends Omit<RadixTextAreaProps, 'size'> {
-  size?: DesignSystemSize;
+export interface TextAreaProps extends RadixTextAreaProps {
+  /**
+   * Radix numeric size: "1" | "2" | "3"
+   */
+  size?: RadixTextAreaProps['size'];
 }
 
 export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
-  ({ size = 'md', className, ...props }, ref) => {
-    const sizeMap: Record<DesignSystemSize, RadixTextAreaProps['size']> = {
-      sm: '1',
-      md: '2',
-      lg: '3',
-    };
-
-    const mappedSize = sizeMap[size];
+  ({ size = '2', className, ...props }, ref) => {
     const composedClassName = ['gn-TextArea', className].filter(Boolean).join(' ');
 
     return (
-      <RadixTextArea ref={ref} size={mappedSize} className={composedClassName} {...props} />
+      <RadixTextArea ref={ref} size={size} className={composedClassName} {...props} />
     );
   }
 );

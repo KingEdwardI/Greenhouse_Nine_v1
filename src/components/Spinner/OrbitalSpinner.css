@@ -1,0 +1,149 @@
+.gn-OrbitalSpinner {
+  --spinner-color: var(--accent-9);
+  --spinner-size: 48px;
+  --dot-size: 8px;
+  --spinner-duration: 2s;
+  --color-1: #2E8B57;
+  --color-2: #007BA7;
+  --color-3: #541466;
+  --color-4: #DAA520;
+  --color-5: #93e9be;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Size variants */
+.gn-OrbitalSpinner--sm {
+  --spinner-size: 32px;
+  --dot-size: 5px;
+}
+
+.gn-OrbitalSpinner--md {
+  --spinner-size: 48px;
+  --dot-size: 8px;
+}
+
+.gn-OrbitalSpinner--lg {
+  --spinner-size: 64px;
+  --dot-size: 10px;
+}
+
+/* Orbit container */
+.gn-OrbitalSpinner__orbit {
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+  position: relative;
+  animation: gn-orbital-rotate var(--spinner-duration) linear infinite;
+}
+
+/* Dots */
+.gn-OrbitalSpinner__dot {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background-color: var(--spinner-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
+
+/* Position each dot around the orbit with phase offsets */
+.gn-OrbitalSpinner__dot--1 {
+  transform: translate(-50%, -50%) translateY(calc(var(--spinner-size) / -2));
+  animation: gn-dot-pulse var(--spinner-duration) ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.gn-OrbitalSpinner__dot--2 {
+  transform: translate(-50%, -50%) translateY(calc(var(--spinner-size) / -2));
+  animation: gn-dot-pulse var(--spinner-duration) ease-in-out infinite;
+  animation-delay: calc(var(--spinner-duration) * 0.25);
+  opacity: 0.8;
+}
+
+.gn-OrbitalSpinner__dot--3 {
+  transform: translate(-50%, -50%) translateY(calc(var(--spinner-size) / -2));
+  animation: gn-dot-pulse var(--spinner-duration) ease-in-out infinite;
+  animation-delay: calc(var(--spinner-duration) * 0.5);
+  opacity: 0.6;
+}
+
+.gn-OrbitalSpinner__dot--4 {
+  transform: translate(-50%, -50%) translateY(calc(var(--spinner-size) / -2));
+  animation: gn-dot-pulse var(--spinner-duration) ease-in-out infinite;
+  animation-delay: calc(var(--spinner-duration) * 0.75);
+  opacity: 0.4;
+}
+
+/* Multicolor variant - Staggered Hue Rotation */
+.gn-OrbitalSpinner--multicolor {
+  --color-cycle-duration: 10s;
+}
+
+.gn-OrbitalSpinner--multicolor .gn-OrbitalSpinner__dot {
+  animation: gn-dot-pulse var(--spinner-duration) ease-in-out infinite,
+             gn-orbital-hue-cycle var(--color-cycle-duration) linear infinite;
+}
+
+.gn-OrbitalSpinner--multicolor .gn-OrbitalSpinner__dot--1 {
+  animation-delay: 0s, 0s;
+}
+
+.gn-OrbitalSpinner--multicolor .gn-OrbitalSpinner__dot--2 {
+  animation-delay: calc(var(--spinner-duration) * 0.25), calc(var(--color-cycle-duration) * 0.25);
+}
+
+.gn-OrbitalSpinner--multicolor .gn-OrbitalSpinner__dot--3 {
+  animation-delay: calc(var(--spinner-duration) * 0.5), calc(var(--color-cycle-duration) * 0.5);
+}
+
+.gn-OrbitalSpinner--multicolor .gn-OrbitalSpinner__dot--4 {
+  animation-delay: calc(var(--spinner-duration) * 0.75), calc(var(--color-cycle-duration) * 0.75);
+}
+
+/* Hue rotation animation - creates rainbow trail effect */
+@keyframes gn-orbital-hue-cycle {
+  0% {
+    filter: hue-rotate(0deg) brightness(1.1);
+  }
+  100% {
+    filter: hue-rotate(360deg) brightness(1.1);
+  }
+}
+
+/* Animations */
+@keyframes gn-orbital-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gn-dot-pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(calc(var(--spinner-size) / -2)) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(calc(var(--spinner-size) / -2)) scale(0.6);
+    opacity: 0.3;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .gn-OrbitalSpinner__orbit {
+    animation-duration: 3s;
+  }
+
+  .gn-OrbitalSpinner__dot {
+    animation: none;
+    opacity: 0.7;
+  }
+}

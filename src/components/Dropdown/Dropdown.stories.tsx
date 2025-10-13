@@ -24,9 +24,9 @@ export const Default = () => (
 
 export const Sizes = () => (
   <div style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
-    <Dropdown size="sm" label="Small" sections={sections} />
-    <Dropdown size="md" label="Medium" sections={sections} />
-    <Dropdown size="lg" label="Large" sections={sections} />
+    <Dropdown size="1" label="Size 1" sections={sections} />
+    <Dropdown size="2" label="Size 2 (default)" sections={sections} />
+    <Dropdown size="3" label="Size 3" sections={sections} />
   </div>
 );
 

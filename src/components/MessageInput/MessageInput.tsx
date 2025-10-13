@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { TextArea } from '../TextArea';
-import { Button } from '../Button';
-import './MessageInput.css';
+import React, { useState, useRef, useEffect } from "react";
+import { TextArea } from "../TextArea";
+import { Button } from "../Button";
+import "./MessageInput.css";
 
 export interface MessageInputProps {
   placeholder?: string;
@@ -12,25 +12,41 @@ export interface MessageInputProps {
   className?: string;
 }
 
-export const MessageInput = React.forwardRef<HTMLTextAreaElement, MessageInputProps>(
-  ({ placeholder = 'Type a message...', onSend, disabled = false, loading = false, maxRows = 4, className, ...props }, ref) => {
-    const [value, setValue] = useState('');
+export const MessageInput = React.forwardRef<
+  HTMLTextAreaElement,
+  MessageInputProps
+>(
+  (
+    {
+      placeholder = "Type a message...",
+      onSend,
+      disabled = false,
+      loading = false,
+      maxRows = 4,
+      className,
+      ...props
+    },
+    ref,
+  ) => {
+    const [value, setValue] = useState("");
     const textAreaRef = useRef<HTMLTextAreaElement>(null);
-    const composedClassName = ['gn-MessageInput', className].filter(Boolean).join(' ');
+    const composedClassName = ["gn-MessageInput", className]
+      .filter(Boolean)
+      .join(" ");
 
     const handleSubmit = () => {
       if (value.trim() && onSend && !disabled && !loading) {
         onSend(value.trim());
-        setValue('');
+        setValue("");
         // Reset textarea height
         if (textAreaRef.current) {
-          textAreaRef.current.style.height = 'auto';
+          textAreaRef.current.style.height = "auto";
         }
       }
     };
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-      if (e.key === 'Enter' && !e.shiftKey) {
+      if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();
         handleSubmit();
       }
@@ -38,10 +54,10 @@ export const MessageInput = React.forwardRef<HTMLTextAreaElement, MessageInputPr
 
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
       setValue(e.target.value);
-      
+
       // Auto-resize textarea
       const textarea = e.target;
-      textarea.style.height = 'auto';
+      textarea.style.height = "auto";
       const scrollHeight = textarea.scrollHeight;
       const lineHeight = parseInt(getComputedStyle(textarea).lineHeight);
       const maxHeight = lineHeight * maxRows;
@@ -51,7 +67,7 @@ export const MessageInput = React.forwardRef<HTMLTextAreaElement, MessageInputPr
     // Set the ref on the textarea
     useEffect(() => {
       if (textAreaRef.current && ref) {
-        if (typeof ref === 'function') {
+        if (typeof ref === "function") {
           ref(textAreaRef.current);
         } else {
           ref.current = textAreaRef.current;
@@ -70,24 +86,25 @@ export const MessageInput = React.forwardRef<HTMLTextAreaElement, MessageInputPr
           disabled={disabled || loading}
           className="gn-MessageInput__textarea"
           rows={1}
-          style={{ 
-            resize: 'none',
-            overflow: 'auto',
-            minHeight: '40px'
+          style={{
+            resize: "none",
+            overflow: "auto",
+            minHeight: "40px",
           }}
         />
         <Button
           onClick={handleSubmit}
           disabled={disabled || loading || !value.trim()}
           loading={loading}
-          size="sm"
+          size="1"
           className="gn-MessageInput__button"
         >
           Send
         </Button>
       </div>
     );
-  }
+  },
 );
 
-MessageInput.displayName = 'MessageInput';
+MessageInput.displayName = "MessageInput";
+

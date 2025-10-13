@@ -1,0 +1,236 @@
+/* RingSpinner Component Styles */
+
+.gn-RingSpinner {
+  --gn-spinner-color: linear-gradient(
+    135deg,
+    #2e8b57 0%,
+    #007ba7 50%,
+    #541466 100%
+  );
+  --gn-spinner-thickness: 4px;
+  --gn-spinner-size: 40px;
+  --spinner-duration: 3.3s;
+  --color-1: #2E8B57;
+  --color-2: #007BA7;
+  --color-3: #541466;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--gn-spinner-size);
+  height: var(--gn-spinner-size);
+  position: relative;
+}
+
+.gn-RingSpinner__ring {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  animation: gn-spinner-rotate var(--spinner-duration) linear infinite;
+}
+
+.gn-RingSpinner__ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: var(--gn-spinner-thickness);
+  background: var(--gn-spinner-color);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.3;
+}
+
+.gn-RingSpinner__ring::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: var(--gn-spinner-thickness);
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 30deg,
+    #2e8b57 30deg,
+    #2e8b57 60deg,
+    transparent 60deg,
+    transparent 90deg,
+    #007ba7 90deg,
+    #007ba7 120deg,
+    transparent 120deg,
+    transparent 150deg,
+    #541466 150deg,
+    #541466 180deg,
+    transparent 180deg,
+    transparent 210deg,
+    #2e8b57 210deg,
+    #2e8b57 240deg,
+    transparent 240deg,
+    transparent 270deg,
+    #007ba7 270deg,
+    #007ba7 300deg,
+    transparent 300deg,
+    transparent 330deg,
+    #541466 330deg,
+    #541466 360deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Size variants */
+.gn-RingSpinner--sm {
+  --gn-spinner-size: 24px;
+  --gn-spinner-thickness: 3px;
+}
+
+.gn-RingSpinner--md {
+  --gn-spinner-size: 40px;
+  --gn-spinner-thickness: 4px;
+}
+
+.gn-RingSpinner--lg {
+  --gn-spinner-size: 64px;
+  --gn-spinner-thickness: 5px;
+}
+
+/* Multicolor variant - Animated Conic Gradient with dual rotation */
+.gn-RingSpinner--multicolor {
+  --color-cycle-duration: 8s;
+  --gradient-rotation-duration: 12s;
+}
+
+.gn-RingSpinner--multicolor .gn-RingSpinner__ring::before {
+  background: conic-gradient(
+    from 0deg,
+    #2e8b57,
+    #007ba7,
+    #541466,
+    #DAA520,
+    #e54709,
+    #2e8b57
+  );
+  animation: gn-ring-gradient-shift var(--gradient-rotation-duration) linear infinite;
+  opacity: 0.4;
+}
+
+.gn-RingSpinner--multicolor .gn-RingSpinner__ring::after {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 20deg,
+    #2e8b57 20deg,
+    #2e8b57 40deg,
+    transparent 40deg,
+    transparent 60deg,
+    #007ba7 60deg,
+    #007ba7 80deg,
+    transparent 80deg,
+    transparent 100deg,
+    #541466 100deg,
+    #541466 120deg,
+    transparent 120deg,
+    transparent 140deg,
+    #DAA520 140deg,
+    #DAA520 160deg,
+    transparent 160deg,
+    transparent 180deg,
+    #e54709 180deg,
+    #e54709 200deg,
+    transparent 200deg,
+    transparent 220deg,
+    #2e8b57 220deg,
+    #2e8b57 240deg,
+    transparent 240deg,
+    transparent 260deg,
+    #007ba7 260deg,
+    #007ba7 280deg,
+    transparent 280deg,
+    transparent 300deg,
+    #541466 300deg,
+    #541466 320deg,
+    transparent 320deg,
+    transparent 340deg,
+    #DAA520 340deg,
+    #DAA520 360deg
+  );
+  animation: gn-spinner-rotate var(--spinner-duration) linear infinite,
+             gn-ring-hue-cycle var(--color-cycle-duration) linear infinite;
+}
+
+/* Gradient rotation animation - shifts the gradient angle */
+@keyframes gn-ring-gradient-shift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Hue rotation animation for multicolor - creates dynamic color cycling */
+@keyframes gn-ring-hue-cycle {
+  0% {
+    filter: hue-rotate(0deg) saturate(1.2);
+  }
+  100% {
+    filter: hue-rotate(360deg) saturate(1.2);
+  }
+}
+
+/* Animation */
+@keyframes gn-spinner-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom color override */
+.gn-RingSpinner[style*="--gn-spinner-color"] .gn-RingSpinner__ring::before {
+  background: var(--gn-spinner-color);
+}
+
+.gn-RingSpinner[style*="--gn-spinner-color"] .gn-RingSpinner__ring::after {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 30deg,
+    var(--gn-spinner-color) 30deg,
+    var(--gn-spinner-color) 60deg,
+    transparent 60deg,
+    transparent 90deg,
+    var(--gn-spinner-color) 90deg,
+    var(--gn-spinner-color) 120deg,
+    transparent 120deg,
+    transparent 150deg,
+    var(--gn-spinner-color) 150deg,
+    var(--gn-spinner-color) 180deg,
+    transparent 180deg,
+    transparent 210deg,
+    var(--gn-spinner-color) 210deg,
+    var(--gn-spinner-color) 240deg,
+    transparent 240deg,
+    transparent 270deg,
+    var(--gn-spinner-color) 270deg,
+    var(--gn-spinner-color) 300deg,
+    transparent 300deg,
+    transparent 330deg,
+    var(--gn-spinner-color) 330deg,
+    var(--gn-spinner-color) 360deg
+  );
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .gn-RingSpinner__ring {
+    animation-duration: 3s;
+  }
+}

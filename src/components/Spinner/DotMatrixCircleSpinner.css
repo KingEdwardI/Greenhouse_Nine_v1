@@ -1,0 +1,97 @@
+/* DotMatrixCircleSpinner base styles */
+.gn-DotMatrixCircleSpinner {
+  position: relative;
+  width: var(--circle-size);
+  height: var(--circle-size);
+}
+
+/* Size variants */
+.gn-DotMatrixCircleSpinner--sm {
+  --circle-size: 40px;
+  --dot-size: 6px;
+}
+
+.gn-DotMatrixCircleSpinner--md {
+  --circle-size: 60px;
+  --dot-size: 10px;
+}
+
+.gn-DotMatrixCircleSpinner--lg {
+  --circle-size: 80px;
+  --dot-size: 14px;
+}
+
+/* Dot styles */
+.gn-DotMatrixCircleSpinner__dot {
+  position: absolute;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  background-color: var(--dot-color, var(--accent-9));
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  animation: dot-circle-wave var(--animation-duration, 2.5s) ease-in-out infinite;
+  animation-delay: var(--animation-delay, 0s);
+}
+
+/* Position dots in a circle using CSS variables */
+.gn-DotMatrixCircleSpinner__dot {
+  transform: translate(-50%, -50%)
+             translate(
+               calc(cos(var(--angle)) * calc(var(--circle-size) / 2 - var(--dot-size))),
+               calc(sin(var(--angle)) * calc(var(--circle-size) / 2 - var(--dot-size)))
+             );
+}
+
+/* Wave animation - pulsing effect around the circle */
+@keyframes dot-circle-wave {
+  0%, 100% {
+    transform: translate(-50%, -50%)
+               translate(
+                 calc(cos(var(--angle)) * calc(var(--circle-size) / 2 - var(--dot-size))),
+                 calc(sin(var(--angle)) * calc(var(--circle-size) / 2 - var(--dot-size)))
+               )
+               scale(0.5);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%)
+               translate(
+                 calc(cos(var(--angle)) * calc(var(--circle-size) / 2 - var(--dot-size))),
+                 calc(sin(var(--angle)) * calc(var(--circle-size) / 2 - var(--dot-size)))
+               )
+               scale(1);
+    opacity: 1;
+  }
+}
+
+/* Multicolor variant - Circular Color Rotation (colors chase around circle) */
+.gn-DotMatrixCircleSpinner--multicolor {
+  --color-cycle-duration: 8s;
+}
+
+.gn-DotMatrixCircleSpinner--multicolor .gn-DotMatrixCircleSpinner__dot {
+  box-shadow: 0 0 12px currentColor;
+  animation: dot-circle-wave var(--animation-duration, 2.5s) ease-in-out infinite,
+             dot-circle-color-chase var(--color-cycle-duration) linear infinite;
+}
+
+/* Color chase animation - creates spinning rainbow effect */
+@keyframes dot-circle-color-chase {
+  0% {
+    filter: hue-rotate(calc(var(--hue-offset) + 0deg)) saturate(1.4) brightness(1.15);
+  }
+  100% {
+    filter: hue-rotate(calc(var(--hue-offset) + 360deg)) saturate(1.4) brightness(1.15);
+  }
+}
+
+/* Accessibility - Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .gn-DotMatrixCircleSpinner--multicolor .gn-DotMatrixCircleSpinner__dot {
+    animation: dot-circle-wave var(--animation-duration, 2.5s) ease-in-out infinite;
+    filter: none;
+    box-shadow: 0 0 8px var(--dot-color);
+  }
+}

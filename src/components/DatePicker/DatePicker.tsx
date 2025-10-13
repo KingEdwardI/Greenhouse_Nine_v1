@@ -4,10 +4,11 @@ import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import './DatePicker.css';
 
-type DesignSystemSize = 'sm' | 'md' | 'lg';
-
 export interface DatePickerProps {
-  size?: DesignSystemSize;
+  /**
+   * Radix numeric size: "1" | "2" | "3"
+   */
+  size?: '1' | '2' | '3';
   value?: Date | undefined;
   defaultValue?: Date | undefined;
   onChange?: (date: Date | undefined) => void;
@@ -21,7 +22,7 @@ function formatISO(date: Date): string {
 }
 
 export const DatePicker: React.FC<DatePickerProps> = ({
-  size = 'md',
+  size = '2',
   value,
   defaultValue,
   onChange,
@@ -29,7 +30,6 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   formatDate = formatISO,
   disabled,
 }) => {
-  const sizeMap: Record<DesignSystemSize, '1' | '2' | '3'> = { sm: '1', md: '2', lg: '3' };
   const isControlled = value !== undefined;
   const [internal, setInternal] = React.useState<Date | undefined>(defaultValue);
   const current = isControlled ? value : internal;
@@ -43,7 +43,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
     <div className="gn-DatePicker">
       <Popover.Root>
         <Popover.Trigger>
-          <RadixTextField.Root size={sizeMap[size]} disabled={disabled} readOnly value={current ? formatDate(current) : ''} placeholder={placeholder}>
+          <RadixTextField.Root size={size} disabled={disabled} readOnly value={current ? formatDate(current) : ''} placeholder={placeholder}>
             <RadixTextField.Slot side="right">
               <Button size="1" variant="ghost" disabled={disabled}>📅</Button>
             </RadixTextField.Slot>

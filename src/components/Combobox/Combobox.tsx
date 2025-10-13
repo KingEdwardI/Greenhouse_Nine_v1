@@ -3,8 +3,6 @@ import { Popover, TextField as RadixTextField } from '@radix-ui/themes';
 import { CommandRoot, CommandInput, CommandList, CommandEmpty, CommandItem } from 'cmdk';
 import './Combobox.css';
 
-type DesignSystemSize = 'sm' | 'md' | 'lg';
-
 export interface ComboboxOption {
   label: string;
   value: string;
@@ -12,7 +10,10 @@ export interface ComboboxOption {
 }
 
 export interface ComboboxProps {
-  size?: DesignSystemSize;
+  /**
+   * Radix numeric size: "1" | "2" | "3"
+   */
+  size?: '1' | '2' | '3';
   options: ComboboxOption[];
   value?: string | undefined;
   defaultValue?: string | undefined;
@@ -23,7 +24,7 @@ export interface ComboboxProps {
 }
 
 export const Combobox: React.FC<ComboboxProps> = ({
-  size = 'md',
+  size = '2',
   options,
   value,
   defaultValue,
@@ -32,7 +33,6 @@ export const Combobox: React.FC<ComboboxProps> = ({
   searchPlaceholder = 'Search…',
   disabled,
 }) => {
-  const sizeMap: Record<DesignSystemSize, '1' | '2' | '3'> = { sm: '1', md: '2', lg: '3' };
   const isControlled = value !== undefined;
   const [internal, setInternal] = React.useState<string | undefined>(defaultValue);
   const [open, setOpen] = React.useState(false);
@@ -53,7 +53,7 @@ export const Combobox: React.FC<ComboboxProps> = ({
     <div className="gn-Combobox">
       <Popover.Root open={open} onOpenChange={setOpen}>
         <Popover.Trigger disabled={disabled}>
-          <RadixTextField.Root size={sizeMap[size]} disabled={disabled} readOnly value={display} placeholder={placeholder} />
+          <RadixTextField.Root size={size} disabled={disabled} readOnly value={display} placeholder={placeholder} />
         </Popover.Trigger>
         <Popover.Content side="bottom" align="start" className="gn-ComboboxContent">
           <CommandRoot label="Command menu">
