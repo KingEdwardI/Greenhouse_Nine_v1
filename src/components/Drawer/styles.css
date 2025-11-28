@@ -1,0 +1,152 @@
+/* Drawer Styles */
+.gn-DrawerOverlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+}
+
+.gn-DrawerContent {
+  background-color: var(--color-panel-solid);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 350px; /* Default size */
+  padding: var(--space-5);
+  box-shadow: var(--shadow-5);
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  outline: none;
+}
+
+.gn-DrawerContent[data-position='right'] {
+  right: 0;
+  border-left: 1px solid var(--gray-a4);
+}
+
+.gn-DrawerContent[data-position='left'] {
+  left: 0;
+  border-right: 1px solid var(--gray-a4);
+}
+
+/* Sizes */
+.gn-DrawerContent[data-size='sm'] {
+  max-width: 300px;
+}
+.gn-DrawerContent[data-size='md'] {
+  max-width: 450px;
+}
+.gn-DrawerContent[data-size='lg'] {
+  max-width: 600px;
+}
+.gn-DrawerContent[data-size='xl'] {
+  max-width: 800px;
+}
+
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translateX(var(--slide-from));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.gn-DrawerContent[data-position='right'] {
+  --slide-from: 100%;
+}
+
+.gn-DrawerContent[data-position='left'] {
+  --slide-from: -100%;
+}
+
+/* Glass Variant */
+.gn-DrawerContent.gn-Drawer--glass {
+  backdrop-filter: blur(var(--glass-blur, 14px)) saturate(200%);
+  -webkit-backdrop-filter: blur(var(--glass-blur, 14px)) saturate(200%);
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0.03) 40%,
+      rgba(255, 255, 255, 0.015) 100%),
+    linear-gradient(180deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.08) 100%),
+    var(--glass-surface, rgba(0, 0, 0, 0.28)) !important;
+  border: 1px solid transparent !important;
+  background-clip: padding-box !important;
+  box-shadow:
+    var(--glass-shadow, 0 12px 40px rgba(0, 0, 0, 0.68)),
+    inset 0 1px 3px rgba(255, 255, 255, 0.12),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.35),
+    inset 0 0 20px rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.gn-DrawerContent.gn-Drawer--glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gn-DrawerContent.gn-Drawer--glass::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.06) 30%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.1) 70%,
+    rgba(0, 0, 0, 0.25)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure drawer content is above pseudo-elements */
+.gn-DrawerContent.gn-Drawer--glass > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Adjust borders for glass variant */
+.gn-DrawerContent.gn-Drawer--glass[data-position='right'] {
+  border-left: none !important;
+}
+
+.gn-DrawerContent.gn-Drawer--glass[data-position='left'] {
+  border-right: none !important;
+}

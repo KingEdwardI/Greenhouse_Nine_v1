@@ -121,6 +121,17 @@ export const generateRadixOverrides = (colors: Record<string, string>) => {
     '--radius-4': '8px',
     '--radius-5': '12px',
     '--radius-6': '16px',
+
+    // Glass tokens (namespaced) - obsidian dark (brightened 12%)
+    '--glass-blur': '14px',
+    '--glass-surface': hexToRgba(colors.black, 0.28),
+    '--glass-surface-strong': hexToRgba(colors.black, 0.48),
+    '--glass-border': hexToRgba(colors.graphite, 0.42),
+    '--glass-border-strong': hexToRgba(colors.graphite, 0.62),
+    '--glass-shadow': '0 12px 40px rgba(0, 0, 0, 0.68)',
+    '--glass-highlight': 'inset 0 1px 1px rgba(255, 255, 255, 0.08)',
+    '--glass-accent': 'var(--accent-9)', // emerald
+    '--glass-accent-soft': hexToRgba(colors.emerald, 0.15),
   };
 };
 

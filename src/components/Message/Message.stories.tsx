@@ -189,6 +189,66 @@ export const MarkdownComparison: Story = () => (
   </div>
 );
 
+export const GlassVariants: Story = () => (
+  <div
+    style={{
+      padding: "20px",
+      background: "var(--gray-1)",
+      display: "flex",
+      flexDirection: "column",
+      gap: "12px",
+    }}
+  >
+    <Message variant="user" timestamp="2:30 PM" glass>
+      Default glass message
+    </Message>
+    <Message variant="assistant" timestamp="2:30 PM" username="Assistant" glass glassColor="primary">
+      Primary glass variant (Sea Green tint)
+    </Message>
+    <Message variant="user" timestamp="2:31 PM" glass glassColor="secondary">
+      Secondary glass variant (Cerulean tint)
+    </Message>
+    <Message variant="assistant" timestamp="2:31 PM" username="Assistant" glass glassColor="accent">
+      Accent glass variant (Purple tint)
+    </Message>
+    <Message variant="user" timestamp="2:32 PM" glass glassColor="success">
+      Success glass variant (Mint tint)
+    </Message>
+    <Message variant="assistant" timestamp="2:32 PM" username="Assistant" glass glassColor="info">
+      Info glass variant (Blue tint)
+    </Message>
+    <Message variant="user" timestamp="2:33 PM" glass glassColor="warning">
+      Warning glass variant (Gold tint)
+    </Message>
+  </div>
+);
+
+export const GlassConversation: Story = () => (
+  <div
+    style={{
+      padding: "20px",
+      background: "linear-gradient(135deg, var(--gray-2) 0%, var(--gray-1) 100%)",
+      display: "flex",
+      flexDirection: "column",
+      gap: "12px",
+      minHeight: "400px",
+    }}
+  >
+    <Message variant="user" timestamp="2:30 PM" status="read" glass>
+      **Hey, check out this new glass effect!**
+    </Message>
+    <Message variant="assistant" timestamp="2:30 PM" username="Assistant" glass glassColor="primary">
+      Wow! The glass effect looks amazing with the obsidian dark theme. Notice how it has that subtle shimmer?
+    </Message>
+    <Message variant="user" timestamp="2:31 PM" status="read" glass>
+      Yes! And the text shadows make everything readable even with the transparency.
+    </Message>
+    <Message variant="assistant" timestamp="2:31 PM" username="Assistant" glass glassColor="primary">
+      The unified architecture means all components use the same token system. Much cleaner and more maintainable!
+    </Message>
+  </div>
+);
+
 export const MixedContent: Story = () => (
   <div
     style={{

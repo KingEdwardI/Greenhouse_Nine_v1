@@ -81,3 +81,12 @@ export type {
   WaveSpinnerProps,
   VineSpinnerProps
 } from './Spinner';
+
+export { DataTable } from './Table';
+export type { DataTableProps, DataTableHeader } from './Table';
+
+export { Breadcrumbs } from './Breadcrumbs';
+export type { BreadcrumbsProps, BreadcrumbItem } from './Breadcrumbs';
+
+export { Drawer } from './Drawer';
+export type { DrawerProps } from './Drawer';

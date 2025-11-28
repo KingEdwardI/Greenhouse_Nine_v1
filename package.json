@@ -32,6 +32,7 @@
     "**/*.css"
   ],
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-toast": "^1.2.15",
     "@radix-ui/themes": "^3.2.1",
     "cmdk": "^1.1.1",

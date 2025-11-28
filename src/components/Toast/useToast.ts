@@ -7,6 +7,7 @@ export interface ToastOptions {
   durationMs?: number;
   actionLabel?: string;
   onAction?: () => void;
+  glass?: boolean;
 }
 
 interface ToastContextValue {

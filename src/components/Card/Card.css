@@ -1,0 +1,79 @@
+.gn-Card--glass {
+  position: relative;
+  backdrop-filter: blur(var(--glass-blur)) saturate(200%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(200%);
+  background: 
+    linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.05) 0%, 
+      rgba(255, 255, 255, 0.02) 40%, 
+      rgba(255, 255, 255, 0.01) 100%),
+    var(--glass-surface) !important;
+  border: 1px solid transparent !important;
+  border-radius: var(--radius-4);
+  background-clip: padding-box !important;
+  box-shadow: 
+    var(--glass-shadow),
+    inset 0 1px 2px rgba(255, 255, 255, 0.1),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.gn-Card--glass::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+.gn-Card--glass::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.04) 30%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.12) 70%,
+    rgba(0, 0, 0, 0.25)
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.gn-Card--glass:hover {
+  background: 
+    linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.07) 0%, 
+      rgba(255, 255, 255, 0.03) 40%, 
+      rgba(255, 255, 255, 0.01) 100%),
+    var(--glass-surface-strong) !important;
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 
+    0 20px 56px rgba(0, 0, 0, 0.8),
+    inset 0 1px 3px rgba(255, 255, 255, 0.12),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.gn-Card--glass:hover::before {
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
+}

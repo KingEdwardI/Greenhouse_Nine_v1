@@ -1,6 +1,7 @@
 import React from 'react';
 import * as RadixToast from '@radix-ui/react-toast';
 import { type ToastOptions, ToastContext } from './useToast';
+import './Toast.css';
 
 interface ToastItem extends Required<Pick<ToastOptions, 'intent'>> {
   id: string;
@@ -9,6 +10,7 @@ interface ToastItem extends Required<Pick<ToastOptions, 'intent'>> {
   durationMs?: number;
   actionLabel?: string;
   onAction?: () => void;
+  glass?: boolean;
 }
 
 export interface ToastProviderProps {
@@ -32,6 +34,7 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({ children }) => {
       durationMs: options.durationMs ?? 4000,
       actionLabel: options.actionLabel,
       onAction: options.onAction,
+      glass: options.glass,
     };
     setToasts((prev) => [...prev, item]);
   }, []);
@@ -43,7 +46,7 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({ children }) => {
         {toasts.map((toast) => (
           <RadixToast.Root
             key={toast.id}
-            className={`gn-Toast gn-Toast--${toast.intent}`}
+            className={`gn-Toast gn-Toast--${toast.intent}${toast.glass ? ' gn-Toast--glass' : ''}`}
             duration={toast.durationMs}
             defaultOpen
             onOpenChange={(open) => {

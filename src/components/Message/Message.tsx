@@ -12,6 +12,8 @@ export interface MessageProps {
   username?: string;
   className?: string;
   markdown?: boolean;
+  glass?: boolean;
+  glassColor?: "default" | "primary" | "secondary" | "accent" | "success" | "info" | "warning";
 }
 
 export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
@@ -24,6 +26,8 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
       username,
       className,
       markdown = true,
+      glass = false,
+      glassColor = "default",
       ...props
     },
     ref,
@@ -31,6 +35,8 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
     const composedClassName = [
       "gn-Message",
       `gn-Message--${variant}`,
+      glass && "gn-Message--glass",
+      glass && `gn-Message--glass-${glassColor}`,
       status && `gn-Message--${status}`,
       className,
     ]
@@ -102,6 +108,7 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
           variant={variant === "user" ? "classic" : "surface"}
           size="1"
           className="gn-Message__bubble"
+          glass={glass}
         >
           {renderContent()}
           {status && (

@@ -61,3 +61,23 @@ export const WithContent = () => {
     </Card>
   );
 };
+
+export const Glass = () => {
+  return (
+    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+      <Card glass style={{ width: '200px' }}>
+        <p><strong>Glass Card</strong></p>
+        <p>Subtle glassmorphism effect</p>
+      </Card>
+      <Card glass variant="classic" style={{ width: '200px' }}>
+        <p><strong>Glass Classic</strong></p>
+        <p>Glass with classic variant</p>
+      </Card>
+      <Card glass style={{ width: '200px' }}>
+        <p><strong>Glass with Button</strong></p>
+        <p>Card content with button</p>
+        <Button size="1" style={{ marginTop: '12px' }}>Action</Button>
+      </Card>
+    </div>
+  );
+};

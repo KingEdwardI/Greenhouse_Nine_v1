@@ -3,6 +3,15 @@ import { Text } from "../Text";
 import { MarkdownRenderer } from "../MarkdownRenderer";
 import "./GlassMessage.css";
 
+/**
+ * @deprecated Use Message component with glass prop instead.
+ * GlassMessage will be removed in the next major version.
+ * 
+ * Migration guide:
+ * - Replace <GlassMessage glassColor="primary"> with <Message glass glassColor="primary">
+ * - All props remain the same
+ */
+
 export interface GlassMessageProps {
   children: React.ReactNode;
   variant?: "user" | "system" | "assistant";

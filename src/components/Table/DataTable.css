@@ -1,0 +1,114 @@
+/* DataTable container with horizontal scroll */
+.gn-DataTable__container {
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+}
+
+/* DataTable container with sticky header needs overflow */
+.gn-DataTable__container--sticky {
+  overflow: auto;
+  max-height: inherit; /* Inherit from parent */
+}
+
+/* Base DataTable styles */
+.gn-DataTable {
+  font-family: var(--code-font-family);
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Sticky header support - fixed to use th directly */
+.gn-DataTable--sticky thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-panel-solid);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 1px 0 0 var(--gray-6);
+}
+
+/* Glass effect for DataTable */
+.gn-DataTable--glass {
+  position: relative;
+  backdrop-filter: blur(var(--glass-blur)) saturate(200%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(200%);
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.05) 40%,
+      rgba(255, 255, 255, 0.02) 100%),
+    linear-gradient(180deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.1) 100%),
+    var(--glass-surface) !important;
+  border: 1px solid transparent !important;
+  background-clip: padding-box !important;
+  box-shadow:
+    var(--glass-shadow),
+    inset 0 1px 2px rgba(255, 255, 255, 0.1),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-3);
+  overflow: hidden;
+}
+
+.gn-DataTable--glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.08) 30%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.1) 70%,
+    rgba(0, 0, 0, 0.25)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Glass effect on sticky headers */
+.gn-DataTable--glass.gn-DataTable--sticky thead th {
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.06) 40%,
+      rgba(255, 255, 255, 0.03) 100%),
+    var(--glass-surface-strong) !important;
+  backdrop-filter: blur(12px) saturate(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(200%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced hover states for glass DataTables */
+.gn-DataTable--glass tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Scrollbar styling for DataTable container */
+.gn-DataTable__container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.gn-DataTable__container::-webkit-scrollbar-track {
+  background: var(--gray-3);
+  border-radius: var(--radius-1);
+}
+
+.gn-DataTable__container::-webkit-scrollbar-thumb {
+  background: var(--gray-7);
+  border-radius: var(--radius-1);
+}
+
+.gn-DataTable__container::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-9);
+}

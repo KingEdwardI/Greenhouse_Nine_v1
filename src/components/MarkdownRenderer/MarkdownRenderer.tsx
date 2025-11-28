@@ -22,6 +22,13 @@ export const MarkdownRenderer = React.forwardRef<
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeHighlight]}
+        components={{
+          table: ({ children }) => (
+            <div className="gn-MarkdownRenderer__table-wrapper">
+              <table>{children}</table>
+            </div>
+          ),
+        }}
       >
         {children}
       </ReactMarkdown>

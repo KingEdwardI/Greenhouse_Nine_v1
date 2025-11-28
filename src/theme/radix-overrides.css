@@ -60,6 +60,15 @@
   --radius-4: 8px;
   --radius-5: 12px;
   --radius-6: 16px;
+  --glass-blur: 14px;
+  --glass-surface: rgba(0, 0, 0, 0.28);
+  --glass-surface-strong: rgba(0, 0, 0, 0.48);
+  --glass-border: rgba(52, 52, 52, 0.42);
+  --glass-border-strong: rgba(52, 52, 52, 0.62);
+  --glass-shadow: 0 12px 40px rgba(0, 0, 0, 0.68);
+  --glass-highlight: inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  --glass-accent: var(--accent-9);
+  --glass-accent-soft: rgba(147, 185, 122, 0.15);
 }
 
 /* Set dark appearance by default */

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Dialog as RadixDialog, Flex } from '@radix-ui/themes';
 import type { Dialog as RadixDialogNS } from '@radix-ui/themes';
+import './Dialog.css';
 
 export interface DialogProps extends Omit<RadixDialogNS.RootProps, 'children'> {
   /**
@@ -27,6 +28,10 @@ export interface DialogProps extends Omit<RadixDialogNS.RootProps, 'children'> {
    * Footer actions area (e.g., buttons). Placed at the bottom of the content.
    */
   actions?: React.ReactNode;
+  /**
+   * Apply glass morphism effect to the dialog.
+   */
+  glass?: boolean;
 }
 
 type DialogComponent = React.FC<DialogProps> & {
@@ -40,15 +45,18 @@ const DialogBase: React.FC<DialogProps> = ({
   description,
   children,
   actions,
+  glass = false,
   ...rootProps
 }) => {
+  const contentClassName = glass ? 'gn-Dialog--glass' : undefined;
+
   return (
     <RadixDialog.Root {...rootProps}>
       <RadixDialog.Trigger>
         {/* Consumers typically pass a Button here */}
         <span>{trigger}</span>
       </RadixDialog.Trigger>
-      <RadixDialog.Content size={size}>
+      <RadixDialog.Content size={size} className={contentClassName}>
         {title ? <RadixDialog.Title>{title}</RadixDialog.Title> : null}
         {description ? (
           <RadixDialog.Description>{description}</RadixDialog.Description>

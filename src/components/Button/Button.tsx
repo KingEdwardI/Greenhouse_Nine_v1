@@ -17,6 +17,10 @@ export interface ButtonProps extends Omit<RadixButtonProps, "color"> {
    * Loading state for the button
    */
   loading?: boolean;
+  /**
+   * Enable glassmorphism effect
+   */
+  glass?: boolean;
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -26,6 +30,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       size = "2",
       color = "accent",
       loading = false,
+      glass = false,
       className,
       children,
       disabled,
@@ -33,7 +38,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref,
   ) => {
-    const composedClassName = ["gn-Button", className]
+    const composedClassName = [
+      "gn-Button",
+      glass && "gn-Button--glass",
+      className,
+    ]
       .filter(Boolean)
       .join(" ");
 

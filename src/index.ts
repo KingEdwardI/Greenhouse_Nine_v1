@@ -39,8 +39,7 @@ export {
   Link,
   Blockquote,
 
-  // Data display (not overridden)
-  Table,
+  // Data display (not overridden - except Table which we override)
   DataList,
   Badge,
   Avatar,
