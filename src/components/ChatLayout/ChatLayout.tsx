@@ -9,7 +9,7 @@ export interface ChatLayoutMessage extends Omit<MessageProps, "children"> {
   content: React.ReactNode;
 }
 
-export interface ChatLayoutProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ChatLayoutProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
   messages?: ChatLayoutMessage[];
   onSend?: (message: string) => void;
   title?: React.ReactNode;
@@ -81,8 +81,6 @@ export const ChatLayout = React.forwardRef<HTMLDivElement, ChatLayoutProps>(
       loading: listLoading,
       emptyState: listEmptyState,
       autoScroll: listAutoScroll,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      children: _children,
       ...restListProps
     } = messageListProps ?? {};
 

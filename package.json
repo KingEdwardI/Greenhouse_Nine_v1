@@ -14,8 +14,7 @@
     "generate:css": "tsx scripts/generateRadixCSS.ts",
     "preladle": "pnpm run generate:css",
     "prebuild": "pnpm run generate:css",
-    "prepack": "pnpm run build",
-    "prepare": "husky"
+    "prepack": "pnpm run build"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

@@ -35,7 +35,6 @@ export const Basic = () => {
                   size="2"
                   weight="medium"
                   mb="2"
-                  display="block"
                 >
                   Full Name
                 </Text>
@@ -51,7 +50,6 @@ export const Basic = () => {
                   size="2"
                   weight="medium"
                   mb="2"
-                  display="block"
                 >
                   Username
                 </Text>
@@ -62,12 +60,7 @@ export const Basic = () => {
               </div>
             </Flex>
 
-            <Flex
-              gap="3"
-              justify="end"
-              pt="4"
-              borderTop="1px solid var(--gray-a4)"
-            >
+            <Flex gap="3" pt="4">
               <Drawer.Close asChild>
                 <Button variant="soft" color="gray">
                   Cancel
@@ -106,7 +99,7 @@ export const LeftSide = () => {
               <Text as="div" size="2" weight="bold" mb="2" color="gray">
                 Menu
               </Text>
-              <Button variant="ghost" justify="start" size="3">
+              <Button variant="ghost" size="3">
                 <svg
                   width="16"
                   height="16"
@@ -123,7 +116,7 @@ export const LeftSide = () => {
                 </svg>
                 Home
               </Button>
-              <Button variant="ghost" justify="start" size="3">
+              <Button variant="ghost" size="3">
                 <svg
                   width="16"
                   height="16"
@@ -146,7 +139,7 @@ export const LeftSide = () => {
               <Text as="div" size="2" weight="bold" mb="2" color="gray">
                 Account
               </Text>
-              <Button variant="ghost" justify="start" size="3" color="red">
+              <Button variant="ghost"  size="3" color="red">
                 <svg
                   width="16"
                   height="16"
@@ -215,9 +208,7 @@ export const Sizes = () => {
 
                 <Flex
                   gap="3"
-                  justify="end"
                   pt="4"
-                  borderTop="1px solid var(--gray-a4)"
                 >
                   <Drawer.Close asChild>
                     <Button variant="soft" color="gray">
@@ -264,7 +255,6 @@ export const Glass = () => {
                   size="2"
                   weight="medium"
                   mb="2"
-                  display="block"
                 >
                   Full Name
                 </Text>
@@ -280,7 +270,6 @@ export const Glass = () => {
                   size="2"
                   weight="medium"
                   mb="2"
-                  display="block"
                 >
                   Username
                 </Text>
@@ -296,7 +285,6 @@ export const Glass = () => {
                   size="2"
                   weight="medium"
                   mb="2"
-                  display="block"
                 >
                   Email
                 </Text>
@@ -308,12 +296,7 @@ export const Glass = () => {
               </div>
             </Flex>
 
-            <Flex
-              gap="3"
-              justify="end"
-              pt="4"
-              borderTop="1px solid rgba(255, 255, 255, 0.1)"
-            >
+            <Flex gap="3" pt="4">
               <Drawer.Close asChild>
                 <Button variant="soft" color="gray">
                   Cancel
@@ -352,7 +335,7 @@ export const GlassLeft = () => {
               <Text as="div" size="2" weight="bold" mb="2" color="gray">
                 Menu
               </Text>
-              <Button variant="ghost" justify="start" size="3">
+              <Button variant="ghost" size="3">
                 <svg
                   width="16"
                   height="16"
@@ -369,7 +352,7 @@ export const GlassLeft = () => {
                 </svg>
                 Home
               </Button>
-              <Button variant="ghost" justify="start" size="3">
+              <Button variant="ghost" size="3">
                 <svg
                   width="16"
                   height="16"
@@ -386,7 +369,7 @@ export const GlassLeft = () => {
                 </svg>
                 Settings
               </Button>
-              <Button variant="ghost" justify="start" size="3">
+              <Button variant="ghost" size="3">
                 <svg
                   width="16"
                   height="16"
@@ -412,7 +395,7 @@ export const GlassLeft = () => {
               <Text as="div" size="2" weight="bold" mb="2" color="gray">
                 Account
               </Text>
-              <Button variant="ghost" justify="start" size="3" color="red">
+              <Button variant="ghost"  size="3" color="red">
                 <svg
                   width="16"
                   height="16"
@@ -487,7 +470,6 @@ export const GlassSizes = () => {
                       size="2"
                       weight="medium"
                       mb="2"
-                      display="block"
                     >
                       Sample Field
                     </Text>
@@ -497,9 +479,7 @@ export const GlassSizes = () => {
 
                 <Flex
                   gap="3"
-                  justify="end"
                   pt="4"
-                  borderTop="1px solid rgba(255, 255, 255, 0.1)"
                 >
                   <Drawer.Close asChild>
                     <Button variant="soft" color="gray">
