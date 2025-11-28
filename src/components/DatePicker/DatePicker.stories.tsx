@@ -2,7 +2,7 @@ import React from 'react';
 import { DatePicker } from '.';
 
 export default {
-  title: 'Form - Date Picker',
+  title: 'Forms - DatePicker',
 };
 
 export const Default = () => <DatePicker />;

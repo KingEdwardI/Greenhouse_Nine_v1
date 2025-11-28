@@ -1,7 +1,7 @@
 import { Dropdown } from './Dropdown';
 
 export default {
-  title: 'Navigation - Dropdown',
+  title: 'Forms - Dropdown',
 };
 
 const sections = [

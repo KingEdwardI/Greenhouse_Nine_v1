@@ -3,7 +3,7 @@ import { TypingIndicator } from './TypingIndicator';
 import type { TypingIndicatorProps } from './TypingIndicator';
 
 export default {
-  title: 'Messaging - Typing Indicator'
+  title: 'Messaging - TypingIndicator'
 };
 
 export const Default: Story<TypingIndicatorProps> = (args) => (

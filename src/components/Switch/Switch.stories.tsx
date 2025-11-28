@@ -1,7 +1,7 @@
 import { Switch } from './Switch';
 
 export default {
-  title: 'Form - Switch',
+  title: 'Forms - Switch',
 };
 
 export const Default = () => (

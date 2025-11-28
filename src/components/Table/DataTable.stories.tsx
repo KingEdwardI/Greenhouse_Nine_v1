@@ -1,7 +1,7 @@
 import { DataTable } from "./DataTable";
 
 export default {
-  title: "Data Display - Data Table",
+  title: "DataTable",
 };
 
 export const Basic = () => (

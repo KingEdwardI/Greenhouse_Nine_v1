@@ -2,7 +2,7 @@ import { Field } from './Field';
 import { Input, PasswordInput, NumberInput } from '../Input';
 
 export default {
-  title: 'Form - Field'
+  title: 'Forms - Field'
 };
 
 export const Default = () => (

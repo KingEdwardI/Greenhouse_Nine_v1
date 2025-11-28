@@ -83,7 +83,8 @@ export const ChatLayout = React.forwardRef<HTMLDivElement, ChatLayoutProps>(
       loading: listLoading,
       emptyState: listEmptyState,
       autoScroll: listAutoScroll,
-      children: _ignoredChildren,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      children: _children,
       ...restListProps
     } = messageListProps ?? {};
 

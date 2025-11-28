@@ -1,7 +1,7 @@
 import { Button } from "./Button";
 
 export default {
-  title: "Form - Button",
+  title: "Forms - Button",
 };
 
 export const Default = () => {

@@ -1,7 +1,7 @@
 import { Input, PasswordInput, NumberInput, MaskedInput } from '.';
 
 export default {
-  title: 'Form - Input'
+  title: 'Forms - Input'
 };
 
 export const Default = () => <Input placeholder="Enter text" />;

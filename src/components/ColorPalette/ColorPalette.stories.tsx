@@ -2,7 +2,7 @@ import { ColorPalette } from "./ColorPalette";
 import { colors } from "../../tokens/colors";
 
 export default {
-  title: "Foundations - Color Palette",
+  title: "Core - ColorPalette",
 };
 
 export const Default = () => {

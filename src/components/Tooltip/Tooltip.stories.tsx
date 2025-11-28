@@ -2,7 +2,7 @@ import { Tooltip } from './Tooltip';
 import { Button } from '../Button';
 
 export default {
-  title: 'Overlay - Tooltip'
+  title: 'Overlays - Tooltip'
 };
 
 export const Default = () => {

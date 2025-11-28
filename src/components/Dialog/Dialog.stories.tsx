@@ -2,7 +2,7 @@ import { Dialog } from './Dialog';
 import { Button } from '../Button';
 
 export default {
-  title: 'Overlay - Dialog'
+  title: 'Overlays - Dialog'
 };
 
 export const Default = () => (

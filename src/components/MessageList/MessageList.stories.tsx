@@ -4,7 +4,7 @@ import { Message } from '../Message';
 import type { MessageListProps } from './MessageList';
 
 export default {
-  title: 'Messaging - Message List'
+  title: 'Messaging - MessageList'
 };
 
 export const Default: Story<MessageListProps> = (args) => (

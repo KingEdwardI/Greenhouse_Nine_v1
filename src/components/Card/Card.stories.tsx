@@ -2,7 +2,7 @@ import { Card } from './Card';
 import { Button } from '../Button';
 
 export default {
-  title: 'Surfaces - Card'
+  title: 'Core - Card'
 };
 
 export const Default = () => {

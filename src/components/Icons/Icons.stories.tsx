@@ -1,5 +1,5 @@
 export default {
-  title: 'Foundations - Icons',
+  title: 'Core - Icons',
 };
 
 export const SuggestedUsage = () => {

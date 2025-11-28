@@ -1,7 +1,7 @@
 import { Label } from './Label';
 
 export default {
-  title: 'Form - Label',
+  title: 'Forms - Label',
 };
 
 export const Default = () => (

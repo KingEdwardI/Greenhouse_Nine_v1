@@ -1,7 +1,7 @@
 import { ContextMenu, type ContextMenuItemData } from './ContextMenu';
 
 export default {
-  title: 'Navigation - Context Menu',
+  title: 'Overlays - ContextMenu',
 };
 
 const basicItems: ContextMenuItemData[] = [
