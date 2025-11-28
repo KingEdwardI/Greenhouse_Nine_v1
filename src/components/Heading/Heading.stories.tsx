@@ -1,7 +1,7 @@
 import { Heading } from './Heading';
 
 export default {
-  title: 'Typography/Heading'
+  title: 'Typography - Heading'
 };
 
 export const Default = () => {

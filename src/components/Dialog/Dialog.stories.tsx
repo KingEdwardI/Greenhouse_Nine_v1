@@ -2,7 +2,7 @@ import { Dialog } from './Dialog';
 import { Button } from '../Button';
 
 export default {
-  title: 'Overlay/Dialog'
+  title: 'Overlay - Dialog'
 };
 
 export const Default = () => (
@@ -96,5 +96,4 @@ export const GlassWithActions = () => (
     </div>
   </Dialog>
 );
-
 

@@ -1,7 +1,7 @@
 import { TextArea } from './TextArea';
 
 export default {
-  title: 'Forms/TextArea'
+  title: 'Form - Text Area'
 };
 
 export const Default = () => (

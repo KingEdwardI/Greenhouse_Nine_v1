@@ -1,5 +1,9 @@
 import { Breadcrumbs } from './Breadcrumbs';
 
+export default {
+    title: 'Navigation - Breadcrumbs',
+};
+
 export const Basic = () => {
     const items = [
         { label: 'Home', href: '/' },

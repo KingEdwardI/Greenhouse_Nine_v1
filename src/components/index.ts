@@ -61,6 +61,9 @@ export type { MessageListProps } from './MessageList';
 export { TypingIndicator } from './TypingIndicator';
 export type { TypingIndicatorProps } from './TypingIndicator';
 
+export { ChatLayout } from './ChatLayout';
+export type { ChatLayoutProps, ChatLayoutMessage } from './ChatLayout';
+
 export {
   OrbitalSpinner,
   RingSpinner,

@@ -1,3 +1,6 @@
+export default {
+  title: 'Foundations - Icons',
+};
 
 export const SuggestedUsage = () => {
   const snippet = `import { Home, Search } from 'lucide-react';
@@ -62,7 +65,6 @@ export const Example = () => (
     </div>
   );
 };
-
 
 
 

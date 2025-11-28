@@ -4,7 +4,7 @@ import type { OrbitalSpinnerProps } from "./OrbitalSpinner";
 import { colors } from "../../tokens/colors";
 
 export default {
-  title: "Feedback/OrbitalSpinner",
+  title: "Feedback - Orbital Spinner",
 };
 
 export const Default: Story<OrbitalSpinnerProps> = (args) => (

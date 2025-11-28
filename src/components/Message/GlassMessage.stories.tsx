@@ -4,7 +4,7 @@ import type { GlassMessageProps } from "./GlassMessage";
 import { Button } from "../Button";
 
 export default {
-  title: "Chat/GlassMessage",
+  title: "Messaging - Glass Message",
 };
 
 export const Default: Story<GlassMessageProps> = (args) => (

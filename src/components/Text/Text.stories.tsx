@@ -1,7 +1,7 @@
 import { Text } from './Text';
 
 export default {
-  title: 'Typography/Text'
+  title: 'Typography - Text'
 };
 
 export const Default = () => {

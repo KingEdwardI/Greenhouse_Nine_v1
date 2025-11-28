@@ -522,6 +522,56 @@ import { MessageList, Message } from '@highwind/greenhouse-nine';
 |------|------|---------|-------------|
 | children | `React.ReactNode` | - | Message components |
 
+### ChatLayout
+
+High-level chat container that composes `Message`, `MessageList`, `TypingIndicator`, and `MessageInput` into a single layout.
+
+```tsx
+import { ChatLayout, type ChatLayoutMessage } from '@highwind/greenhouse-nine';
+
+const messages: ChatLayoutMessage[] = [
+  { id: '1', variant: 'system', timestamp: 'Today', content: 'Conversation started' },
+  { id: '2', variant: 'assistant', username: 'Assistant', content: 'How can I help you?' },
+];
+
+<ChatLayout
+  title="Workspace Support"
+  description="Chat with the Greenhouse assistant"
+  messages={messages}
+  typingUsers={['Assistant']}
+  onSend={(value) => console.log(value)}
+  sidebar={<div>Members + Notes</div>}
+/>;
+```
+
+**Props:** `ChatLayoutProps`
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| messages | `ChatLayoutMessage[]` | `[]` | Collection passed to `Message` bubbles |
+| onSend | `(message: string) => void` | - | Handler routed to `MessageInput` |
+| title | `React.ReactNode` | - | Header title (if `header` not provided) |
+| description | `React.ReactNode` | - | Supporting text under the title |
+| status | `React.ReactNode` | - | Right-aligned status badge/text |
+| header | `React.ReactNode` | - | Custom header content |
+| headerActions | `React.ReactNode` | - | Action slot next to the status |
+| toolbar | `React.ReactNode` | - | Row rendered under the header |
+| footer | `React.ReactNode` | - | Content between the list and input |
+| sidebar | `React.ReactNode` | - | Optional aside rendered next to the chat |
+| sidebarPosition | `'left' \| 'right'` | `'right'` | Choose which edge renders the sidebar |
+| showInput | `boolean` | auto | Force showing/hiding the default input |
+| typingUsers | `string[]` | `[]` | Users forwarded to the typing indicator |
+| showTyping | `boolean` | auto | Toggle typing indicator visibility |
+| loading | `boolean` | `false` | Loading state for the message list |
+| emptyState | `React.ReactNode` | - | Custom empty state node |
+| autoScroll | `boolean` | `true` | Scroll to the newest message automatically |
+| messageListProps | `Partial<Omit<MessageListProps, 'children'>>` | - | Pass-through props to `MessageList` |
+| messageInputProps | `Partial<MessageInputProps>` | - | Pass-through props to `MessageInput` |
+| renderMessage | `(message, index) => React.ReactNode` | - | Custom renderer for each message |
+| inputArea | `React.ReactNode` | - | Replace the default input area entirely |
+
+**Message shape:** `ChatLayoutMessage extends Omit<MessageProps, 'children'> { id: string | number; content: React.ReactNode; }`
+
 ### TypingIndicator
 
 Animated typing indicator.

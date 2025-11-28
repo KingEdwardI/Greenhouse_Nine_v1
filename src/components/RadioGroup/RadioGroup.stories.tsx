@@ -1,7 +1,7 @@
 import { RadioGroup } from './RadioGroup';
 
 export default {
-  title: 'Forms/RadioGroup'
+  title: 'Form - Radio Group'
 };
 
 const options = [

@@ -2,6 +2,10 @@ import { useState } from 'react';
 import { Drawer } from './Drawer';
 import { Button, Flex, Text, TextField } from '@radix-ui/themes';
 
+export default {
+    title: 'Overlay - Drawer',
+};
+
 export const Basic = () => {
     const [open, setOpen] = useState(false);
 

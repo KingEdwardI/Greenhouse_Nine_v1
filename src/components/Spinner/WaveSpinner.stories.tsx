@@ -3,7 +3,7 @@ import { WaveSpinner } from "./WaveSpinner";
 import type { WaveSpinnerProps } from "./WaveSpinner";
 
 export default {
-  title: "Feedback/WaveSpinner",
+  title: "Feedback - Wave Spinner",
 };
 
 export const Default: Story<WaveSpinnerProps> = (args) => (

@@ -37,3 +37,4 @@ temp_*
 *.njsproj
 *.sln
 *.sw?
+.claude

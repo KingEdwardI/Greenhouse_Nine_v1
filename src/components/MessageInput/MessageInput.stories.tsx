@@ -3,7 +3,7 @@ import { MessageInput } from './MessageInput';
 import type { MessageInputProps } from './MessageInput';
 
 export default {
-  title: 'Chat/MessageInput'
+  title: 'Messaging - Message Input'
 };
 
 export const Default: Story<MessageInputProps> = (args) => (

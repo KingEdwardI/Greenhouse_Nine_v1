@@ -13,6 +13,32 @@
   animation: gn-context-menu-in 150ms ease-out;
 }
 
+.gn-ContextMenuContent--glass {
+  position: relative;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.02) 65%),
+    var(--glass-surface, rgba(0, 0, 0, 0.28));
+  border: 1px solid var(--glass-border, rgba(52, 52, 52, 0.42));
+  border-radius: var(--radius-4);
+  box-shadow:
+    var(--glass-shadow, 0 12px 40px rgba(0, 0, 0, 0.68)),
+    var(--glass-highlight, inset 0 1px 1px rgba(255, 255, 255, 0.08));
+  backdrop-filter: blur(var(--glass-blur, 14px)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--glass-blur, 14px)) saturate(180%);
+  color: var(--gray-1);
+  overflow: hidden;
+}
+
+.gn-ContextMenuContent--glass::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15), transparent 70%);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
 .gn-ContextMenuItem {
   display: flex;
   align-items: center;
@@ -28,8 +54,20 @@
   user-select: none;
 }
 
+.gn-ContextMenuItem--glass {
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 0 6px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
 .gn-ContextMenuItem:hover {
   background-color: var(--gray-3);
+}
+
+.gn-ContextMenuItem--glass:hover {
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 .gn-ContextMenuItem:focus-visible {
@@ -37,10 +75,20 @@
   color: var(--accent-11);
 }
 
+.gn-ContextMenuItem--glass:focus-visible,
+.gn-ContextMenuContent--glass .gn-ContextMenuItem[data-state='open'] {
+  background-color: rgba(255, 255, 255, 0.13);
+  color: var(--accent-4);
+}
+
 .gn-ContextMenuItem[data-disabled] {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
+}
+
+.gn-ContextMenuItem--glass[data-disabled] {
+  opacity: 0.35;
 }
 
 .gn-ContextMenuItem--destructive {
@@ -76,10 +124,24 @@
   margin-left: auto;
 }
 
+.gn-ContextMenuItem--glass .gn-ContextMenuShortcut {
+  color: rgba(255, 255, 255, 0.65);
+}
+
 .gn-ContextMenuSeparator {
   height: 1px;
   background-color: var(--gray-6);
   margin: var(--space-1) 0;
+}
+
+.gn-ContextMenuSeparator--glass {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  opacity: 0.7;
 }
 
 /* Submenu styling */
@@ -93,6 +155,12 @@
   margin-left: auto;
   font-size: var(--font-size-3);
   color: inherit;
+}
+
+.gn-ContextMenuContent--glass .gn-ContextMenuItem[data-state="open"]::after {
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 0 6px rgba(0, 0, 0, 0.15);
 }
 
 /* Animation */

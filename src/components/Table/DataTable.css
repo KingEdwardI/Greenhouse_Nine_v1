@@ -7,8 +7,9 @@
 
 /* DataTable container with sticky header needs overflow */
 .gn-DataTable__container--sticky {
-  overflow: auto;
-  max-height: inherit; /* Inherit from parent */
+  overflow-y: auto;
+  overflow-x: auto;
+  height: 100%; /* Fill parent's height for sticky to work */
 }
 
 /* Base DataTable styles */
@@ -18,8 +19,10 @@
   border-collapse: collapse;
 }
 
-/* Sticky header support - fixed to use th directly */
-.gn-DataTable--sticky thead th {
+/* Sticky header support - apply sticky to th cells for browser compatibility */
+.gn-DataTable--sticky thead th,
+.gn-DataTable--sticky .rt-TableHeader th,
+.gn-DataTable--sticky .rt-TableColumnHeaderCell {
   position: sticky;
   top: 0;
   z-index: 10;
@@ -77,7 +80,9 @@
 }
 
 /* Glass effect on sticky headers */
-.gn-DataTable--glass.gn-DataTable--sticky thead th {
+.gn-DataTable--glass.gn-DataTable--sticky thead th,
+.gn-DataTable--glass.gn-DataTable--sticky .rt-TableHeader th,
+.gn-DataTable--glass.gn-DataTable--sticky .rt-TableColumnHeaderCell {
   background:
     linear-gradient(135deg,
       rgba(255, 255, 255, 0.12) 0%,

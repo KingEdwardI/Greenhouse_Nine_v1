@@ -1,6 +1,10 @@
 import type { Story } from "@ladle/react";
 import { MarkdownRenderer } from "./MarkdownRenderer";
 
+export default {
+  title: "Foundations - Markdown Renderer",
+};
+
 export const Basic: Story = () => (
   <MarkdownRenderer>
     {`# Hello World

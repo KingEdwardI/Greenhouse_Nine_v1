@@ -3,7 +3,7 @@ import { Message } from "./Message";
 import type { MessageProps } from "./Message";
 
 export default {
-  title: "Chat/Message",
+  title: "Messaging - Message",
 };
 
 export const Default: Story<MessageProps> = (args) => (

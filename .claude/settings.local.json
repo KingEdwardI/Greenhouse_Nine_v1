@@ -13,7 +13,8 @@
       "Bash(npx tsc:*)",
       "Bash(pnpm install:*)",
       "Bash(yalc publish:*)",
-      "Read(//Users/eddie/workspace/Highwind/**)"
+      "Read(//Users/eddie/workspace/Highwind/**)",
+      "Bash(ls:*)"
     ],
     "deny": [],
     "ask": []

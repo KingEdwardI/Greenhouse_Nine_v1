@@ -1,7 +1,7 @@
 import { Checkbox } from './Checkbox';
 
 export default {
-  title: 'Forms/Checkbox'
+  title: 'Form - Checkbox'
 };
 
 export const Default = () => (

@@ -1,7 +1,7 @@
 import { Select } from './Select';
 
 export default {
-  title: 'Forms/Select'
+  title: 'Form - Select'
 };
 
 const items = [

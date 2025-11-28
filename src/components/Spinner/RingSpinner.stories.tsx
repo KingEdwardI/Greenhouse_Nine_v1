@@ -3,7 +3,7 @@ import { RingSpinner } from "./RingSpinner";
 import type { RingSpinnerProps } from "./RingSpinner";
 
 export default {
-  title: "Feedback/RingSpinner",
+  title: "Feedback - Ring Spinner",
 };
 
 export const Default: Story<RingSpinnerProps> = (args) => (

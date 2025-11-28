@@ -1,5 +1,9 @@
 import { Dropdown } from './Dropdown';
 
+export default {
+  title: 'Navigation - Dropdown',
+};
+
 const sections = [
   {
     label: 'Fruits',
@@ -47,6 +51,23 @@ export const Position = () => (
   </div>
 );
 
-
+export const Glass = () => (
+  <div
+    style={{
+      display: 'flex',
+      gap: 24,
+      alignItems: 'center',
+      flexWrap: 'wrap',
+      padding: 60,
+      background:
+        'radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 45%), var(--color-panel)',
+      borderRadius: 16,
+    }}
+  >
+    <Dropdown label="Glass dropdown" sections={sections} glass />
+    <Dropdown label="Aligned glass" sections={sections} glass align="center" />
+    <Dropdown label="Side glass" sections={sections} glass side="top" />
+  </div>
+);
 
 

@@ -4,7 +4,7 @@ import type { VineSpinnerProps } from "./VineSpinner";
 import { useState, useEffect } from "react";
 
 export default {
-  title: "Feedback/VineSpinner",
+  title: "Feedback - Vine Spinner",
 };
 
 export const Playground: Story<VineSpinnerProps> = (args) => (

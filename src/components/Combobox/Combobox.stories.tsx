@@ -2,7 +2,7 @@ import React from 'react';
 import { Combobox } from '.';
 
 export default {
-  title: 'Forms/Combobox',
+  title: 'Form - Combobox',
 };
 
 const options = [

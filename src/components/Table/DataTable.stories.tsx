@@ -1,7 +1,7 @@
 import { DataTable } from "./DataTable";
 
 export default {
-  title: "Data Display/DataTable",
+  title: "Data Display - Data Table",
 };
 
 export const Basic = () => (
@@ -131,7 +131,7 @@ export const ManyColumns = () => (
 );
 
 export const StickyHeader = () => (
-  <div style={{ maxHeight: "400px" }}>
+  <div style={{ height: "400px", overflow: "hidden" }}>
     <DataTable
       headers={[
         { label: "Index" },

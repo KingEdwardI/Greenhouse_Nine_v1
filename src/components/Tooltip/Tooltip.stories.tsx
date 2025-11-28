@@ -2,7 +2,7 @@ import { Tooltip } from './Tooltip';
 import { Button } from '../Button';
 
 export default {
-  title: 'Overlay/Tooltip'
+  title: 'Overlay - Tooltip'
 };
 
 export const Default = () => {
@@ -28,5 +28,4 @@ export const Widths = () => {
     </div>
   );
 };
-
 

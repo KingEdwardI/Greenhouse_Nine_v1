@@ -1,7 +1,7 @@
 import { ContextMenu, type ContextMenuItemData } from './ContextMenu';
 
 export default {
-  title: 'Overlay/ContextMenu',
+  title: 'Navigation - Context Menu',
 };
 
 const basicItems: ContextMenuItemData[] = [
@@ -317,5 +317,41 @@ export const OnText = () => (
       </ContextMenu>
       {' '}for a context menu. You can use context menus on any element.
     </p>
+  </div>
+);
+
+export const Glass = () => (
+  <div
+    style={{
+      padding: '4rem',
+      minHeight: '420px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background:
+        'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 45%), radial-gradient(circle at 80% 0%, rgba(102,51,255,0.25), transparent 55%), linear-gradient(145deg, #050505, #0d1117)',
+    }}
+  >
+    <ContextMenu
+      items={fileManagerItems}
+      onItemSelect={(itemId) => console.log(`Glass action: ${itemId}`)}
+      glass
+    >
+      <div
+        style={{
+          padding: '2.5rem',
+          borderRadius: 'var(--radius-4)',
+          border: '1px solid rgba(255, 255, 255, 0.15)',
+          boxShadow: '0 20px 60px rgba(0, 0, 0, 0.55)',
+          background: 'rgba(255, 255, 255, 0.02)',
+          color: 'var(--gray-1)',
+          textAlign: 'center',
+          cursor: 'context-menu',
+          width: '280px',
+        }}
+      >
+        Right-click anywhere on this glass tile
+      </div>
+    </ContextMenu>
   </div>
 );

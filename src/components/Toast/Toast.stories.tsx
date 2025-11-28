@@ -89,7 +89,7 @@ const GlassDemo: React.FC = () => {
 };
 
 const meta: Meta = {
-  title: 'Feedback/Toast',
+  title: 'Feedback - Toast',
 };
 
 export default meta;

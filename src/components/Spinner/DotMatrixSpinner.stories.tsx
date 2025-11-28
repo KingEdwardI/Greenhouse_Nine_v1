@@ -4,7 +4,7 @@ import type { DotMatrixSpinnerProps } from "./DotMatrixSpinner";
 import { colors } from "../../tokens/colors";
 
 export default {
-  title: "Feedback/DotMatrixSpinner",
+  title: "Feedback - Dot Matrix Spinner",
 };
 
 export const Default: Story<DotMatrixSpinnerProps> = (args) => (

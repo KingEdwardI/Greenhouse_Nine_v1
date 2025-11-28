@@ -26,6 +26,10 @@ export interface DropdownProps extends Omit<React.ComponentPropsWithoutRef<typeo
   align?: 'start' | 'center' | 'end';
   side?: 'top' | 'right' | 'bottom' | 'left';
   sideOffset?: number;
+  /**
+   * Enable glass morphism treatment for the trigger + content surface
+   */
+  glass?: boolean;
 }
 
 export const Dropdown: React.FC<DropdownProps> = ({
@@ -35,18 +39,26 @@ export const Dropdown: React.FC<DropdownProps> = ({
   align = 'start',
   side = 'bottom',
   sideOffset = 4,
+  glass = false,
   ...props
 }) => {
+  const contentClassName = [
+    'dropdown-content',
+    glass && 'dropdown-content--glass',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
     <RadixDropdown.Root {...props}>
       <RadixDropdown.Trigger>
-        <DSButton size={size} variant="soft">
+        <DSButton size={size} variant="soft" glass={glass}>
           {label}
           <RadixDropdown.TriggerIcon />
         </DSButton>
       </RadixDropdown.Trigger>
-      <RadixDropdown.Content 
-        className="dropdown-content"
+      <RadixDropdown.Content
+        className={contentClassName}
         align={align}
         side={side}
         sideOffset={sideOffset}
@@ -60,10 +72,10 @@ export const Dropdown: React.FC<DropdownProps> = ({
             ) : null}
             <RadixDropdown.Group>
               {section.items.map((item, i) => (
-                <RadixDropdown.Item 
-                  key={`${idx}-${i}`} 
+                <RadixDropdown.Item
+                  key={`${idx}-${i}`}
                   className="dropdown-item"
-                  disabled={item.disabled} 
+                  disabled={item.disabled}
                   onSelect={item.onSelect}
                 >
                   {item.label}
