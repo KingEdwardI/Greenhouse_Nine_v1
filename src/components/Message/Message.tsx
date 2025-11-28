@@ -13,7 +13,14 @@ export interface MessageProps {
   className?: string;
   markdown?: boolean;
   glass?: boolean;
-  glassColor?: "default" | "primary" | "secondary" | "accent" | "success" | "info" | "warning";
+  glassColor?:
+    | "default"
+    | "primary"
+    | "secondary"
+    | "accent"
+    | "success"
+    | "info"
+    | "warning";
 }
 
 export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
@@ -30,7 +37,7 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
       glassColor = "default",
       ...props
     },
-    ref,
+    ref
   ) => {
     const composedClassName = [
       "gn-Message",
@@ -84,11 +91,7 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
           {childArray.map((child, index) => {
             if (typeof child === "string") {
               // Render string as markdown
-              return (
-                <MarkdownRenderer key={index}>
-                  {child}
-                </MarkdownRenderer>
-              );
+              return <MarkdownRenderer key={index}>{child}</MarkdownRenderer>;
             }
             // Render React element as-is
             return <React.Fragment key={index}>{child}</React.Fragment>;
@@ -124,7 +127,7 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
         )}
       </div>
     );
-  },
+  }
 );
 
 Message.displayName = "Message";

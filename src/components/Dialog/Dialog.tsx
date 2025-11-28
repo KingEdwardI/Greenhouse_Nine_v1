@@ -1,13 +1,13 @@
-import React from 'react';
-import { Dialog as RadixDialog, Flex } from '@radix-ui/themes';
-import type { Dialog as RadixDialogNS } from '@radix-ui/themes';
-import './Dialog.css';
+import React from "react";
+import { Dialog as RadixDialog, Flex } from "@radix-ui/themes";
+import type { Dialog as RadixDialogNS } from "@radix-ui/themes";
+import "./Dialog.css";
 
-export interface DialogProps extends Omit<RadixDialogNS.RootProps, 'children'> {
+export interface DialogProps extends Omit<RadixDialogNS.RootProps, "children"> {
   /**
    * Radix numeric size: "1" | "2" | "3" | "4"
    */
-  size?: RadixDialogNS.ContentProps['size'];
+  size?: RadixDialogNS.ContentProps["size"];
   /**
    * Element that opens the dialog when interacted with.
    */
@@ -39,7 +39,7 @@ type DialogComponent = React.FC<DialogProps> & {
 };
 
 const DialogBase: React.FC<DialogProps> = ({
-  size = '2',
+  size = "2",
   trigger,
   title,
   description,
@@ -48,7 +48,7 @@ const DialogBase: React.FC<DialogProps> = ({
   glass = false,
   ...rootProps
 }) => {
-  const contentClassName = glass ? 'gn-Dialog--glass' : undefined;
+  const contentClassName = glass ? "gn-Dialog--glass" : undefined;
 
   return (
     <RadixDialog.Root {...rootProps}>
@@ -76,6 +76,4 @@ export const Dialog = Object.assign(DialogBase, {
   Close: RadixDialog.Close,
 }) as DialogComponent;
 
-Dialog.displayName = 'Dialog';
-
-
+Dialog.displayName = "Dialog";

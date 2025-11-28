@@ -257,13 +257,13 @@ export const ColorMatrix = () => {
                   border: "1px solid rgba(255, 255, 255, 0.1)",
                 }}
                 onClick={() => navigator.clipboard.writeText(color)}
-                onMouseEnter={(e) => {
+                onMouseEnter={e => {
                   e.currentTarget.style.transform = "scale(1.05)";
                   e.currentTarget.style.boxShadow =
                     "0 4px 12px rgba(0, 0, 0, 0.3)";
                   e.currentTarget.style.zIndex = "10";
                 }}
-                onMouseLeave={(e) => {
+                onMouseLeave={e => {
                   e.currentTarget.style.transform = "scale(1)";
                   e.currentTarget.style.boxShadow = "none";
                   e.currentTarget.style.zIndex = "1";
@@ -377,12 +377,10 @@ export const BrandColors = () => {
                 transition: "transform 0.2s ease",
               }}
               onClick={() => navigator.clipboard.writeText(color)}
-              onMouseEnter={(e) =>
+              onMouseEnter={e =>
                 (e.currentTarget.style.transform = "scale(1.05)")
               }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.transform = "scale(1)")
-              }
+              onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
             >
               <span
                 style={{

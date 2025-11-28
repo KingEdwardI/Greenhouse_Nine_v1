@@ -26,7 +26,7 @@ export const MessageInput = React.forwardRef<
       className,
       ...props
     },
-    ref,
+    ref
   ) => {
     const [value, setValue] = useState("");
     const textAreaRef = useRef<HTMLTextAreaElement>(null);
@@ -103,8 +103,7 @@ export const MessageInput = React.forwardRef<
         </Button>
       </div>
     );
-  },
+  }
 );
 
 MessageInput.displayName = "MessageInput";
-

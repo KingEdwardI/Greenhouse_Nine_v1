@@ -1,13 +1,13 @@
-import React from 'react';
-import { Card as RadixCard } from '@radix-ui/themes';
-import type { CardProps as RadixCardProps } from '@radix-ui/themes';
-import './Card.css';
+import React from "react";
+import { Card as RadixCard } from "@radix-ui/themes";
+import type { CardProps as RadixCardProps } from "@radix-ui/themes";
+import "./Card.css";
 
 export interface CardProps extends RadixCardProps {
   /**
    * Radix numeric size: "1" | "2" | "3" | "4" | "5"
    */
-  size?: RadixCardProps['size'];
+  size?: RadixCardProps["size"];
   children: React.ReactNode;
   /**
    * Enable glass morphism effect
@@ -16,13 +16,13 @@ export interface CardProps extends RadixCardProps {
 }
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ variant = 'surface', size = '2', glass = false, className, ...props }, ref) => {
-    const composedClassName = [
-      glass && 'gn-Card--glass',
-      className,
-    ]
+  (
+    { variant = "surface", size = "2", glass = false, className, ...props },
+    ref
+  ) => {
+    const composedClassName = [glass && "gn-Card--glass", className]
       .filter(Boolean)
-      .join(' ');
+      .join(" ");
 
     return (
       <RadixCard
@@ -36,4 +36,4 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
   }
 );
 
-Card.displayName = 'Card';
+Card.displayName = "Card";

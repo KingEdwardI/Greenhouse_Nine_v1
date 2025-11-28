@@ -6,32 +6,36 @@
   position: relative;
   backdrop-filter: blur(var(--glass-blur)) saturate(200%);
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(200%);
-  background: 
-    linear-gradient(135deg, 
-      rgba(255, 255, 255, 0.1) 0%, 
-      rgba(255, 255, 255, 0.05) 40%, 
-      rgba(255, 255, 255, 0.02) 100%),
-    linear-gradient(180deg,
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.05) 40%,
+      rgba(255, 255, 255, 0.02) 100%
+    ),
+    linear-gradient(
+      180deg,
       rgba(255, 255, 255, 0.08) 0%,
       transparent 50%,
-      rgba(0, 0, 0, 0.1) 100%),
+      rgba(0, 0, 0, 0.1) 100%
+    ),
     var(--glass-surface) !important;
   border: 1px solid transparent !important;
   background-clip: padding-box !important;
-  box-shadow: 
+  box-shadow:
     var(--glass-shadow),
     inset 0 2px 4px rgba(255, 255, 255, 0.15),
     inset 0 -2px 4px rgba(0, 0, 0, 0.35),
     inset 0 0 20px rgba(255, 255, 255, 0.03);
   transition: all 0.2s ease;
   overflow: hidden;
-  text-shadow: 
+  text-shadow:
     0 1px 2px rgba(0, 0, 0, 0.5),
     0 0 8px rgba(0, 0, 0, 0.3);
 }
 
 .gn-Button--glass::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -50,7 +54,7 @@
 }
 
 .gn-Button--glass::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
@@ -63,8 +67,8 @@
     rgba(0, 0, 0, 0.1) 70%,
     rgba(0, 0, 0, 0.25)
   );
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -72,23 +76,27 @@
 }
 
 .gn-Button--glass:hover {
-  background: 
-    linear-gradient(135deg, 
-      rgba(255, 255, 255, 0.12) 0%, 
-      rgba(255, 255, 255, 0.06) 40%, 
-      rgba(255, 255, 255, 0.03) 100%),
-    linear-gradient(180deg,
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.06) 40%,
+      rgba(255, 255, 255, 0.03) 100%
+    ),
+    linear-gradient(
+      180deg,
       rgba(255, 255, 255, 0.1) 0%,
       transparent 50%,
-      rgba(0, 0, 0, 0.15) 100%),
+      rgba(0, 0, 0, 0.15) 100%
+    ),
     var(--glass-surface-strong) !important;
   transform: translateY(-1px);
-  box-shadow: 
+  box-shadow:
     0 16px 48px rgba(0, 0, 0, 0.75),
     inset 0 2px 5px rgba(255, 255, 255, 0.18),
     inset 0 -2px 5px rgba(0, 0, 0, 0.45),
     inset 0 0 25px rgba(255, 255, 255, 0.05);
-  text-shadow: 
+  text-shadow:
     0 1px 3px rgba(0, 0, 0, 0.6),
     0 0 10px rgba(0, 0, 0, 0.4);
 }
@@ -98,8 +106,8 @@
 }
 
 .gn-Button--glass:focus-visible {
-  box-shadow: 
-    0 0 0 2px var(--glass-accent-soft), 
+  box-shadow:
+    0 0 0 2px var(--glass-accent-soft),
     0 0 0 4px var(--glass-accent),
     0 8px 32px rgba(0, 0, 0, 0.4),
     inset 0 2px 5px rgba(255, 255, 255, 0.18),

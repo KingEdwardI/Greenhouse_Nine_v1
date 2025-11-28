@@ -1,8 +1,8 @@
-import React from 'react';
-import { Button } from './Button';
-import type { ButtonProps } from './Button';
+import React from "react";
+import { Button } from "./Button";
+import type { ButtonProps } from "./Button";
 
-interface LoadingButtonProps extends Omit<ButtonProps, 'loading'> {
+interface LoadingButtonProps extends Omit<ButtonProps, "loading"> {
   isLoading?: boolean;
   loadingText?: string;
 }
@@ -13,7 +13,7 @@ interface LoadingButtonProps extends Omit<ButtonProps, 'loading'> {
  */
 export const LoadingButton: React.FC<LoadingButtonProps> = ({
   isLoading = false,
-  loadingText = 'Loading...',
+  loadingText = "Loading...",
   children,
   ...props
 }) => {

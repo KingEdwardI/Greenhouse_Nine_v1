@@ -1,17 +1,19 @@
-import React from 'react';
-import { Text } from '../Text';
-import './TypingIndicator.css';
+import React from "react";
+import { Text } from "../Text";
+import "./TypingIndicator.css";
 
 export interface TypingIndicatorProps {
   users?: string[];
   className?: string;
 }
 
-export const TypingIndicator: React.FC<TypingIndicatorProps> = ({ 
-  users = [], 
-  className 
+export const TypingIndicator: React.FC<TypingIndicatorProps> = ({
+  users = [],
+  className,
 }) => {
-  const composedClassName = ['gn-TypingIndicator', className].filter(Boolean).join(' ');
+  const composedClassName = ["gn-TypingIndicator", className]
+    .filter(Boolean)
+    .join(" ");
 
   if (users.length === 0) {
     return null;
@@ -25,7 +27,7 @@ export const TypingIndicator: React.FC<TypingIndicatorProps> = ({
     } else if (users.length > 2) {
       return `${users[0]}, ${users[1]} and ${users.length - 2} others are typing`;
     }
-    return 'Someone is typing';
+    return "Someone is typing";
   };
 
   return (
@@ -42,4 +44,4 @@ export const TypingIndicator: React.FC<TypingIndicatorProps> = ({
   );
 };
 
-TypingIndicator.displayName = 'TypingIndicator';
+TypingIndicator.displayName = "TypingIndicator";

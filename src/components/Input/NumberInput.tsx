@@ -1,11 +1,14 @@
-import React from 'react';
-import { TextField as RadixTextField, IconButton } from '@radix-ui/themes';
+import React from "react";
+import { TextField as RadixTextField, IconButton } from "@radix-ui/themes";
 
-export interface NumberInputProps extends Omit<React.ComponentProps<typeof RadixTextField.Root>, 'type' | 'onChange' | 'value' | 'defaultValue'> {
+export interface NumberInputProps extends Omit<
+  React.ComponentProps<typeof RadixTextField.Root>,
+  "type" | "onChange" | "value" | "defaultValue"
+> {
   /**
    * Radix numeric size: "1" | "2" | "3"
    */
-  size?: React.ComponentProps<typeof RadixTextField.Root>['size'];
+  size?: React.ComponentProps<typeof RadixTextField.Root>["size"];
   step?: number;
   min?: number;
   max?: number;
@@ -15,27 +18,20 @@ export interface NumberInputProps extends Omit<React.ComponentProps<typeof Radix
 }
 
 function coerceToNumber(value: string): number | undefined {
-  if (value.trim() === '') return undefined;
+  if (value.trim() === "") return undefined;
   const parsed = Number(value);
   return Number.isNaN(parsed) ? undefined : parsed;
 }
 
 export const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
   (
-    {
-      size = '2',
-      step = 1,
-      min,
-      max,
-      value,
-      defaultValue,
-      onChange,
-      ...props
-    },
+    { size = "2", step = 1, min, max, value, defaultValue, onChange, ...props },
     ref
   ) => {
     const isControlled = value !== undefined;
-    const [uncontrolled, setUncontrolled] = React.useState<number | undefined>(defaultValue);
+    const [uncontrolled, setUncontrolled] = React.useState<number | undefined>(
+      defaultValue
+    );
     const current = isControlled ? value : uncontrolled;
 
     const setValue = (next: number | undefined) => {
@@ -61,22 +57,33 @@ export const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
         type="text"
         inputMode="decimal"
         pattern={"[0-9]*"}
-        value={current ?? ''}
+        value={current ?? ""}
         onChange={handleTextChange}
         {...props}
       >
         <RadixTextField.Slot side="right">
-          <IconButton size="1" variant="ghost" onClick={increment} aria-label="Increment value">+</IconButton>
+          <IconButton
+            size="1"
+            variant="ghost"
+            onClick={increment}
+            aria-label="Increment value"
+          >
+            +
+          </IconButton>
         </RadixTextField.Slot>
         <RadixTextField.Slot side="right">
-          <IconButton size="1" variant="ghost" onClick={decrement} aria-label="Decrement value">-</IconButton>
+          <IconButton
+            size="1"
+            variant="ghost"
+            onClick={decrement}
+            aria-label="Decrement value"
+          >
+            -
+          </IconButton>
         </RadixTextField.Slot>
       </RadixTextField.Root>
     );
   }
 );
 
-NumberInput.displayName = 'NumberInput';
-
-
-
+NumberInput.displayName = "NumberInput";

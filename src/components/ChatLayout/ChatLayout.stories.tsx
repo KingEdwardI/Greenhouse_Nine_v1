@@ -56,12 +56,11 @@ const generateMessageId = (): string => {
 };
 
 export const Default: Story = () => {
-  const [messages, setMessages] = React.useState<ChatLayoutMessage[]>(
-    initialMessages
-  );
+  const [messages, setMessages] =
+    React.useState<ChatLayoutMessage[]>(initialMessages);
 
   const handleSend = (value: string) => {
-    setMessages((prev) => [
+    setMessages(prev => [
       ...prev,
       {
         id: generateMessageId(),
@@ -118,7 +117,9 @@ export const WithSidebar: Story = () => (
             <Text size="2" weight="bold">
               Participants
             </Text>
-            <ul style={{ marginTop: "8px", paddingLeft: "16px", lineHeight: 1.6 }}>
+            <ul
+              style={{ marginTop: "8px", paddingLeft: "16px", lineHeight: 1.6 }}
+            >
               <li>Eddie (you)</li>
               <li>Greenhouse Assistant</li>
               <li>Amanda</li>
@@ -130,8 +131,8 @@ export const WithSidebar: Story = () => (
               Conversation Notes
             </Text>
             <Text size="1" color="gray">
-              The beta preview opens next Monday. Capture questions so the team can
-              review during standup.
+              The beta preview opens next Monday. Capture questions so the team
+              can review during standup.
             </Text>
           </div>
         </div>
@@ -152,7 +153,11 @@ export const SidebarLeft: Story = () => (
     <ChatLayout
       title="Studio Concierge"
       description="Live chat with the concierge team."
-      status={<span style={{ color: "var(--green-9)" }}>Typically replies in 2 min</span>}
+      status={
+        <span style={{ color: "var(--green-9)" }}>
+          Typically replies in 2 min
+        </span>
+      }
       sidebarPosition="left"
       sidebar={
         <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
@@ -161,15 +166,18 @@ export const SidebarLeft: Story = () => (
               Concierge Tips
             </Text>
             <Text size="1" color="gray">
-              Drop files or screenshots directly into the composer. The left sidebar
-              is perfect for workflows that need a persistent checklist or knowledge base.
+              Drop files or screenshots directly into the composer. The left
+              sidebar is perfect for workflows that need a persistent checklist
+              or knowledge base.
             </Text>
           </div>
           <div>
             <Text size="2" weight="bold">
               Quick Actions
             </Text>
-            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+            <div
+              style={{ display: "flex", flexDirection: "column", gap: "8px" }}
+            >
               <Button size="1" variant="soft">
                 Summarize Thread
               </Button>
@@ -198,7 +206,7 @@ export const CustomRenderer: Story = () => (
       description="Messages rendered with custom glass bubbles."
       messages={initialMessages}
       showInput={false}
-      renderMessage={(message) => (
+      renderMessage={message => (
         <React.Fragment key={message.id}>
           <Message
             variant={message.variant}
@@ -224,4 +232,3 @@ export const CustomRenderer: Story = () => (
     />
   </div>
 );
-

@@ -41,10 +41,10 @@ export const DotMatrixDiamondSpinner = React.forwardRef<
       className,
       ...props
     },
-    ref,
+    ref
   ) => {
     // Calculate duration based on speed (1-10 scale)
-    const duration = 4.5 - (speed * 0.4);
+    const duration = 4.5 - speed * 0.4;
 
     const composedClassName = [
       "gn-DotMatrixDiamondSpinner",
@@ -58,18 +58,18 @@ export const DotMatrixDiamondSpinner = React.forwardRef<
     // Diamond pattern: 1, 3, 5, 3, 1 dots per row
     // Total: 13 dots arranged in a diamond shape
     const diamondPattern = [
-      { row: 0, cols: [0] },           // Top: 1 dot
-      { row: 1, cols: [-1, 0, 1] },    // 3 dots
+      { row: 0, cols: [0] }, // Top: 1 dot
+      { row: 1, cols: [-1, 0, 1] }, // 3 dots
       { row: 2, cols: [-2, -1, 0, 1, 2] }, // Middle: 5 dots
-      { row: 3, cols: [-1, 0, 1] },    // 3 dots
-      { row: 4, cols: [0] },           // Bottom: 1 dot
+      { row: 3, cols: [-1, 0, 1] }, // 3 dots
+      { row: 4, cols: [0] }, // Bottom: 1 dot
     ];
 
     let dotIndex = 0;
     const dotElements: React.ReactElement[] = [];
 
     diamondPattern.forEach(({ row, cols }) => {
-      cols.forEach((col) => {
+      cols.forEach(col => {
         const distanceFromCenter = Math.abs(row - 2) + Math.abs(col);
         const delay = (distanceFromCenter / 4) * duration;
 
@@ -80,14 +80,16 @@ export const DotMatrixDiamondSpinner = React.forwardRef<
           <div
             key={dotIndex}
             className="gn-DotMatrixDiamondSpinner__dot"
-            style={{
-              "--dot-color": color,
-              "--animation-delay": `${delay}s`,
-              "--animation-duration": `${duration}s`,
-              "--diamond-row": row,
-              "--diamond-col": col,
-              "--hue-offset": `${hueOffset}deg`,
-            } as React.CSSProperties}
+            style={
+              {
+                "--dot-color": color,
+                "--animation-delay": `${delay}s`,
+                "--animation-duration": `${duration}s`,
+                "--diamond-row": row,
+                "--diamond-col": col,
+                "--hue-offset": `${hueOffset}deg`,
+              } as React.CSSProperties
+            }
           />
         );
         dotIndex++;
@@ -105,7 +107,7 @@ export const DotMatrixDiamondSpinner = React.forwardRef<
         {dotElements}
       </div>
     );
-  },
+  }
 );
 
 DotMatrixDiamondSpinner.displayName = "DotMatrixDiamondSpinner";

@@ -1,8 +1,8 @@
-import { Tooltip } from './Tooltip';
-import { Button } from '../Button';
+import { Tooltip } from "./Tooltip";
+import { Button } from "../Button";
 
 export default {
-  title: 'Overlays - Tooltip'
+  title: "Overlays - Tooltip",
 };
 
 export const Default = () => {
@@ -15,7 +15,14 @@ export const Default = () => {
 
 export const Widths = () => {
   return (
-    <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+    <div
+      style={{
+        display: "flex",
+        gap: "12px",
+        alignItems: "center",
+        flexWrap: "wrap",
+      }}
+    >
       <Tooltip content="Narrow tooltip" maxWidth="120px">
         <Button size="1">Narrow</Button>
       </Tooltip>
@@ -28,4 +35,3 @@ export const Widths = () => {
     </div>
   );
 };
-

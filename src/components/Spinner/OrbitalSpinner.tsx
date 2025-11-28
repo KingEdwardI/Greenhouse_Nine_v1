@@ -9,17 +9,13 @@ export interface OrbitalSpinnerProps {
   className?: string;
 }
 
-export const OrbitalSpinner = React.forwardRef<HTMLDivElement, OrbitalSpinnerProps>(
+export const OrbitalSpinner = React.forwardRef<
+  HTMLDivElement,
+  OrbitalSpinnerProps
+>(
   (
-    {
-      size = "md",
-      color,
-      speed = 5,
-      multicolor = false,
-      className,
-      ...props
-    },
-    ref,
+    { size = "md", color, speed = 5, multicolor = false, className, ...props },
+    ref
   ) => {
     const composedClassName = [
       "gn-OrbitalSpinner",
@@ -30,7 +26,7 @@ export const OrbitalSpinner = React.forwardRef<HTMLDivElement, OrbitalSpinnerPro
       .filter(Boolean)
       .join(" ");
 
-    const duration = 4.5 - (speed * 0.4);
+    const duration = 4.5 - speed * 0.4;
     const style: React.CSSProperties = {
       "--spinner-duration": `${duration}s`,
       ...(color && { "--spinner-color": color }),
@@ -53,7 +49,7 @@ export const OrbitalSpinner = React.forwardRef<HTMLDivElement, OrbitalSpinnerPro
         </div>
       </div>
     );
-  },
+  }
 );
 
 OrbitalSpinner.displayName = "OrbitalSpinner";

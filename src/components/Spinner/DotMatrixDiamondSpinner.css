@@ -33,37 +33,39 @@
   border-radius: 50%;
   top: 50%;
   left: 50%;
-  animation: dot-diamond-pulse var(--animation-duration, 2.5s) ease-in-out infinite;
+  animation: dot-diamond-pulse var(--animation-duration, 2.5s) ease-in-out
+    infinite;
   animation-delay: var(--animation-delay, 0s);
 }
 
 /* Position dots in a diamond pattern using CSS variables */
 .gn-DotMatrixDiamondSpinner__dot {
   transform: translate(-50%, -50%)
-             translate(
-               calc(var(--diamond-col) * var(--dot-spacing)),
-               calc((var(--diamond-row) - 2) * var(--dot-spacing))
-             );
+    translate(
+      calc(var(--diamond-col) * var(--dot-spacing)),
+      calc((var(--diamond-row) - 2) * var(--dot-spacing))
+    );
 }
 
 /* Pulse animation - corners to center */
 @keyframes dot-diamond-pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(-50%, -50%)
-               translate(
-                 calc(var(--diamond-col) * var(--dot-spacing)),
-                 calc((var(--diamond-row) - 2) * var(--dot-spacing))
-               )
-               scale(0.4);
+      translate(
+        calc(var(--diamond-col) * var(--dot-spacing)),
+        calc((var(--diamond-row) - 2) * var(--dot-spacing))
+      )
+      scale(0.4);
     opacity: 0.3;
   }
   50% {
     transform: translate(-50%, -50%)
-               translate(
-                 calc(var(--diamond-col) * var(--dot-spacing)),
-                 calc((var(--diamond-row) - 2) * var(--dot-spacing))
-               )
-               scale(1.1);
+      translate(
+        calc(var(--diamond-col) * var(--dot-spacing)),
+        calc((var(--diamond-row) - 2) * var(--dot-spacing))
+      )
+      scale(1.1);
     opacity: 1;
   }
 }
@@ -75,24 +77,28 @@
 
 .gn-DotMatrixDiamondSpinner--multicolor .gn-DotMatrixDiamondSpinner__dot {
   box-shadow: 0 0 12px currentColor;
-  animation: dot-diamond-pulse var(--animation-duration, 2.5s) ease-in-out infinite,
-             dot-diamond-color-radiate var(--color-cycle-duration) linear infinite;
+  animation:
+    dot-diamond-pulse var(--animation-duration, 2.5s) ease-in-out infinite,
+    dot-diamond-color-radiate var(--color-cycle-duration) linear infinite;
 }
 
 /* Color radiate animation - pulses through spectrum from center outward */
 @keyframes dot-diamond-color-radiate {
   0% {
-    filter: hue-rotate(calc(var(--hue-offset) + 0deg)) saturate(1.4) brightness(1.15);
+    filter: hue-rotate(calc(var(--hue-offset) + 0deg)) saturate(1.4)
+      brightness(1.15);
   }
   100% {
-    filter: hue-rotate(calc(var(--hue-offset) + 360deg)) saturate(1.4) brightness(1.15);
+    filter: hue-rotate(calc(var(--hue-offset) + 360deg)) saturate(1.4)
+      brightness(1.15);
   }
 }
 
 /* Accessibility - Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   .gn-DotMatrixDiamondSpinner--multicolor .gn-DotMatrixDiamondSpinner__dot {
-    animation: dot-diamond-pulse var(--animation-duration, 2.5s) ease-in-out infinite;
+    animation: dot-diamond-pulse var(--animation-duration, 2.5s) ease-in-out
+      infinite;
     filter: none;
     box-shadow: 0 0 8px var(--dot-color);
   }

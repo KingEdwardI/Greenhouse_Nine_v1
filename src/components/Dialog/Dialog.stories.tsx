@@ -1,8 +1,8 @@
-import { Dialog } from './Dialog';
-import { Button } from '../Button';
+import { Dialog } from "./Dialog";
+import { Button } from "../Button";
 
 export default {
-  title: 'Overlays - Dialog'
+  title: "Overlays - Dialog",
 };
 
 export const Default = () => (
@@ -10,21 +10,25 @@ export const Default = () => (
     title="Dialog Title"
     description="A short description provides helpful context."
     trigger={<Button>Open dialog</Button>}
-    actions={(
+    actions={
       <>
         <Dialog.Close>
-          <Button variant="soft" color="gray">Cancel</Button>
+          <Button variant="soft" color="gray">
+            Cancel
+          </Button>
         </Dialog.Close>
         <Button color="accent">Confirm</Button>
       </>
-    )}
+    }
   >
     Dialog body content goes here.
   </Dialog>
 );
 
 export const Sizes = () => (
-  <div style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
+  <div
+    style={{ display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}
+  >
     <Dialog title="Size 1" trigger={<Button size="1">Open</Button>} size="1">
       Size 1 dialog content
     </Dialog>
@@ -43,14 +47,18 @@ export const Glass = () => (
     title="Glass Dialog"
     description="A dialog with glass morphism effect."
     trigger={<Button glass>Open Glass Dialog</Button>}
-    actions={(
+    actions={
       <>
         <Dialog.Close>
-          <Button variant="soft" color="gray">Cancel</Button>
+          <Button variant="soft" color="gray">
+            Cancel
+          </Button>
         </Dialog.Close>
-        <Button glass color="accent">Confirm</Button>
+        <Button glass color="accent">
+          Confirm
+        </Button>
       </>
-    )}
+    }
   >
     This dialog demonstrates the glass morphism effect with backdrop blur,
     gradient overlays, and subtle lighting effects.
@@ -58,14 +66,43 @@ export const Glass = () => (
 );
 
 export const GlassSizes = () => (
-  <div style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
-    <Dialog glass title="Glass Size 1" trigger={<Button glass size="1">Open</Button>} size="1">
+  <div
+    style={{ display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}
+  >
+    <Dialog
+      glass
+      title="Glass Size 1"
+      trigger={
+        <Button glass size="1">
+          Open
+        </Button>
+      }
+      size="1"
+    >
       Glass dialog with size 1
     </Dialog>
-    <Dialog glass title="Glass Size 2" trigger={<Button glass size="2">Open</Button>} size="2">
+    <Dialog
+      glass
+      title="Glass Size 2"
+      trigger={
+        <Button glass size="2">
+          Open
+        </Button>
+      }
+      size="2"
+    >
       Glass dialog with size 2 (default)
     </Dialog>
-    <Dialog glass title="Glass Size 3" trigger={<Button glass size="3">Open</Button>} size="3">
+    <Dialog
+      glass
+      title="Glass Size 3"
+      trigger={
+        <Button glass size="3">
+          Open
+        </Button>
+      }
+      size="3"
+    >
       Glass dialog with size 3
     </Dialog>
   </div>
@@ -76,24 +113,31 @@ export const GlassWithActions = () => (
     glass
     title="Confirm Action"
     description="Are you sure you want to proceed with this action? This cannot be undone."
-    trigger={<Button glass color="red">Delete Item</Button>}
-    actions={(
+    trigger={
+      <Button glass color="red">
+        Delete Item
+      </Button>
+    }
+    actions={
       <>
         <Dialog.Close>
-          <Button variant="soft" color="gray">Cancel</Button>
+          <Button variant="soft" color="gray">
+            Cancel
+          </Button>
         </Dialog.Close>
         <Dialog.Close>
-          <Button glass color="red">Delete</Button>
+          <Button glass color="red">
+            Delete
+          </Button>
         </Dialog.Close>
       </>
-    )}
+    }
   >
-    <div style={{ padding: '16px 0' }}>
+    <div style={{ padding: "16px 0" }}>
       <p style={{ margin: 0 }}>
-        This action will permanently remove the item from your account.
-        All associated data will be lost.
+        This action will permanently remove the item from your account. All
+        associated data will be lost.
       </p>
     </div>
   </Dialog>
 );
-

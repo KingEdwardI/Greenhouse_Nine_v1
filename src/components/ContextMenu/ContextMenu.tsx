@@ -1,6 +1,6 @@
-import React from 'react';
-import { ContextMenu as RadixContextMenu } from '@radix-ui/themes';
-import './ContextMenu.css';
+import React from "react";
+import { ContextMenu as RadixContextMenu } from "@radix-ui/themes";
+import "./ContextMenu.css";
 
 export interface ContextMenuItemData {
   id: string;
@@ -29,19 +29,25 @@ const ContextMenuItem: React.FC<{
   onSelect?: (itemId: string) => void;
   glass?: boolean;
 }> = ({ item, onSelect, glass = false }) => {
-  const separatorClassName = ['gn-ContextMenuSeparator', glass && 'gn-ContextMenuSeparator--glass']
-    .filter(Boolean)
-    .join(' ');
-  const contentClassName = ['gn-ContextMenuContent', glass && 'gn-ContextMenuContent--glass']
-    .filter(Boolean)
-    .join(' ');
-  const itemClassName = [
-    'gn-ContextMenuItem',
-    item.destructive && 'gn-ContextMenuItem--destructive',
-    glass && 'gn-ContextMenuItem--glass',
+  const separatorClassName = [
+    "gn-ContextMenuSeparator",
+    glass && "gn-ContextMenuSeparator--glass",
   ]
     .filter(Boolean)
-    .join(' ');
+    .join(" ");
+  const contentClassName = [
+    "gn-ContextMenuContent",
+    glass && "gn-ContextMenuContent--glass",
+  ]
+    .filter(Boolean)
+    .join(" ");
+  const itemClassName = [
+    "gn-ContextMenuItem",
+    item.destructive && "gn-ContextMenuItem--destructive",
+    glass && "gn-ContextMenuItem--glass",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   if (item.separator) {
     return <RadixContextMenu.Separator className={separatorClassName} />;
@@ -56,7 +62,12 @@ const ContextMenuItem: React.FC<{
         </RadixContextMenu.SubTrigger>
         <RadixContextMenu.SubContent className={contentClassName}>
           {item.children.map((child, index) => (
-            <ContextMenuItem key={child.id || index} item={child} onSelect={onSelect} glass={glass} />
+            <ContextMenuItem
+              key={child.id || index}
+              item={child}
+              onSelect={onSelect}
+              glass={glass}
+            />
           ))}
         </RadixContextMenu.SubContent>
       </RadixContextMenu.Sub>
@@ -64,10 +75,16 @@ const ContextMenuItem: React.FC<{
   }
 
   return (
-    <RadixContextMenu.Item className={itemClassName} disabled={item.disabled} onSelect={() => onSelect?.(item.id)}>
+    <RadixContextMenu.Item
+      className={itemClassName}
+      disabled={item.disabled}
+      onSelect={() => onSelect?.(item.id)}
+    >
       {item.icon && <span className="gn-ContextMenuIcon">{item.icon}</span>}
       <span className="gn-ContextMenuLabel">{item.label}</span>
-      {item.shortcut && <span className="gn-ContextMenuShortcut">{item.shortcut}</span>}
+      {item.shortcut && (
+        <span className="gn-ContextMenuShortcut">{item.shortcut}</span>
+      )}
     </RadixContextMenu.Item>
   );
 };
@@ -79,22 +96,33 @@ export const ContextMenu: React.FC<ContextMenuProps> = ({
   disabled = false,
   glass = false,
 }) => {
-  const contentClassName = ['gn-ContextMenuContent', glass && 'gn-ContextMenuContent--glass']
+  const contentClassName = [
+    "gn-ContextMenuContent",
+    glass && "gn-ContextMenuContent--glass",
+  ]
     .filter(Boolean)
-    .join(' ');
+    .join(" ");
 
   return (
     <RadixContextMenu.Root>
-      <RadixContextMenu.Trigger disabled={disabled} className="gn-ContextMenuTrigger">
+      <RadixContextMenu.Trigger
+        disabled={disabled}
+        className="gn-ContextMenuTrigger"
+      >
         {children}
       </RadixContextMenu.Trigger>
       <RadixContextMenu.Content className={contentClassName}>
         {items.map((item, index) => (
-          <ContextMenuItem key={item.id || index} item={item} onSelect={onItemSelect} glass={glass} />
+          <ContextMenuItem
+            key={item.id || index}
+            item={item}
+            onSelect={onItemSelect}
+            glass={glass}
+          />
         ))}
       </RadixContextMenu.Content>
     </RadixContextMenu.Root>
   );
 };
 
-ContextMenu.displayName = 'ContextMenu';
+ContextMenu.displayName = "ContextMenu";

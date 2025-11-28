@@ -71,19 +71,23 @@
 }
 
 .gn-WaveSpinner--multicolor .gn-WaveSpinner__bar {
-  animation: gn-wave-animation var(--spinner-duration, 2s) ease-in-out infinite alternate,
-             gn-wave-color-flow var(--color-cycle-duration) linear infinite;
-  animation-delay: var(--animation-delay, 0s), calc(var(--animation-delay, 0s) * 0.8);
+  animation:
+    gn-wave-animation var(--spinner-duration, 2s) ease-in-out infinite alternate,
+    gn-wave-color-flow var(--color-cycle-duration) linear infinite;
+  animation-delay:
+    var(--animation-delay, 0s), calc(var(--animation-delay, 0s) * 0.8);
   box-shadow: 0 0 8px currentColor;
 }
 
 /* Color flow animation - creates flowing rainbow across bars */
 @keyframes gn-wave-color-flow {
   0% {
-    filter: hue-rotate(calc(var(--hue-offset) + 0deg)) saturate(1.3) brightness(1.1);
+    filter: hue-rotate(calc(var(--hue-offset) + 0deg)) saturate(1.3)
+      brightness(1.1);
   }
   100% {
-    filter: hue-rotate(calc(var(--hue-offset) + 360deg)) saturate(1.3) brightness(1.1);
+    filter: hue-rotate(calc(var(--hue-offset) + 360deg)) saturate(1.3)
+      brightness(1.1);
   }
 }
 

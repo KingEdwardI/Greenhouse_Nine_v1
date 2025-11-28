@@ -1,7 +1,7 @@
-import { Heading } from './Heading';
+import { Heading } from "./Heading";
 
 export default {
-  title: 'Typography - Heading'
+  title: "Typography - Heading",
 };
 
 export const Default = () => {
@@ -10,7 +10,14 @@ export const Default = () => {
 
 export const Sizes = () => {
   return (
-    <div style={{ display: 'flex', gap: '12px', alignItems: 'baseline', flexWrap: 'wrap' }}>
+    <div
+      style={{
+        display: "flex",
+        gap: "12px",
+        alignItems: "baseline",
+        flexWrap: "wrap",
+      }}
+    >
       <Heading size="3">Size 3</Heading>
       <Heading size="5">Size 5</Heading>
       <Heading size="7">Size 7</Heading>
@@ -21,7 +28,7 @@ export const Sizes = () => {
 
 export const Levels = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
       <Heading as="h1">H1</Heading>
       <Heading as="h2">H2</Heading>
       <Heading as="h3">H3</Heading>
@@ -31,5 +38,3 @@ export const Levels = () => {
     </div>
   );
 };
-
-

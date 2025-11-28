@@ -1,14 +1,11 @@
-export { Input } from './Input';
-export type { InputProps } from './Input';
+export { Input } from "./Input";
+export type { InputProps } from "./Input";
 
-export { PasswordInput } from './PasswordInput';
-export type { PasswordInputProps } from './PasswordInput';
+export { PasswordInput } from "./PasswordInput";
+export type { PasswordInputProps } from "./PasswordInput";
 
-export { NumberInput } from './NumberInput';
-export type { NumberInputProps } from './NumberInput';
+export { NumberInput } from "./NumberInput";
+export type { NumberInputProps } from "./NumberInput";
 
-export { MaskedInput } from './MaskedInput';
-export type { MaskedInputProps } from './MaskedInput';
-
-
-
+export { MaskedInput } from "./MaskedInput";
+export type { MaskedInputProps } from "./MaskedInput";

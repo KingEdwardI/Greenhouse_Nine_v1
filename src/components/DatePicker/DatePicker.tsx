@@ -1,14 +1,14 @@
-import React from 'react';
-import { Popover, TextField as RadixTextField, Button } from '@radix-ui/themes';
-import { DayPicker } from 'react-day-picker';
-import 'react-day-picker/dist/style.css';
-import './DatePicker.css';
+import React from "react";
+import { Popover, TextField as RadixTextField, Button } from "@radix-ui/themes";
+import { DayPicker } from "react-day-picker";
+import "react-day-picker/dist/style.css";
+import "./DatePicker.css";
 
 export interface DatePickerProps {
   /**
    * Radix numeric size: "1" | "2" | "3"
    */
-  size?: '1' | '2' | '3';
+  size?: "1" | "2" | "3";
   value?: Date | undefined;
   defaultValue?: Date | undefined;
   onChange?: (date: Date | undefined) => void;
@@ -22,16 +22,18 @@ function formatISO(date: Date): string {
 }
 
 export const DatePicker: React.FC<DatePickerProps> = ({
-  size = '2',
+  size = "2",
   value,
   defaultValue,
   onChange,
-  placeholder = 'Pick a date',
+  placeholder = "Pick a date",
   formatDate = formatISO,
   disabled,
 }) => {
   const isControlled = value !== undefined;
-  const [internal, setInternal] = React.useState<Date | undefined>(defaultValue);
+  const [internal, setInternal] = React.useState<Date | undefined>(
+    defaultValue
+  );
   const current = isControlled ? value : internal;
 
   const setValue = (next: Date | undefined) => {
@@ -43,24 +45,39 @@ export const DatePicker: React.FC<DatePickerProps> = ({
     <div className="gn-DatePicker">
       <Popover.Root>
         <Popover.Trigger>
-          <RadixTextField.Root size={size} disabled={disabled} readOnly value={current ? formatDate(current) : ''} placeholder={placeholder}>
+          <RadixTextField.Root
+            size={size}
+            disabled={disabled}
+            readOnly
+            value={current ? formatDate(current) : ""}
+            placeholder={placeholder}
+          >
             <RadixTextField.Slot side="right">
-              <Button size="1" variant="ghost" disabled={disabled}>📅</Button>
+              <Button size="1" variant="ghost" disabled={disabled}>
+                📅
+              </Button>
             </RadixTextField.Slot>
           </RadixTextField.Root>
         </Popover.Trigger>
-        <Popover.Content side="bottom" align="start" className="gn-DatePickerContent" style={{ width: '320px' }}>
+        <Popover.Content
+          side="bottom"
+          align="start"
+          className="gn-DatePickerContent"
+          style={{ width: "320px" }}
+        >
           <DayPicker
             mode="single"
             selected={current}
-            onSelect={(d) => setValue(d ?? undefined)}
-            style={{
-              '--rdp-accent-color': 'var(--accent-9)',
-              '--rdp-accent-color-dark': 'var(--accent-10)',
-              '--rdp-background-color': 'var(--color-panel)',
-              '--rdp-outline': '2px solid var(--accent-8)',
-              '--rdp-outline-selected': '2px solid var(--accent-9)',
-            } as React.CSSProperties}
+            onSelect={d => setValue(d ?? undefined)}
+            style={
+              {
+                "--rdp-accent-color": "var(--accent-9)",
+                "--rdp-accent-color-dark": "var(--accent-10)",
+                "--rdp-background-color": "var(--color-panel)",
+                "--rdp-outline": "2px solid var(--accent-8)",
+                "--rdp-outline-selected": "2px solid var(--accent-9)",
+              } as React.CSSProperties
+            }
           />
         </Popover.Content>
       </Popover.Root>
@@ -68,7 +85,4 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   );
 };
 
-DatePicker.displayName = 'DatePicker';
-
-
-
+DatePicker.displayName = "DatePicker";

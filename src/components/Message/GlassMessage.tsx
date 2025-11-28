@@ -6,7 +6,7 @@ import "./GlassMessage.css";
 /**
  * @deprecated Use Message component with glass prop instead.
  * GlassMessage will be removed in the next major version.
- * 
+ *
  * Migration guide:
  * - Replace <GlassMessage glassColor="primary"> with <Message glass glassColor="primary">
  * - All props remain the same
@@ -20,7 +20,13 @@ export interface GlassMessageProps {
   username?: string;
   className?: string;
   markdown?: boolean;
-  glassColor?: "primary" | "secondary" | "accent" | "success" | "info" | "warning";
+  glassColor?:
+    | "primary"
+    | "secondary"
+    | "accent"
+    | "success"
+    | "info"
+    | "warning";
 }
 
 export const GlassMessage = React.forwardRef<HTMLDivElement, GlassMessageProps>(
@@ -36,7 +42,7 @@ export const GlassMessage = React.forwardRef<HTMLDivElement, GlassMessageProps>(
       glassColor = "primary",
       ...props
     },
-    ref,
+    ref
   ) => {
     const composedClassName = [
       "gn-GlassMessage",
@@ -89,11 +95,7 @@ export const GlassMessage = React.forwardRef<HTMLDivElement, GlassMessageProps>(
           {childArray.map((child, index) => {
             if (typeof child === "string") {
               // Render string as markdown
-              return (
-                <MarkdownRenderer key={index}>
-                  {child}
-                </MarkdownRenderer>
-              );
+              return <MarkdownRenderer key={index}>{child}</MarkdownRenderer>;
             }
             // Render React element as-is
             return <React.Fragment key={index}>{child}</React.Fragment>;
@@ -124,7 +126,7 @@ export const GlassMessage = React.forwardRef<HTMLDivElement, GlassMessageProps>(
         )}
       </div>
     );
-  },
+  }
 );
 
 GlassMessage.displayName = "GlassMessage";

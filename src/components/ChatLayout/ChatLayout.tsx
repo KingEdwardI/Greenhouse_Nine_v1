@@ -68,9 +68,7 @@ export const ChatLayout = React.forwardRef<HTMLDivElement, ChatLayoutProps>(
     const composedClassName = [
       "gn-ChatLayout",
       sidebar && "gn-ChatLayout--with-sidebar",
-      sidebar &&
-        sidebarPosition === "left" &&
-        "gn-ChatLayout--sidebar-left",
+      sidebar && sidebarPosition === "left" && "gn-ChatLayout--sidebar-left",
       className,
     ]
       .filter(Boolean)
@@ -98,10 +96,7 @@ export const ChatLayout = React.forwardRef<HTMLDivElement, ChatLayoutProps>(
     const resolvedEmptyState = listEmptyState ?? emptyState;
     const resolvedAutoScroll = listAutoScroll ?? autoScroll;
 
-    const listClasses = [
-      "gn-ChatLayout__message-list",
-      listClassName,
-    ]
+    const listClasses = ["gn-ChatLayout__message-list", listClassName]
       .filter(Boolean)
       .join(" ");
 
@@ -182,9 +177,7 @@ export const ChatLayout = React.forwardRef<HTMLDivElement, ChatLayoutProps>(
             </div>
           )}
 
-          {toolbar && (
-            <div className="gn-ChatLayout__toolbar">{toolbar}</div>
-          )}
+          {toolbar && <div className="gn-ChatLayout__toolbar">{toolbar}</div>}
 
           <div className="gn-ChatLayout__messages">
             <MessageList
@@ -217,4 +210,3 @@ export const ChatLayout = React.forwardRef<HTMLDivElement, ChatLayoutProps>(
 );
 
 ChatLayout.displayName = "ChatLayout";
-

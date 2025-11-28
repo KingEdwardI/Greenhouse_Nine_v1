@@ -48,7 +48,7 @@ export const RingSpinner = React.forwardRef<HTMLDivElement, RingSpinnerProps>(
       style,
       ...props
     },
-    ref,
+    ref
   ) => {
     const composedClassName = [
       "gn-RingSpinner",
@@ -59,7 +59,7 @@ export const RingSpinner = React.forwardRef<HTMLDivElement, RingSpinnerProps>(
       .filter(Boolean)
       .join(" ");
 
-    const duration = 4.5 - (speed * 0.4);
+    const duration = 4.5 - speed * 0.4;
     const customStyles = {
       ...style,
       "--spinner-duration": `${duration}s`,
@@ -79,7 +79,7 @@ export const RingSpinner = React.forwardRef<HTMLDivElement, RingSpinnerProps>(
         <div className="gn-RingSpinner__ring" />
       </div>
     );
-  },
+  }
 );
 
 RingSpinner.displayName = "RingSpinner";

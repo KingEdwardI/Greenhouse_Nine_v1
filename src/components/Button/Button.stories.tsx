@@ -63,10 +63,15 @@ export const Glass = () => {
   return (
     <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
       <Button glass>Glass Button</Button>
-      <Button glass variant="soft">Glass Soft</Button>
-      <Button glass variant="outline">Glass Outline</Button>
-      <Button glass disabled>Glass Disabled</Button>
+      <Button glass variant="soft">
+        Glass Soft
+      </Button>
+      <Button glass variant="outline">
+        Glass Outline
+      </Button>
+      <Button glass disabled>
+        Glass Disabled
+      </Button>
     </div>
   );
 };
-

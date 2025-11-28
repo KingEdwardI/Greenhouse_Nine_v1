@@ -1,8 +1,8 @@
-import { Field } from './Field';
-import { Input, PasswordInput, NumberInput } from '../Input';
+import { Field } from "./Field";
+import { Input, PasswordInput, NumberInput } from "../Input";
 
 export default {
-  title: 'Forms - Field'
+  title: "Forms - Field",
 };
 
 export const Default = () => (
@@ -28,7 +28,3 @@ export const WithNumber = () => (
     <NumberInput defaultValue={2} min={0} max={10} />
   </Field>
 );
-
-
-
-

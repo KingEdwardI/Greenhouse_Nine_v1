@@ -21,9 +21,9 @@ export const WaveSpinner = React.forwardRef<HTMLDivElement, WaveSpinnerProps>(
       className,
       ...props
     },
-    ref,
+    ref
   ) => {
-    const duration = 4.5 - (speed * 0.4);
+    const duration = 4.5 - speed * 0.4;
 
     const composedClassName = [
       "gn-WaveSpinner",
@@ -43,12 +43,14 @@ export const WaveSpinner = React.forwardRef<HTMLDivElement, WaveSpinnerProps>(
         <div
           key={index}
           className="gn-WaveSpinner__bar"
-          style={{
-            "--spinner-duration": `${duration}s`,
-            "--animation-delay": `${index * 0.1}s`,
-            "--hue-offset": `${hueOffset}deg`,
-            ...(color && { backgroundColor: color }),
-          } as React.CSSProperties}
+          style={
+            {
+              "--spinner-duration": `${duration}s`,
+              "--animation-delay": `${index * 0.1}s`,
+              "--hue-offset": `${hueOffset}deg`,
+              ...(color && { backgroundColor: color }),
+            } as React.CSSProperties
+          }
         />
       );
     });
@@ -69,7 +71,7 @@ export const WaveSpinner = React.forwardRef<HTMLDivElement, WaveSpinnerProps>(
         {barElements}
       </div>
     );
-  },
+  }
 );
 
 WaveSpinner.displayName = "WaveSpinner";

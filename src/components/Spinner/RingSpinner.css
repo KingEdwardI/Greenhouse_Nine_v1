@@ -10,8 +10,8 @@
   --gn-spinner-thickness: 4px;
   --gn-spinner-size: 40px;
   --spinner-duration: 3.3s;
-  --color-1: #2E8B57;
-  --color-2: #007BA7;
+  --color-1: #2e8b57;
+  --color-2: #007ba7;
   --color-3: #541466;
 
   display: inline-flex;
@@ -37,7 +37,8 @@
   border-radius: 50%;
   padding: var(--gn-spinner-thickness);
   background: var(--gn-spinner-color);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -77,7 +78,8 @@
     #541466 330deg,
     #541466 360deg
   );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -111,11 +113,12 @@
     #2e8b57,
     #007ba7,
     #541466,
-    #DAA520,
+    #daa520,
     #e54709,
     #2e8b57
   );
-  animation: gn-ring-gradient-shift var(--gradient-rotation-duration) linear infinite;
+  animation: gn-ring-gradient-shift var(--gradient-rotation-duration) linear
+    infinite;
   opacity: 0.4;
 }
 
@@ -136,8 +139,8 @@
     #541466 120deg,
     transparent 120deg,
     transparent 140deg,
-    #DAA520 140deg,
-    #DAA520 160deg,
+    #daa520 140deg,
+    #daa520 160deg,
     transparent 160deg,
     transparent 180deg,
     #e54709 180deg,
@@ -156,11 +159,12 @@
     #541466 320deg,
     transparent 320deg,
     transparent 340deg,
-    #DAA520 340deg,
-    #DAA520 360deg
+    #daa520 340deg,
+    #daa520 360deg
   );
-  animation: gn-spinner-rotate var(--spinner-duration) linear infinite,
-             gn-ring-hue-cycle var(--color-cycle-duration) linear infinite;
+  animation:
+    gn-spinner-rotate var(--spinner-duration) linear infinite,
+    gn-ring-hue-cycle var(--color-cycle-duration) linear infinite;
 }
 
 /* Gradient rotation animation - shifts the gradient angle */

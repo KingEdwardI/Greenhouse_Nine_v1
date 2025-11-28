@@ -6,7 +6,7 @@ export default {
   title: "Messaging - Message",
 };
 
-export const Default: Story<MessageProps> = (args) => (
+export const Default: Story<MessageProps> = args => (
   <div style={{ padding: "20px", background: "var(--gray-1)" }}>
     <Message {...args}>Hello, this is a test message!</Message>
   </div>
@@ -202,19 +202,37 @@ export const GlassVariants: Story = () => (
     <Message variant="user" timestamp="2:30 PM" glass>
       Default glass message
     </Message>
-    <Message variant="assistant" timestamp="2:30 PM" username="Assistant" glass glassColor="primary">
+    <Message
+      variant="assistant"
+      timestamp="2:30 PM"
+      username="Assistant"
+      glass
+      glassColor="primary"
+    >
       Primary glass variant (Sea Green tint)
     </Message>
     <Message variant="user" timestamp="2:31 PM" glass glassColor="secondary">
       Secondary glass variant (Cerulean tint)
     </Message>
-    <Message variant="assistant" timestamp="2:31 PM" username="Assistant" glass glassColor="accent">
+    <Message
+      variant="assistant"
+      timestamp="2:31 PM"
+      username="Assistant"
+      glass
+      glassColor="accent"
+    >
       Accent glass variant (Purple tint)
     </Message>
     <Message variant="user" timestamp="2:32 PM" glass glassColor="success">
       Success glass variant (Mint tint)
     </Message>
-    <Message variant="assistant" timestamp="2:32 PM" username="Assistant" glass glassColor="info">
+    <Message
+      variant="assistant"
+      timestamp="2:32 PM"
+      username="Assistant"
+      glass
+      glassColor="info"
+    >
       Info glass variant (Blue tint)
     </Message>
     <Message variant="user" timestamp="2:33 PM" glass glassColor="warning">
@@ -227,7 +245,8 @@ export const GlassConversation: Story = () => (
   <div
     style={{
       padding: "20px",
-      background: "linear-gradient(135deg, var(--gray-2) 0%, var(--gray-1) 100%)",
+      background:
+        "linear-gradient(135deg, var(--gray-2) 0%, var(--gray-1) 100%)",
       display: "flex",
       flexDirection: "column",
       gap: "12px",
@@ -237,14 +256,29 @@ export const GlassConversation: Story = () => (
     <Message variant="user" timestamp="2:30 PM" status="read" glass>
       **Hey, check out this new glass effect!**
     </Message>
-    <Message variant="assistant" timestamp="2:30 PM" username="Assistant" glass glassColor="primary">
-      Wow! The glass effect looks amazing with the obsidian dark theme. Notice how it has that subtle shimmer?
+    <Message
+      variant="assistant"
+      timestamp="2:30 PM"
+      username="Assistant"
+      glass
+      glassColor="primary"
+    >
+      Wow! The glass effect looks amazing with the obsidian dark theme. Notice
+      how it has that subtle shimmer?
     </Message>
     <Message variant="user" timestamp="2:31 PM" status="read" glass>
-      Yes! And the text shadows make everything readable even with the transparency.
+      Yes! And the text shadows make everything readable even with the
+      transparency.
     </Message>
-    <Message variant="assistant" timestamp="2:31 PM" username="Assistant" glass glassColor="primary">
-      The unified architecture means all components use the same token system. Much cleaner and more maintainable!
+    <Message
+      variant="assistant"
+      timestamp="2:31 PM"
+      username="Assistant"
+      glass
+      glassColor="primary"
+    >
+      The unified architecture means all components use the same token system.
+      Much cleaner and more maintainable!
     </Message>
   </div>
 );
@@ -260,7 +294,14 @@ export const MixedContent: Story = () => (
     }}
   >
     <Message variant="assistant" timestamp="2:30 PM" username="Assistant">
-      <div style={{ padding: "10px", background: "var(--blue-4)", borderRadius: "4px", marginBottom: "8px" }}>
+      <div
+        style={{
+          padding: "10px",
+          background: "var(--blue-4)",
+          borderRadius: "4px",
+          marginBottom: "8px",
+        }}
+      >
         Custom Component Header
       </div>
       {`# Some regular markdown
@@ -270,12 +311,21 @@ export const MixedContent: Story = () => (
 - **Bold** and *italic* work too
 
 Here's some \`inline code\` as well.`}
-      <div style={{ padding: "10px", background: "var(--green-4)", borderRadius: "4px", marginTop: "8px" }}>
+      <div
+        style={{
+          padding: "10px",
+          background: "var(--green-4)",
+          borderRadius: "4px",
+          marginTop: "8px",
+        }}
+      >
         Custom Component Footer
       </div>
     </Message>
     <Message variant="user" timestamp="2:31 PM">
-      <button style={{ padding: "8px 16px", marginBottom: "8px", cursor: "pointer" }}>
+      <button
+        style={{ padding: "8px 16px", marginBottom: "8px", cursor: "pointer" }}
+      >
         Click me!
       </button>
       {`You can also mix components with markdown in user messages:
@@ -286,4 +336,3 @@ Here's some \`inline code\` as well.`}
     </Message>
   </div>
 );
-

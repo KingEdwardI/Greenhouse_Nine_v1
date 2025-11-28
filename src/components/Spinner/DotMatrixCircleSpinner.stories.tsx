@@ -7,7 +7,7 @@ export default {
   title: "Feedback - Dot Matrix Circle Spinner",
 };
 
-export const Default: Story<DotMatrixCircleSpinnerProps> = (args) => (
+export const Default: Story<DotMatrixCircleSpinnerProps> = args => (
   <div style={{ padding: "40px", background: "var(--gray-1)" }}>
     <DotMatrixCircleSpinner {...args} />
   </div>
@@ -57,19 +57,25 @@ export const Sizes: Story = () => (
   >
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner size="sm" />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         Small
       </p>
     </div>
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner size="md" />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         Medium
       </p>
     </div>
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner size="lg" />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         Large
       </p>
     </div>
@@ -89,7 +95,9 @@ export const Colors: Story = () => (
   >
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner color={colors.primary} />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         Primary
       </p>
       <p style={{ fontSize: "12px", color: "var(--gray-10)" }}>
@@ -98,7 +106,9 @@ export const Colors: Story = () => (
     </div>
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner color={colors.secondary} />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         Secondary
       </p>
       <p style={{ fontSize: "12px", color: "var(--gray-10)" }}>
@@ -107,7 +117,9 @@ export const Colors: Story = () => (
     </div>
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner color={colors.accent} />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         Accent
       </p>
       <p style={{ fontSize: "12px", color: "var(--gray-10)" }}>
@@ -116,7 +128,9 @@ export const Colors: Story = () => (
     </div>
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner color={colors.warning} />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         Warning
       </p>
       <p style={{ fontSize: "12px", color: "var(--gray-10)" }}>
@@ -125,7 +139,9 @@ export const Colors: Story = () => (
     </div>
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner color={colors.danger} />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         Danger
       </p>
       <p style={{ fontSize: "12px", color: "var(--gray-10)" }}>
@@ -134,16 +150,18 @@ export const Colors: Story = () => (
     </div>
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner color={colors.info} />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         Info
       </p>
-      <p style={{ fontSize: "12px", color: "var(--gray-10)" }}>
-        {colors.info}
-      </p>
+      <p style={{ fontSize: "12px", color: "var(--gray-10)" }}>{colors.info}</p>
     </div>
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner color={colors.success} />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         Success
       </p>
       <p style={{ fontSize: "12px", color: "var(--gray-10)" }}>
@@ -165,25 +183,33 @@ export const Speeds: Story = () => (
   >
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner speed={2} color={colors.primary} />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         Slow (speed: 2)
       </p>
     </div>
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner speed={5} color={colors.secondary} />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         Normal (speed: 5)
       </p>
     </div>
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner speed={8} color={colors.accent} />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         Fast (speed: 8)
       </p>
     </div>
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner speed={10} color={colors.warning} />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         Very Fast (speed: 10)
       </p>
     </div>
@@ -202,25 +228,33 @@ export const Dots: Story = () => (
   >
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner dots={6} color={colors.primary} />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         6 dots
       </p>
     </div>
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner dots={8} color={colors.secondary} />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         8 dots (default)
       </p>
     </div>
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner dots={10} color={colors.accent} />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         10 dots
       </p>
     </div>
     <div style={{ textAlign: "center" }}>
       <DotMatrixCircleSpinner dots={12} color={colors.warning} />
-      <p style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}>
+      <p
+        style={{ marginTop: "12px", fontSize: "14px", color: "var(--gray-11)" }}
+      >
         12 dots
       </p>
     </div>

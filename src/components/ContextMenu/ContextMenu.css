@@ -16,7 +16,11 @@
 .gn-ContextMenuContent--glass {
   position: relative;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.02) 65%),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.14) 0%,
+      rgba(255, 255, 255, 0.02) 65%
+    ),
     var(--glass-surface, rgba(0, 0, 0, 0.28));
   border: 1px solid var(--glass-border, rgba(52, 52, 52, 0.42));
   border-radius: var(--radius-4);
@@ -30,11 +34,15 @@
 }
 
 .gn-ContextMenuContent--glass::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 1px;
   border-radius: inherit;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15), transparent 70%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    transparent 70%
+  );
   pointer-events: none;
   opacity: 0.9;
 }
@@ -59,7 +67,9 @@
   text-shadow:
     0 1px 2px rgba(0, 0, 0, 0.4),
     0 0 6px rgba(0, 0, 0, 0.25);
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
 }
 
 .gn-ContextMenuItem:hover {
@@ -76,7 +86,7 @@
 }
 
 .gn-ContextMenuItem--glass:focus-visible,
-.gn-ContextMenuContent--glass .gn-ContextMenuItem[data-state='open'] {
+.gn-ContextMenuContent--glass .gn-ContextMenuItem[data-state="open"] {
   background-color: rgba(255, 255, 255, 0.13);
   color: var(--accent-4);
 }
@@ -151,7 +161,7 @@
 }
 
 .gn-ContextMenuItem[data-state="open"]::after {
-  content: '›';
+  content: "›";
   margin-left: auto;
   font-size: var(--font-size-3);
   color: inherit;
@@ -181,7 +191,7 @@
     min-width: 180px;
     max-width: 90vw;
   }
-  
+
   .gn-ContextMenuItem {
     padding: var(--space-3) var(--space-3);
     font-size: var(--font-size-3);

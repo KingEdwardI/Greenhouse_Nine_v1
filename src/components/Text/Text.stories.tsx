@@ -1,7 +1,7 @@
-import { Text } from './Text';
+import { Text } from "./Text";
 
 export default {
-  title: 'Typography - Text'
+  title: "Typography - Text",
 };
 
 export const Default = () => {
@@ -10,7 +10,14 @@ export const Default = () => {
 
 export const Sizes = () => {
   return (
-    <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+    <div
+      style={{
+        display: "flex",
+        gap: "12px",
+        alignItems: "center",
+        flexWrap: "wrap",
+      }}
+    >
       <Text size="1">Size 1</Text>
       <Text size="2">Size 2 (default)</Text>
       <Text size="3">Size 3</Text>
@@ -22,7 +29,14 @@ export const Sizes = () => {
 
 export const Weights = () => {
   return (
-    <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+    <div
+      style={{
+        display: "flex",
+        gap: "12px",
+        alignItems: "center",
+        flexWrap: "wrap",
+      }}
+    >
       <Text weight="light">Light</Text>
       <Text weight="regular">Regular</Text>
       <Text weight="medium">Medium</Text>
@@ -30,5 +44,3 @@ export const Weights = () => {
     </div>
   );
 };
-
-

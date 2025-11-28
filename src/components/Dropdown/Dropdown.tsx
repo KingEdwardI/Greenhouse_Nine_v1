@@ -1,8 +1,8 @@
-import React from 'react';
-import { DropdownMenu as RadixDropdown } from '@radix-ui/themes';
-import { Button as DSButton } from '../Button';
-import type { ButtonProps } from '../Button';
-import './Dropdown.css';
+import React from "react";
+import { DropdownMenu as RadixDropdown } from "@radix-ui/themes";
+import { Button as DSButton } from "../Button";
+import type { ButtonProps } from "../Button";
+import "./Dropdown.css";
 
 export interface DropdownItem {
   label: string;
@@ -16,15 +16,18 @@ export interface DropdownSection {
   items: DropdownItem[];
 }
 
-export interface DropdownProps extends Omit<React.ComponentPropsWithoutRef<typeof RadixDropdown.Root>, 'children'> {
+export interface DropdownProps extends Omit<
+  React.ComponentPropsWithoutRef<typeof RadixDropdown.Root>,
+  "children"
+> {
   /**
    * Radix numeric size: "1" | "2" | "3" | "4" - applied to the trigger button
    */
-  size?: ButtonProps['size'];
+  size?: ButtonProps["size"];
   label: React.ReactNode;
   sections: DropdownSection[];
-  align?: 'start' | 'center' | 'end';
-  side?: 'top' | 'right' | 'bottom' | 'left';
+  align?: "start" | "center" | "end";
+  side?: "top" | "right" | "bottom" | "left";
   sideOffset?: number;
   /**
    * Enable glass morphism treatment for the trigger + content surface
@@ -33,21 +36,21 @@ export interface DropdownProps extends Omit<React.ComponentPropsWithoutRef<typeo
 }
 
 export const Dropdown: React.FC<DropdownProps> = ({
-  size = '2',
+  size = "2",
   label,
   sections,
-  align = 'start',
-  side = 'bottom',
+  align = "start",
+  side = "bottom",
   sideOffset = 4,
   glass = false,
   ...props
 }) => {
   const contentClassName = [
-    'dropdown-content',
-    glass && 'dropdown-content--glass',
+    "dropdown-content",
+    glass && "dropdown-content--glass",
   ]
     .filter(Boolean)
-    .join(' ');
+    .join(" ");
 
   return (
     <RadixDropdown.Root {...props}>
@@ -92,6 +95,4 @@ export const Dropdown: React.FC<DropdownProps> = ({
   );
 };
 
-Dropdown.displayName = 'Dropdown';
-
-
+Dropdown.displayName = "Dropdown";

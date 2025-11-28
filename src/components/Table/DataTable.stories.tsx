@@ -6,11 +6,7 @@ export default {
 
 export const Basic = () => (
   <DataTable
-    headers={[
-      { label: "Name" },
-      { label: "Role" },
-      { label: "Status" },
-    ]}
+    headers={[{ label: "Name" }, { label: "Role" }, { label: "Status" }]}
     rows={[
       ["Alice Johnson", "Developer", "Active"],
       ["Bob Smith", "Designer", "Active"],
@@ -152,11 +148,7 @@ export const StickyHeader = () => (
 
 export const GhostVariant = () => (
   <DataTable
-    headers={[
-      { label: "Name" },
-      { label: "Role" },
-      { label: "Status" },
-    ]}
+    headers={[{ label: "Name" }, { label: "Role" }, { label: "Status" }]}
     rows={[
       ["Alice Johnson", "Developer", "Active"],
       ["Bob Smith", "Designer", "Active"],
@@ -193,11 +185,7 @@ export const GlassEffect = () => (
 
 export const SmallSize = () => (
   <DataTable
-    headers={[
-      { label: "Code" },
-      { label: "Name" },
-      { label: "Type" },
-    ]}
+    headers={[{ label: "Code" }, { label: "Name" }, { label: "Type" }]}
     rows={[
       ["JS", "JavaScript", "Language"],
       ["TS", "TypeScript", "Language"],
@@ -209,11 +197,7 @@ export const SmallSize = () => (
 
 export const LargeSize = () => (
   <DataTable
-    headers={[
-      { label: "Title" },
-      { label: "Author" },
-      { label: "Year" },
-    ]}
+    headers={[{ label: "Title" }, { label: "Author" }, { label: "Year" }]}
     rows={[
       ["The Pragmatic Programmer", "Hunt & Thomas", "1999"],
       ["Clean Code", "Robert Martin", "2008"],
@@ -225,85 +209,103 @@ export const LargeSize = () => (
 
 export const WithReactNodes = () => (
   <DataTable
-    headers={[
-      { label: "User" },
-      { label: "Status" },
-      { label: "Actions" },
-    ]}
+    headers={[{ label: "User" }, { label: "Status" }, { label: "Actions" }]}
     rows={[
       [
-        <div key="user1" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-          <div style={{
-            width: "32px",
-            height: "32px",
-            borderRadius: "50%",
-            background: "var(--accent-9)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "white",
-            fontWeight: "bold"
-          }}>
+        <div
+          key="user1"
+          style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
+        >
+          <div
+            style={{
+              width: "32px",
+              height: "32px",
+              borderRadius: "50%",
+              background: "var(--accent-9)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "white",
+              fontWeight: "bold",
+            }}
+          >
             A
           </div>
           <span>Alice Johnson</span>
         </div>,
-        <span key="status1" style={{
-          padding: "0.25rem 0.5rem",
-          borderRadius: "var(--radius-2)",
-          background: "var(--green-9)",
-          color: "white",
-          fontSize: "0.75rem"
-        }}>
+        <span
+          key="status1"
+          style={{
+            padding: "0.25rem 0.5rem",
+            borderRadius: "var(--radius-2)",
+            background: "var(--green-9)",
+            color: "white",
+            fontSize: "0.75rem",
+          }}
+        >
           Active
         </span>,
-        <button key="action1" style={{
-          padding: "0.25rem 0.75rem",
-          borderRadius: "var(--radius-2)",
-          background: "var(--accent-9)",
-          color: "white",
-          border: "none",
-          cursor: "pointer"
-        }}>
+        <button
+          key="action1"
+          style={{
+            padding: "0.25rem 0.75rem",
+            borderRadius: "var(--radius-2)",
+            background: "var(--accent-9)",
+            color: "white",
+            border: "none",
+            cursor: "pointer",
+          }}
+        >
           Edit
-        </button>
+        </button>,
       ],
       [
-        <div key="user2" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-          <div style={{
-            width: "32px",
-            height: "32px",
-            borderRadius: "50%",
-            background: "var(--accent-9)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "white",
-            fontWeight: "bold"
-          }}>
+        <div
+          key="user2"
+          style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
+        >
+          <div
+            style={{
+              width: "32px",
+              height: "32px",
+              borderRadius: "50%",
+              background: "var(--accent-9)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "white",
+              fontWeight: "bold",
+            }}
+          >
             B
           </div>
           <span>Bob Smith</span>
         </div>,
-        <span key="status2" style={{
-          padding: "0.25rem 0.5rem",
-          borderRadius: "var(--radius-2)",
-          background: "var(--gray-9)",
-          color: "white",
-          fontSize: "0.75rem"
-        }}>
+        <span
+          key="status2"
+          style={{
+            padding: "0.25rem 0.5rem",
+            borderRadius: "var(--radius-2)",
+            background: "var(--gray-9)",
+            color: "white",
+            fontSize: "0.75rem",
+          }}
+        >
           Inactive
         </span>,
-        <button key="action2" style={{
-          padding: "0.25rem 0.75rem",
-          borderRadius: "var(--radius-2)",
-          background: "var(--accent-9)",
-          color: "white",
-          border: "none",
-          cursor: "pointer"
-        }}>
+        <button
+          key="action2"
+          style={{
+            padding: "0.25rem 0.75rem",
+            borderRadius: "var(--radius-2)",
+            background: "var(--accent-9)",
+            color: "white",
+            border: "none",
+            cursor: "pointer",
+          }}
+        >
           Edit
-        </button>
+        </button>,
       ],
     ]}
   />

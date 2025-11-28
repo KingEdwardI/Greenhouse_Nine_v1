@@ -1,18 +1,28 @@
 /* CSS Reset with design token integration */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: var(--default-font-family, 'FiraCode Mono', 'Fira Code', Monaco, Consolas, monospace);
+  font-family: var(
+    --default-font-family,
+    "FiraCode Mono",
+    "Fira Code",
+    Monaco,
+    Consolas,
+    monospace
+  );
   background-color: var(--color-background);
   color: var(--gray-12);
   line-height: 1.5;
@@ -35,7 +45,8 @@ button {
 }
 
 /* Remove default list styles */
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -46,7 +57,12 @@ a {
 }
 
 /* Ensure consistent heading styles */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   margin: 0;
 }

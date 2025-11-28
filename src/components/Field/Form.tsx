@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
 
 export interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {
   onSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
   preventDefault?: boolean;
 }
 
-export const Form: React.FC<FormProps> = ({ onSubmit, preventDefault = true, children, ...props }) => {
+export const Form: React.FC<FormProps> = ({
+  onSubmit,
+  preventDefault = true,
+  children,
+  ...props
+}) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     if (preventDefault) event.preventDefault();
     onSubmit?.(event);
@@ -18,7 +23,4 @@ export const Form: React.FC<FormProps> = ({ onSubmit, preventDefault = true, chi
   );
 };
 
-Form.displayName = 'Form';
-
-
-
+Form.displayName = "Form";

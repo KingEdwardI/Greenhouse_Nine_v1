@@ -47,10 +47,10 @@ export const DotMatrixSpiralSpinner = React.forwardRef<
       className,
       ...props
     },
-    ref,
+    ref
   ) => {
     // Calculate duration based on speed (1-10 scale)
-    const duration = 4.5 - (speed * 0.4);
+    const duration = 4.5 - speed * 0.4;
 
     const composedClassName = [
       "gn-DotMatrixSpiralSpinner",
@@ -72,7 +72,7 @@ export const DotMatrixSpiralSpinner = React.forwardRef<
       const radius = t * maxRadius;
 
       // Delay based on direction
-      const baseDelay = direction === "outward" ? t : (1 - t);
+      const baseDelay = direction === "outward" ? t : 1 - t;
       const delay = baseDelay * duration;
 
       // For multicolor, calculate hue offset based on position along spiral
@@ -82,14 +82,16 @@ export const DotMatrixSpiralSpinner = React.forwardRef<
         <div
           key={index}
           className="gn-DotMatrixSpiralSpinner__dot"
-          style={{
-            "--dot-color": color,
-            "--animation-delay": `${delay}s`,
-            "--animation-duration": `${duration}s`,
-            "--spiral-angle": `${angle}rad`,
-            "--spiral-radius": radius,
-            "--hue-offset": `${hueOffset}deg`,
-          } as React.CSSProperties}
+          style={
+            {
+              "--dot-color": color,
+              "--animation-delay": `${delay}s`,
+              "--animation-duration": `${duration}s`,
+              "--spiral-angle": `${angle}rad`,
+              "--spiral-radius": radius,
+              "--hue-offset": `${hueOffset}deg`,
+            } as React.CSSProperties
+          }
         />
       );
     });
@@ -105,7 +107,7 @@ export const DotMatrixSpiralSpinner = React.forwardRef<
         {dotElements}
       </div>
     );
-  },
+  }
 );
 
 DotMatrixSpiralSpinner.displayName = "DotMatrixSpiralSpinner";

@@ -93,18 +93,22 @@ export const DataTable = React.forwardRef<HTMLTableElement, DataTableProps>(
           </RadixTable.Header>
 
           <RadixTable.Body>
-            {rows.map((row: Array<string | React.ReactNode>, rowIndex: number) => (
-              <RadixTable.Row key={rowIndex}>
-                {row.map((cell: string | React.ReactNode, cellIndex: number) => (
-                  <RadixTable.Cell
-                    key={cellIndex}
-                    align={headers[cellIndex]?.align || "left"}
-                  >
-                    {cell}
-                  </RadixTable.Cell>
-                ))}
-              </RadixTable.Row>
-            ))}
+            {rows.map(
+              (row: Array<string | React.ReactNode>, rowIndex: number) => (
+                <RadixTable.Row key={rowIndex}>
+                  {row.map(
+                    (cell: string | React.ReactNode, cellIndex: number) => (
+                      <RadixTable.Cell
+                        key={cellIndex}
+                        align={headers[cellIndex]?.align || "left"}
+                      >
+                        {cell}
+                      </RadixTable.Cell>
+                    )
+                  )}
+                </RadixTable.Row>
+              )
+            )}
           </RadixTable.Body>
         </RadixTable.Root>
       </div>

@@ -86,15 +86,20 @@
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 /* Glass variants using token system */
 .gn-Message--glass .gn-Message__bubble {
   /* Glass effect is handled by Card's glass prop */
   /* Additional message-specific glass styling */
-  text-shadow: 
+  text-shadow:
     0 1px 2px rgba(0, 0, 0, 0.4),
     0 0 8px rgba(0, 0, 0, 0.2);
 }
@@ -109,121 +114,145 @@
 
 /* Glass color variants - using token-based approach */
 .gn-Message--glass-primary .gn-Message__bubble {
-  background: 
-    linear-gradient(135deg,
+  background:
+    linear-gradient(
+      135deg,
       rgba(46, 139, 87, 0.15) 0%,
       rgba(46, 139, 87, 0.08) 50%,
-      transparent 100%),
+      transparent 100%
+    ),
     var(--glass-surface) !important;
   border-color: rgba(46, 139, 87, 0.3) !important;
 }
 
 .gn-Message--glass-primary.gn-Message--user .gn-Message__bubble {
-  background: 
-    linear-gradient(135deg,
+  background:
+    linear-gradient(
+      135deg,
       rgba(46, 139, 87, 0.25) 0%,
       rgba(46, 139, 87, 0.12) 50%,
-      transparent 100%),
+      transparent 100%
+    ),
     var(--glass-surface-strong) !important;
   border-color: rgba(46, 139, 87, 0.4) !important;
 }
 
 .gn-Message--glass-secondary .gn-Message__bubble {
-  background: 
-    linear-gradient(135deg,
+  background:
+    linear-gradient(
+      135deg,
       rgba(0, 123, 167, 0.15) 0%,
       rgba(0, 123, 167, 0.08) 50%,
-      transparent 100%),
+      transparent 100%
+    ),
     var(--glass-surface) !important;
   border-color: rgba(0, 123, 167, 0.3) !important;
 }
 
 .gn-Message--glass-secondary.gn-Message--user .gn-Message__bubble {
-  background: 
-    linear-gradient(135deg,
+  background:
+    linear-gradient(
+      135deg,
       rgba(0, 123, 167, 0.25) 0%,
       rgba(0, 123, 167, 0.12) 50%,
-      transparent 100%),
+      transparent 100%
+    ),
     var(--glass-surface-strong) !important;
   border-color: rgba(0, 123, 167, 0.4) !important;
 }
 
 .gn-Message--glass-accent .gn-Message__bubble {
-  background: 
-    linear-gradient(135deg,
+  background:
+    linear-gradient(
+      135deg,
       rgba(84, 20, 102, 0.15) 0%,
       rgba(84, 20, 102, 0.08) 50%,
-      transparent 100%),
+      transparent 100%
+    ),
     var(--glass-surface) !important;
   border-color: rgba(84, 20, 102, 0.3) !important;
 }
 
 .gn-Message--glass-accent.gn-Message--user .gn-Message__bubble {
-  background: 
-    linear-gradient(135deg,
+  background:
+    linear-gradient(
+      135deg,
       rgba(84, 20, 102, 0.25) 0%,
       rgba(84, 20, 102, 0.12) 50%,
-      transparent 100%),
+      transparent 100%
+    ),
     var(--glass-surface-strong) !important;
   border-color: rgba(84, 20, 102, 0.4) !important;
 }
 
 .gn-Message--glass-success .gn-Message__bubble {
-  background: 
-    linear-gradient(135deg,
+  background:
+    linear-gradient(
+      135deg,
       rgba(147, 233, 190, 0.15) 0%,
       rgba(147, 233, 190, 0.08) 50%,
-      transparent 100%),
+      transparent 100%
+    ),
     var(--glass-surface) !important;
   border-color: rgba(147, 233, 190, 0.3) !important;
 }
 
 .gn-Message--glass-success.gn-Message--user .gn-Message__bubble {
-  background: 
-    linear-gradient(135deg,
+  background:
+    linear-gradient(
+      135deg,
       rgba(147, 233, 190, 0.25) 0%,
       rgba(147, 233, 190, 0.12) 50%,
-      transparent 100%),
+      transparent 100%
+    ),
     var(--glass-surface-strong) !important;
   border-color: rgba(147, 233, 190, 0.4) !important;
 }
 
 .gn-Message--glass-info .gn-Message__bubble {
-  background: 
-    linear-gradient(135deg,
+  background:
+    linear-gradient(
+      135deg,
       rgba(35, 59, 163, 0.15) 0%,
       rgba(35, 59, 163, 0.08) 50%,
-      transparent 100%),
+      transparent 100%
+    ),
     var(--glass-surface) !important;
   border-color: rgba(35, 59, 163, 0.3) !important;
 }
 
 .gn-Message--glass-info.gn-Message--user .gn-Message__bubble {
-  background: 
-    linear-gradient(135deg,
+  background:
+    linear-gradient(
+      135deg,
       rgba(35, 59, 163, 0.25) 0%,
       rgba(35, 59, 163, 0.12) 50%,
-      transparent 100%),
+      transparent 100%
+    ),
     var(--glass-surface-strong) !important;
   border-color: rgba(35, 59, 163, 0.4) !important;
 }
 
 .gn-Message--glass-warning .gn-Message__bubble {
-  background: 
-    linear-gradient(135deg,
+  background:
+    linear-gradient(
+      135deg,
       rgba(218, 165, 32, 0.15) 0%,
       rgba(218, 165, 32, 0.08) 50%,
-      transparent 100%),
+      transparent 100%
+    ),
     var(--glass-surface) !important;
   border-color: rgba(218, 165, 32, 0.3) !important;
 }
 
 .gn-Message--glass-warning.gn-Message--user .gn-Message__bubble {
-  background: 
-    linear-gradient(135deg,
+  background:
+    linear-gradient(
+      135deg,
       rgba(218, 165, 32, 0.25) 0%,
       rgba(218, 165, 32, 0.12) 50%,
-      transparent 100%),
+      transparent 100%
+    ),
     var(--glass-surface-strong) !important;
   border-color: rgba(218, 165, 32, 0.4) !important;
 }

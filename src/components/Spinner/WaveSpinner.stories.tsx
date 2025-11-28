@@ -6,7 +6,7 @@ export default {
   title: "Feedback - Wave Spinner",
 };
 
-export const Default: Story<WaveSpinnerProps> = (args) => (
+export const Default: Story<WaveSpinnerProps> = args => (
   <div
     style={{
       padding: "40px",
@@ -57,9 +57,7 @@ export const Sizes: Story = () => (
     }}
   >
     <div style={{ textAlign: "center" }}>
-      <div style={{ marginBottom: "12px", color: "var(--gray-12)" }}>
-        Small
-      </div>
+      <div style={{ marginBottom: "12px", color: "var(--gray-12)" }}>Small</div>
       <WaveSpinner size="sm" />
     </div>
     <div style={{ textAlign: "center" }}>
@@ -211,7 +209,9 @@ export const Speeds: Story = () => (
     }}
   >
     <div style={{ textAlign: "center" }}>
-      <div style={{ marginBottom: "12px", color: "var(--gray-12)" }}>Slow (Speed 2)</div>
+      <div style={{ marginBottom: "12px", color: "var(--gray-12)" }}>
+        Slow (Speed 2)
+      </div>
       <WaveSpinner speed={2} color="#007BA7" />
     </div>
     <div style={{ textAlign: "center" }}>
@@ -221,7 +221,9 @@ export const Speeds: Story = () => (
       <WaveSpinner speed={5} color="#007BA7" />
     </div>
     <div style={{ textAlign: "center" }}>
-      <div style={{ marginBottom: "12px", color: "var(--gray-12)" }}>Fast (Speed 8)</div>
+      <div style={{ marginBottom: "12px", color: "var(--gray-12)" }}>
+        Fast (Speed 8)
+      </div>
       <WaveSpinner speed={8} color="#007BA7" />
     </div>
   </div>

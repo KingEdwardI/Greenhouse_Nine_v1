@@ -47,10 +47,10 @@ export const DotMatrixCircleSpinner = React.forwardRef<
       className,
       ...props
     },
-    ref,
+    ref
   ) => {
     // Calculate duration based on speed (1-10 scale)
-    const duration = 4.5 - (speed * 0.4);
+    const duration = 4.5 - speed * 0.4;
 
     const composedClassName = [
       "gn-DotMatrixCircleSpinner",
@@ -73,13 +73,15 @@ export const DotMatrixCircleSpinner = React.forwardRef<
         <div
           key={index}
           className="gn-DotMatrixCircleSpinner__dot"
-          style={{
-            "--dot-color": color,
-            "--animation-delay": `${delay}s`,
-            "--animation-duration": `${duration}s`,
-            "--angle": `${angle}rad`,
-            "--hue-offset": `${hueOffset}deg`,
-          } as React.CSSProperties}
+          style={
+            {
+              "--dot-color": color,
+              "--animation-delay": `${delay}s`,
+              "--animation-duration": `${duration}s`,
+              "--angle": `${angle}rad`,
+              "--hue-offset": `${hueOffset}deg`,
+            } as React.CSSProperties
+          }
         />
       );
     });
@@ -95,7 +97,7 @@ export const DotMatrixCircleSpinner = React.forwardRef<
         {dotElements}
       </div>
     );
-  },
+  }
 );
 
 DotMatrixCircleSpinner.displayName = "DotMatrixCircleSpinner";

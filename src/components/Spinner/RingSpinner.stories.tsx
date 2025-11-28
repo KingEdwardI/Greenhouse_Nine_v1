@@ -6,7 +6,7 @@ export default {
   title: "Feedback - Ring Spinner",
 };
 
-export const Default: Story<RingSpinnerProps> = (args) => (
+export const Default: Story<RingSpinnerProps> = args => (
   <div
     style={{
       padding: "40px",
@@ -123,9 +123,7 @@ export const Colors: Story = () => (
       }}
     >
       <RingSpinner color="#007BA7" />
-      <div style={{ color: "var(--gray-11)", fontSize: "14px" }}>
-        Secondary
-      </div>
+      <div style={{ color: "var(--gray-11)", fontSize: "14px" }}>Secondary</div>
       <div style={{ color: "var(--gray-9)", fontSize: "12px" }}>#007BA7</div>
     </div>
     <div

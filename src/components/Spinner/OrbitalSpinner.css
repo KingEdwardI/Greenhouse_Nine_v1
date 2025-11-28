@@ -3,10 +3,10 @@
   --spinner-size: 48px;
   --dot-size: 8px;
   --spinner-duration: 2s;
-  --color-1: #2E8B57;
-  --color-2: #007BA7;
+  --color-1: #2e8b57;
+  --color-2: #007ba7;
   --color-3: #541466;
-  --color-4: #DAA520;
+  --color-4: #daa520;
   --color-5: #93e9be;
 
   display: inline-flex;
@@ -85,8 +85,9 @@
 }
 
 .gn-OrbitalSpinner--multicolor .gn-OrbitalSpinner__dot {
-  animation: gn-dot-pulse var(--spinner-duration) ease-in-out infinite,
-             gn-orbital-hue-cycle var(--color-cycle-duration) linear infinite;
+  animation:
+    gn-dot-pulse var(--spinner-duration) ease-in-out infinite,
+    gn-orbital-hue-cycle var(--color-cycle-duration) linear infinite;
 }
 
 .gn-OrbitalSpinner--multicolor .gn-OrbitalSpinner__dot--1 {
@@ -94,15 +95,20 @@
 }
 
 .gn-OrbitalSpinner--multicolor .gn-OrbitalSpinner__dot--2 {
-  animation-delay: calc(var(--spinner-duration) * 0.25), calc(var(--color-cycle-duration) * 0.25);
+  animation-delay:
+    calc(var(--spinner-duration) * 0.25),
+    calc(var(--color-cycle-duration) * 0.25);
 }
 
 .gn-OrbitalSpinner--multicolor .gn-OrbitalSpinner__dot--3 {
-  animation-delay: calc(var(--spinner-duration) * 0.5), calc(var(--color-cycle-duration) * 0.5);
+  animation-delay:
+    calc(var(--spinner-duration) * 0.5), calc(var(--color-cycle-duration) * 0.5);
 }
 
 .gn-OrbitalSpinner--multicolor .gn-OrbitalSpinner__dot--4 {
-  animation-delay: calc(var(--spinner-duration) * 0.75), calc(var(--color-cycle-duration) * 0.75);
+  animation-delay:
+    calc(var(--spinner-duration) * 0.75),
+    calc(var(--color-cycle-duration) * 0.75);
 }
 
 /* Hue rotation animation - creates rainbow trail effect */
@@ -126,12 +132,15 @@
 }
 
 @keyframes gn-dot-pulse {
-  0%, 100% {
-    transform: translate(-50%, -50%) translateY(calc(var(--spinner-size) / -2)) scale(1);
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(calc(var(--spinner-size) / -2))
+      scale(1);
     opacity: 1;
   }
   50% {
-    transform: translate(-50%, -50%) translateY(calc(var(--spinner-size) / -2)) scale(0.6);
+    transform: translate(-50%, -50%) translateY(calc(var(--spinner-size) / -2))
+      scale(0.6);
     opacity: 0.3;
   }
 }

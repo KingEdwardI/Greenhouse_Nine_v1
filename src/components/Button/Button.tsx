@@ -36,7 +36,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       disabled,
       ...props
     },
-    ref,
+    ref
   ) => {
     const composedClassName = [
       "gn-Button",
@@ -62,7 +62,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {loading ? "..." : children}
       </RadixButton>
     );
-  },
+  }
 );
 
 Button.displayName = "Button";

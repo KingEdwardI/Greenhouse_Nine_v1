@@ -23,27 +23,27 @@
   outline: none;
 }
 
-.gn-DrawerContent[data-position='right'] {
+.gn-DrawerContent[data-position="right"] {
   right: 0;
   border-left: 1px solid var(--gray-a4);
 }
 
-.gn-DrawerContent[data-position='left'] {
+.gn-DrawerContent[data-position="left"] {
   left: 0;
   border-right: 1px solid var(--gray-a4);
 }
 
 /* Sizes */
-.gn-DrawerContent[data-size='sm'] {
+.gn-DrawerContent[data-size="sm"] {
   max-width: 300px;
 }
-.gn-DrawerContent[data-size='md'] {
+.gn-DrawerContent[data-size="md"] {
   max-width: 450px;
 }
-.gn-DrawerContent[data-size='lg'] {
+.gn-DrawerContent[data-size="lg"] {
   max-width: 600px;
 }
-.gn-DrawerContent[data-size='xl'] {
+.gn-DrawerContent[data-size="xl"] {
   max-width: 800px;
 }
 
@@ -67,11 +67,11 @@
   }
 }
 
-.gn-DrawerContent[data-position='right'] {
+.gn-DrawerContent[data-position="right"] {
   --slide-from: 100%;
 }
 
-.gn-DrawerContent[data-position='left'] {
+.gn-DrawerContent[data-position="left"] {
   --slide-from: -100%;
 }
 
@@ -80,14 +80,18 @@
   backdrop-filter: blur(var(--glass-blur, 14px)) saturate(200%);
   -webkit-backdrop-filter: blur(var(--glass-blur, 14px)) saturate(200%);
   background:
-    linear-gradient(135deg,
+    linear-gradient(
+      135deg,
       rgba(255, 255, 255, 0.06) 0%,
       rgba(255, 255, 255, 0.03) 40%,
-      rgba(255, 255, 255, 0.015) 100%),
-    linear-gradient(180deg,
+      rgba(255, 255, 255, 0.015) 100%
+    ),
+    linear-gradient(
+      180deg,
       rgba(255, 255, 255, 0.05) 0%,
       transparent 50%,
-      rgba(0, 0, 0, 0.08) 100%),
+      rgba(0, 0, 0, 0.08) 100%
+    ),
     var(--glass-surface, rgba(0, 0, 0, 0.28)) !important;
   border: 1px solid transparent !important;
   background-clip: padding-box !important;
@@ -101,7 +105,7 @@
 }
 
 .gn-DrawerContent.gn-Drawer--glass::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: radial-gradient(
@@ -114,7 +118,7 @@
 }
 
 .gn-DrawerContent.gn-Drawer--glass::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
@@ -143,10 +147,10 @@
 }
 
 /* Adjust borders for glass variant */
-.gn-DrawerContent.gn-Drawer--glass[data-position='right'] {
+.gn-DrawerContent.gn-Drawer--glass[data-position="right"] {
   border-left: none !important;
 }
 
-.gn-DrawerContent.gn-Drawer--glass[data-position='left'] {
+.gn-DrawerContent.gn-Drawer--glass[data-position="left"] {
   border-right: none !important;
 }

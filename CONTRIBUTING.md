@@ -24,17 +24,20 @@ Thank you for your interest in contributing to Greenhouse Nine! This guide will 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd Greenhouse_Nine
 ```
 
 2. Install dependencies:
+
 ```bash
 pnpm install
 ```
 
 3. Start the development server:
+
 ```bash
 pnpm run ladle
 ```
@@ -76,18 +79,32 @@ pnpm run ladle
 ```
 
 Ladle provides an interactive development environment for components:
+
 - Live component preview
 - Hot module replacement
 - Story-based development
 - Access at `http://localhost:61000`
 
-### Linting
+### Linting & Code Style
+
+#### Linting
 
 ```bash
 pnpm run lint
 ```
 
-Auto-fixes ESLint issues when possible.
+Auto-fixes ESLint issues when possible. Includes TypeScript strict checking, React hooks rules, and code style enforcement.
+
+#### Code Formatting
+
+```bash
+pnpm run format      # Format all files
+pnpm run format:check # Check if files are properly formatted
+```
+
+Uses Prettier for consistent code formatting. Pre-commit hooks automatically run both linting and formatting checks.
+
+**Note:** Formatting issues will prevent commits. If your commit fails due to formatting, run `pnpm run format` to fix them automatically.
 
 ### Building
 
@@ -96,6 +113,7 @@ pnpm run build
 ```
 
 This will:
+
 1. Run `generate:css` to create `radix-overrides.css` from design tokens
 2. Compile TypeScript
 3. Bundle the library with Vite
@@ -115,18 +133,20 @@ mkdir src/components/MyComponent
 **`src/components/MyComponent/MyComponent.tsx`**
 
 ```tsx
-import React from 'react';
-import './MyComponent.css';
+import React from "react";
+import "./MyComponent.css";
 
 export interface MyComponentProps {
   children: React.ReactNode;
-  variant?: 'primary' | 'secondary';
-  size?: 'sm' | 'md' | 'lg';
+  variant?: "primary" | "secondary";
+  size?: "sm" | "md" | "lg";
 }
 
 export const MyComponent = React.forwardRef<HTMLDivElement, MyComponentProps>(
-  ({ children, variant = 'primary', size = 'md', ...props }, ref) => {
-    const className = ['gn-MyComponent', `gn-MyComponent--${variant}`].join(' ');
+  ({ children, variant = "primary", size = "md", ...props }, ref) => {
+    const className = ["gn-MyComponent", `gn-MyComponent--${variant}`].join(
+      " "
+    );
 
     return (
       <div ref={ref} className={className} {...props}>
@@ -136,7 +156,7 @@ export const MyComponent = React.forwardRef<HTMLDivElement, MyComponentProps>(
   }
 );
 
-MyComponent.displayName = 'MyComponent';
+MyComponent.displayName = "MyComponent";
 ```
 
 **`src/components/MyComponent/MyComponent.css`**
@@ -154,18 +174,16 @@ MyComponent.displayName = 'MyComponent';
 **`src/components/MyComponent/MyComponent.stories.tsx`**
 
 ```tsx
-import type { Story } from '@ladle/react';
-import { MyComponent, MyComponentProps } from './MyComponent';
+import type { Story } from "@ladle/react";
+import { MyComponent, MyComponentProps } from "./MyComponent";
 
-export const Default: Story<MyComponentProps> = (props) => (
-  <MyComponent {...props}>
-    Content
-  </MyComponent>
+export const Default: Story<MyComponentProps> = props => (
+  <MyComponent {...props}>Content</MyComponent>
 );
 
 Default.args = {
-  variant: 'primary',
-  size: 'md'
+  variant: "primary",
+  size: "md",
 };
 
 export const Variants: Story = () => (
@@ -179,8 +197,8 @@ export const Variants: Story = () => (
 **`src/components/MyComponent/index.ts`**
 
 ```tsx
-export { MyComponent } from './MyComponent';
-export type { MyComponentProps } from './MyComponent';
+export { MyComponent } from "./MyComponent";
+export type { MyComponentProps } from "./MyComponent";
 ```
 
 ### 3. Export from Components Index
@@ -188,8 +206,8 @@ export type { MyComponentProps } from './MyComponent';
 Add to `src/components/index.ts`:
 
 ```tsx
-export { MyComponent } from './MyComponent';
-export type { MyComponentProps } from './MyComponent';
+export { MyComponent } from "./MyComponent";
+export type { MyComponentProps } from "./MyComponent";
 ```
 
 ### 4. Test in Ladle
@@ -213,21 +231,23 @@ pnpm run ladle
 Greenhouse Nine is built on Radix UI Themes. When creating components:
 
 1. **Extend Radix components** when possible:
-```tsx
-import { Button as RadixButton } from '@radix-ui/themes';
-import type { ButtonProps as RadixButtonProps } from '@radix-ui/themes';
 
-export interface ButtonProps extends Omit<RadixButtonProps, 'size'> {
-  size?: 'sm' | 'md' | 'lg';
+```tsx
+import { Button as RadixButton } from "@radix-ui/themes";
+import type { ButtonProps as RadixButtonProps } from "@radix-ui/themes";
+
+export interface ButtonProps extends Omit<RadixButtonProps, "size"> {
+  size?: "sm" | "md" | "lg";
 }
 ```
 
 2. **Map design system values** to Radix values:
+
 ```tsx
 const sizeMap = {
-  sm: '1',
-  md: '2',
-  lg: '3'
+  sm: "1",
+  md: "2",
+  lg: "3",
 };
 ```
 
@@ -252,10 +272,10 @@ Edit `src/tokens/colors.ts`:
 ```tsx
 export const colors = {
   // Add new color
-  myNewColor: '#123456',
+  myNewColor: "#123456",
 
   // Existing colors...
-  emerald: '#93B97A',
+  emerald: "#93B97A",
   // ...
 } as const;
 ```
@@ -269,7 +289,7 @@ pnpm run generate:css
 ### Using Tokens in Components
 
 ```tsx
-import { colors } from '../tokens/colors';
+import { colors } from "../tokens/colors";
 
 // In your component or styles
 const myColor = colors.myNewColor;
@@ -284,6 +304,7 @@ pnpm run build
 ```
 
 **Output:**
+
 - `dist/index.mjs` - ES module
 - `dist/index.cjs` - CommonJS module
 - `dist/index.d.ts` - TypeScript declarations
@@ -292,6 +313,7 @@ pnpm run build
 ### Build Configuration
 
 The library is configured in `vite.config.ts`:
+
 - External dependencies: `react`, `react-dom`, `@radix-ui/themes`
 - Multiple output formats (ESM, CJS)
 - TypeScript declarations via `vite-plugin-dts`
@@ -300,6 +322,7 @@ The library is configured in `vite.config.ts`:
 ### Pre-build Steps
 
 Automatically runs before build:
+
 1. `prebuild` → `generate:css`
 
 ## Code Style
@@ -314,8 +337,8 @@ Automatically runs before build:
 ### Component Structure
 
 ```tsx
-import React from 'react';
-import './Component.css';
+import React from "react";
+import "./Component.css";
 
 export interface ComponentProps {
   // Props definition
@@ -327,12 +350,13 @@ export const Component = React.forwardRef<HTMLElement, ComponentProps>(
   }
 );
 
-Component.displayName = 'Component';
+Component.displayName = "Component";
 ```
 
 ### Imports
 
 Order imports:
+
 1. React
 2. Third-party libraries
 3. Radix UI
@@ -340,16 +364,17 @@ Order imports:
 5. Styles
 
 ```tsx
-import React from 'react';
-import { SomeLib } from 'some-lib';
-import { RadixComponent } from '@radix-ui/themes';
-import { LocalComponent } from '../LocalComponent';
-import './Component.css';
+import React from "react";
+import { SomeLib } from "some-lib";
+import { RadixComponent } from "@radix-ui/themes";
+import { LocalComponent } from "../LocalComponent";
+import "./Component.css";
 ```
 
 ## Pull Request Process
 
 1. **Create a feature branch:**
+
    ```bash
    git checkout -b feature/my-new-component
    ```
@@ -360,6 +385,7 @@ import './Component.css';
    - Update documentation if needed
 
 3. **Test your changes:**
+
    ```bash
    pnpm run lint
    pnpm run build
@@ -367,6 +393,7 @@ import './Component.css';
    ```
 
 4. **Commit your changes:**
+
    ```bash
    git add .
    git commit -m "feat: add MyComponent"
@@ -382,6 +409,7 @@ import './Component.css';
    - `chore:` - Maintenance tasks
 
 5. **Push and create PR:**
+
    ```bash
    git push origin feature/my-new-component
    ```
@@ -401,6 +429,15 @@ Currently, the project uses Ladle for visual component testing. To test:
 2. Navigate to your component story
 3. Verify all variants and props work correctly
 4. Test interactions and edge cases
+
+### Pre-commit Checks
+
+Before each commit, the following automated checks run:
+
+1. **ESLint**: TypeScript linting with strict rules and code style enforcement
+2. **Prettier**: Code formatting verification
+
+These checks ensure code quality and consistent formatting. If checks fail, commits are blocked until issues are resolved. Run `pnpm run lint` and `pnpm run format` to fix issues automatically.
 
 ## Questions?
 

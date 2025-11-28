@@ -65,7 +65,7 @@ export {
   // Form components (only those not overridden)
   Slider,
   SegmentedControl,
-  TextField,  // Note: We have Input, not TextField
+  TextField, // Note: We have Input, not TextField
   Radio,
   CheckboxGroup,
   CheckboxCards,
@@ -99,7 +99,6 @@ export {
 
   // CSS Reset
   Reset,
-
 } from "@radix-ui/themes";
 
 // 5. Type exports for TypeScript users
@@ -135,5 +134,4 @@ export type {
   KbdProps,
   QuoteProps,
   BlockquoteProps,
-
 } from "@radix-ui/themes";

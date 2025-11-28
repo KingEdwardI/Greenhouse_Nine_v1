@@ -7,7 +7,7 @@ export default {
   title: "Messaging - GlassMessage",
 };
 
-export const Default: Story<GlassMessageProps> = (args) => (
+export const Default: Story<GlassMessageProps> = args => (
   <div
     style={{
       padding: "20px",
@@ -31,7 +31,8 @@ export const ColorVariants: Story = () => (
   <div
     style={{
       padding: "20px",
-      background: "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
+      background:
+        "linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
       minHeight: "600px",
       display: "flex",
       flexDirection: "column",
@@ -41,19 +42,34 @@ export const ColorVariants: Story = () => (
     <GlassMessage variant="user" glassColor="primary" timestamp="2:30 PM">
       Primary color - Sea Green
     </GlassMessage>
-    <GlassMessage variant="assistant" glassColor="secondary" username="Bot" timestamp="2:31 PM">
+    <GlassMessage
+      variant="assistant"
+      glassColor="secondary"
+      username="Bot"
+      timestamp="2:31 PM"
+    >
       Secondary color - Cerulean Blue
     </GlassMessage>
     <GlassMessage variant="user" glassColor="accent" timestamp="2:32 PM">
       Accent color - Purple
     </GlassMessage>
-    <GlassMessage variant="assistant" glassColor="success" username="Bot" timestamp="2:33 PM">
+    <GlassMessage
+      variant="assistant"
+      glassColor="success"
+      username="Bot"
+      timestamp="2:33 PM"
+    >
       Success color - Mint Green
     </GlassMessage>
     <GlassMessage variant="user" glassColor="info" timestamp="2:34 PM">
       Info color - Deep Blue
     </GlassMessage>
-    <GlassMessage variant="assistant" glassColor="warning" username="Bot" timestamp="2:35 PM">
+    <GlassMessage
+      variant="assistant"
+      glassColor="warning"
+      username="Bot"
+      timestamp="2:35 PM"
+    >
       Warning color - Gold
     </GlassMessage>
   </div>
@@ -70,16 +86,36 @@ export const Conversation: Story = () => (
       gap: "12px",
     }}
   >
-    <GlassMessage variant="user" glassColor="primary" timestamp="2:30 PM" status="read">
+    <GlassMessage
+      variant="user"
+      glassColor="primary"
+      timestamp="2:30 PM"
+      status="read"
+    >
       {`**Hey, can you help me with something?**`}
     </GlassMessage>
-    <GlassMessage variant="assistant" glassColor="secondary" username="Assistant" timestamp="2:30 PM">
+    <GlassMessage
+      variant="assistant"
+      glassColor="secondary"
+      username="Assistant"
+      timestamp="2:30 PM"
+    >
       Of course! What do you need help with?
     </GlassMessage>
-    <GlassMessage variant="user" glassColor="primary" timestamp="2:31 PM" status="read">
+    <GlassMessage
+      variant="user"
+      glassColor="primary"
+      timestamp="2:31 PM"
+      status="read"
+    >
       {`I'm trying to understand how glassmorphism works in UI design.`}
     </GlassMessage>
-    <GlassMessage variant="assistant" glassColor="secondary" username="Assistant" timestamp="2:31 PM">
+    <GlassMessage
+      variant="assistant"
+      glassColor="secondary"
+      username="Assistant"
+      timestamp="2:31 PM"
+    >
       {`Glassmorphism is a design trend that creates a frosted glass effect. Key characteristics include:
 
 - **Transparency** with blur effects
@@ -103,7 +139,12 @@ export const WithMarkdown: Story = () => (
       gap: "12px",
     }}
   >
-    <GlassMessage variant="user" glassColor="info" timestamp="2:30 PM" status="read">
+    <GlassMessage
+      variant="user"
+      glassColor="info"
+      timestamp="2:30 PM"
+      status="read"
+    >
       Can you show me how to implement a TypeScript interface?
     </GlassMessage>
     <GlassMessage
@@ -145,8 +186,21 @@ export const MixedContent: Story = () => (
       gap: "12px",
     }}
   >
-    <GlassMessage variant="assistant" glassColor="success" username="Assistant" timestamp="2:30 PM">
-      <div style={{ padding: "10px", background: "rgba(255, 255, 255, 0.1)", borderRadius: "4px", marginBottom: "8px", border: "1px solid rgba(255, 255, 255, 0.2)" }}>
+    <GlassMessage
+      variant="assistant"
+      glassColor="success"
+      username="Assistant"
+      timestamp="2:30 PM"
+    >
+      <div
+        style={{
+          padding: "10px",
+          background: "rgba(255, 255, 255, 0.1)",
+          borderRadius: "4px",
+          marginBottom: "8px",
+          border: "1px solid rgba(255, 255, 255, 0.2)",
+        }}
+      >
         Custom Component Header
       </div>
       {`# Glass with mixed content
@@ -184,16 +238,36 @@ export const StatusIndicators: Story = () => (
       gap: "12px",
     }}
   >
-    <GlassMessage variant="user" glassColor="warning" timestamp="2:32 PM" status="sending">
+    <GlassMessage
+      variant="user"
+      glassColor="warning"
+      timestamp="2:32 PM"
+      status="sending"
+    >
       This message is still sending...
     </GlassMessage>
-    <GlassMessage variant="user" glassColor="warning" timestamp="2:33 PM" status="sent">
+    <GlassMessage
+      variant="user"
+      glassColor="warning"
+      timestamp="2:33 PM"
+      status="sent"
+    >
       This message was sent but not delivered yet.
     </GlassMessage>
-    <GlassMessage variant="user" glassColor="warning" timestamp="2:34 PM" status="delivered">
+    <GlassMessage
+      variant="user"
+      glassColor="warning"
+      timestamp="2:34 PM"
+      status="delivered"
+    >
       This message was delivered but not read.
     </GlassMessage>
-    <GlassMessage variant="user" glassColor="warning" timestamp="2:35 PM" status="read">
+    <GlassMessage
+      variant="user"
+      glassColor="warning"
+      timestamp="2:35 PM"
+      status="read"
+    >
       This message has been read!
     </GlassMessage>
   </div>
@@ -210,10 +284,20 @@ export const DarkGradient: Story = () => (
       gap: "12px",
     }}
   >
-    <GlassMessage variant="user" glassColor="primary" timestamp="2:30 PM" status="read">
+    <GlassMessage
+      variant="user"
+      glassColor="primary"
+      timestamp="2:30 PM"
+      status="read"
+    >
       Glass messages work great on dark backgrounds too!
     </GlassMessage>
-    <GlassMessage variant="assistant" glassColor="accent" username="Assistant" timestamp="2:31 PM">
+    <GlassMessage
+      variant="assistant"
+      glassColor="accent"
+      username="Assistant"
+      timestamp="2:31 PM"
+    >
       {`The frosted glass effect creates subtle depth and elegance.
 
 - Backdrop blur: \`12px\`
@@ -234,10 +318,20 @@ export const LightGradient: Story = () => (
       gap: "12px",
     }}
   >
-    <GlassMessage variant="user" glassColor="info" timestamp="2:30 PM" status="read">
+    <GlassMessage
+      variant="user"
+      glassColor="info"
+      timestamp="2:30 PM"
+      status="read"
+    >
       And on light backgrounds with warm tones!
     </GlassMessage>
-    <GlassMessage variant="assistant" glassColor="secondary" username="Assistant" timestamp="2:31 PM">
+    <GlassMessage
+      variant="assistant"
+      glassColor="secondary"
+      username="Assistant"
+      timestamp="2:31 PM"
+    >
       {`The glass effect adapts to any background:
 
 - **Vibrant** gradients

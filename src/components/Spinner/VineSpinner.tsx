@@ -66,9 +66,9 @@ export const VineSpinner = React.forwardRef<HTMLDivElement, VineSpinnerProps>(
       "aria-label": ariaLabel = "Loading",
       ...props
     },
-    ref,
+    ref
   ) => {
-    const duration = 4.5 - (speed * 0.4);
+    const duration = 4.5 - speed * 0.4;
     const isDeterministic = progress !== undefined;
     const normalizedProgress = isDeterministic
       ? Math.max(0, Math.min(100, progress))
@@ -100,15 +100,17 @@ export const VineSpinner = React.forwardRef<HTMLDivElement, VineSpinnerProps>(
         aria-valuenow={isDeterministic ? normalizedProgress : undefined}
         aria-valuemin={isDeterministic ? 0 : undefined}
         aria-valuemax={isDeterministic ? 100 : undefined}
-        style={{
-          "--spinner-duration": `${duration}s`,
-          "--vine-color": effectiveColor,
-          "--progress": normalizedProgress / 100,
-        } as React.CSSProperties}
+        style={
+          {
+            "--spinner-duration": `${duration}s`,
+            "--vine-color": effectiveColor,
+            "--progress": normalizedProgress / 100,
+          } as React.CSSProperties
+        }
         {...props}
       >
         <div className="gn-VineSpinner__container">
-          {vineElements.map((index) => {
+          {vineElements.map(index => {
             // For multicolor, calculate hue offset for each vine (120° apart for 3 vines)
             const hueOffset = multicolor ? (index / vines) * 360 : 0;
 
@@ -116,11 +118,13 @@ export const VineSpinner = React.forwardRef<HTMLDivElement, VineSpinnerProps>(
               <div
                 key={index}
                 className="gn-VineSpinner__vine"
-                style={{
-                  "--vine-index": index,
-                  "--hue-offset": `${hueOffset}deg`,
-                } as React.CSSProperties}
-                >
+                style={
+                  {
+                    "--vine-index": index,
+                    "--hue-offset": `${hueOffset}deg`,
+                  } as React.CSSProperties
+                }
+              >
                 <svg viewBox="0 0 100 120" className="gn-VineSpinner__svg">
                   {/* Roots (optional) */}
                   {showRoots && (
@@ -238,16 +242,61 @@ export const VineSpinner = React.forwardRef<HTMLDivElement, VineSpinnerProps>(
                   {showBlossoms && (
                     <g className="gn-VineSpinner__blossom">
                       {/* Flower petals */}
-                      <circle cx="50" cy="-5" r="4" className="gn-VineSpinner__petal gn-VineSpinner__petal--1" />
-                      <circle cx="55" cy="-8" r="4" className="gn-VineSpinner__petal gn-VineSpinner__petal--2" />
-                      <circle cx="58" cy="-13" r="4" className="gn-VineSpinner__petal gn-VineSpinner__petal--3" />
-                      <circle cx="55" cy="-18" r="4" className="gn-VineSpinner__petal gn-VineSpinner__petal--4" />
-                      <circle cx="50" cy="-21" r="4" className="gn-VineSpinner__petal gn-VineSpinner__petal--5" />
-                      <circle cx="45" cy="-18" r="4" className="gn-VineSpinner__petal gn-VineSpinner__petal--6" />
-                      <circle cx="42" cy="-13" r="4" className="gn-VineSpinner__petal gn-VineSpinner__petal--7" />
-                      <circle cx="45" cy="-8" r="4" className="gn-VineSpinner__petal gn-VineSpinner__petal--8" />
+                      <circle
+                        cx="50"
+                        cy="-5"
+                        r="4"
+                        className="gn-VineSpinner__petal gn-VineSpinner__petal--1"
+                      />
+                      <circle
+                        cx="55"
+                        cy="-8"
+                        r="4"
+                        className="gn-VineSpinner__petal gn-VineSpinner__petal--2"
+                      />
+                      <circle
+                        cx="58"
+                        cy="-13"
+                        r="4"
+                        className="gn-VineSpinner__petal gn-VineSpinner__petal--3"
+                      />
+                      <circle
+                        cx="55"
+                        cy="-18"
+                        r="4"
+                        className="gn-VineSpinner__petal gn-VineSpinner__petal--4"
+                      />
+                      <circle
+                        cx="50"
+                        cy="-21"
+                        r="4"
+                        className="gn-VineSpinner__petal gn-VineSpinner__petal--5"
+                      />
+                      <circle
+                        cx="45"
+                        cy="-18"
+                        r="4"
+                        className="gn-VineSpinner__petal gn-VineSpinner__petal--6"
+                      />
+                      <circle
+                        cx="42"
+                        cy="-13"
+                        r="4"
+                        className="gn-VineSpinner__petal gn-VineSpinner__petal--7"
+                      />
+                      <circle
+                        cx="45"
+                        cy="-8"
+                        r="4"
+                        className="gn-VineSpinner__petal gn-VineSpinner__petal--8"
+                      />
                       {/* Flower center */}
-                      <circle cx="50" cy="-13" r="3.5" className="gn-VineSpinner__flowerCenter" />
+                      <circle
+                        cx="50"
+                        cy="-13"
+                        r="3.5"
+                        className="gn-VineSpinner__flowerCenter"
+                      />
                     </g>
                   )}
                 </svg>
@@ -257,7 +306,7 @@ export const VineSpinner = React.forwardRef<HTMLDivElement, VineSpinnerProps>(
         </div>
       </div>
     );
-  },
+  }
 );
 
 VineSpinner.displayName = "VineSpinner";

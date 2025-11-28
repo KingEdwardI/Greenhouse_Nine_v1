@@ -7,8 +7,15 @@ export default {
   title: "Feedback - Orbital Spinner",
 };
 
-export const Default: Story<OrbitalSpinnerProps> = (args) => (
-  <div style={{ padding: "40px", background: "var(--gray-1)", display: "flex", justifyContent: "center" }}>
+export const Default: Story<OrbitalSpinnerProps> = args => (
+  <div
+    style={{
+      padding: "40px",
+      background: "var(--gray-1)",
+      display: "flex",
+      justifyContent: "center",
+    }}
+  >
     <OrbitalSpinner {...args} />
   </div>
 );
@@ -46,15 +53,27 @@ export const Sizes: Story = () => (
   >
     <div style={{ textAlign: "center" }}>
       <OrbitalSpinner size="sm" />
-      <div style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}>Small</div>
+      <div
+        style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}
+      >
+        Small
+      </div>
     </div>
     <div style={{ textAlign: "center" }}>
       <OrbitalSpinner size="md" />
-      <div style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}>Medium</div>
+      <div
+        style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}
+      >
+        Medium
+      </div>
     </div>
     <div style={{ textAlign: "center" }}>
       <OrbitalSpinner size="lg" />
-      <div style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}>Large</div>
+      <div
+        style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}
+      >
+        Large
+      </div>
     </div>
   </div>
 );
@@ -73,33 +92,105 @@ export const Colors: Story = () => (
   >
     <div style={{ textAlign: "center" }}>
       <OrbitalSpinner color={colors.primary} />
-      <div style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}>Primary</div>
-      <div style={{ fontSize: "10px", color: "var(--gray-10)", fontFamily: "monospace" }}>{colors.primary}</div>
+      <div
+        style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}
+      >
+        Primary
+      </div>
+      <div
+        style={{
+          fontSize: "10px",
+          color: "var(--gray-10)",
+          fontFamily: "monospace",
+        }}
+      >
+        {colors.primary}
+      </div>
     </div>
     <div style={{ textAlign: "center" }}>
       <OrbitalSpinner color={colors.secondary} />
-      <div style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}>Secondary</div>
-      <div style={{ fontSize: "10px", color: "var(--gray-10)", fontFamily: "monospace" }}>{colors.secondary}</div>
+      <div
+        style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}
+      >
+        Secondary
+      </div>
+      <div
+        style={{
+          fontSize: "10px",
+          color: "var(--gray-10)",
+          fontFamily: "monospace",
+        }}
+      >
+        {colors.secondary}
+      </div>
     </div>
     <div style={{ textAlign: "center" }}>
       <OrbitalSpinner color={colors.accent} />
-      <div style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}>Accent</div>
-      <div style={{ fontSize: "10px", color: "var(--gray-10)", fontFamily: "monospace" }}>{colors.accent}</div>
+      <div
+        style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}
+      >
+        Accent
+      </div>
+      <div
+        style={{
+          fontSize: "10px",
+          color: "var(--gray-10)",
+          fontFamily: "monospace",
+        }}
+      >
+        {colors.accent}
+      </div>
     </div>
     <div style={{ textAlign: "center" }}>
       <OrbitalSpinner color={colors.warning} />
-      <div style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}>Warning</div>
-      <div style={{ fontSize: "10px", color: "var(--gray-10)", fontFamily: "monospace" }}>{colors.warning}</div>
+      <div
+        style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}
+      >
+        Warning
+      </div>
+      <div
+        style={{
+          fontSize: "10px",
+          color: "var(--gray-10)",
+          fontFamily: "monospace",
+        }}
+      >
+        {colors.warning}
+      </div>
     </div>
     <div style={{ textAlign: "center" }}>
       <OrbitalSpinner color={colors.danger} />
-      <div style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}>Danger</div>
-      <div style={{ fontSize: "10px", color: "var(--gray-10)", fontFamily: "monospace" }}>{colors.danger}</div>
+      <div
+        style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}
+      >
+        Danger
+      </div>
+      <div
+        style={{
+          fontSize: "10px",
+          color: "var(--gray-10)",
+          fontFamily: "monospace",
+        }}
+      >
+        {colors.danger}
+      </div>
     </div>
     <div style={{ textAlign: "center" }}>
       <OrbitalSpinner color={colors.success} />
-      <div style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}>Success</div>
-      <div style={{ fontSize: "10px", color: "var(--gray-10)", fontFamily: "monospace" }}>{colors.success}</div>
+      <div
+        style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}
+      >
+        Success
+      </div>
+      <div
+        style={{
+          fontSize: "10px",
+          color: "var(--gray-10)",
+          fontFamily: "monospace",
+        }}
+      >
+        {colors.success}
+      </div>
     </div>
   </div>
 );
@@ -117,15 +208,27 @@ export const Speeds: Story = () => (
   >
     <div style={{ textAlign: "center" }}>
       <OrbitalSpinner speed={2} />
-      <div style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}>Slow (Speed 2)</div>
+      <div
+        style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}
+      >
+        Slow (Speed 2)
+      </div>
     </div>
     <div style={{ textAlign: "center" }}>
       <OrbitalSpinner speed={5} />
-      <div style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}>Normal (Speed 5)</div>
+      <div
+        style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}
+      >
+        Normal (Speed 5)
+      </div>
     </div>
     <div style={{ textAlign: "center" }}>
       <OrbitalSpinner speed={8} />
-      <div style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}>Fast (Speed 8)</div>
+      <div
+        style={{ marginTop: "12px", fontSize: "12px", color: "var(--gray-11)" }}
+      >
+        Fast (Speed 8)
+      </div>
     </div>
   </div>
 );

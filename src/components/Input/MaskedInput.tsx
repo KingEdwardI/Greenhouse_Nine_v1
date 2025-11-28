@@ -1,12 +1,15 @@
-import React from 'react';
-import { IMaskInput } from 'react-imask';
-import './MaskedInput.css';
+import React from "react";
+import { IMaskInput } from "react-imask";
+import "./MaskedInput.css";
 
-export interface MaskedInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'value' | 'defaultValue' | 'onChange' | 'type'> {
+export interface MaskedInputProps extends Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  "size" | "value" | "defaultValue" | "onChange" | "type"
+> {
   /**
    * Radix numeric size: "1" | "2" | "3"
    */
-  size?: '1' | '2' | '3';
+  size?: "1" | "2" | "3";
   mask: string | RegExp;
   value?: string;
   defaultValue?: string;
@@ -15,16 +18,30 @@ export interface MaskedInputProps extends Omit<React.InputHTMLAttributes<HTMLInp
 }
 
 export const MaskedInput = React.forwardRef<HTMLInputElement, MaskedInputProps>(
-  ({ size = '2', mask, value, defaultValue, onChange, unmask, className, ...props }, ref) => {
+  (
+    {
+      size = "2",
+      mask,
+      value,
+      defaultValue,
+      onChange,
+      unmask,
+      className,
+      ...props
+    },
+    ref
+  ) => {
     const isControlled = value !== undefined;
-    const [internal, setInternal] = React.useState<string>(defaultValue ?? '');
-    const current = isControlled ? value ?? '' : internal;
+    const [internal, setInternal] = React.useState<string>(defaultValue ?? "");
+    const current = isControlled ? (value ?? "") : internal;
 
     const composedClassName = [
-      'gn-MaskedInput',
+      "gn-MaskedInput",
       `gn-MaskedInput--${size}`,
-      className
-    ].filter(Boolean).join(' ');
+      className,
+    ]
+      .filter(Boolean)
+      .join(" ");
 
     return (
       <IMaskInput
@@ -32,7 +49,7 @@ export const MaskedInput = React.forwardRef<HTMLInputElement, MaskedInputProps>(
         mask={mask as unknown as string}
         value={current}
         onAccept={(val: unknown) => {
-          const stringVal = String(val ?? '');
+          const stringVal = String(val ?? "");
           if (!isControlled) setInternal(stringVal);
           onChange?.(stringVal);
         }}
@@ -44,7 +61,4 @@ export const MaskedInput = React.forwardRef<HTMLInputElement, MaskedInputProps>(
   }
 );
 
-MaskedInput.displayName = 'MaskedInput';
-
-
-
+MaskedInput.displayName = "MaskedInput";

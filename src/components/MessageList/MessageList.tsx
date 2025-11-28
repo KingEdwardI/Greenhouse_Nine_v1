@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
-import { MessageCircle } from 'lucide-react';
-import { TypingIndicator } from '../TypingIndicator';
-import { Text } from '../Text';
-import './MessageList.css';
+import React, { useEffect, useRef } from "react";
+import { MessageCircle } from "lucide-react";
+import { TypingIndicator } from "../TypingIndicator";
+import { Text } from "../Text";
+import "./MessageList.css";
 
 export interface MessageListProps {
   children?: React.ReactNode;
@@ -15,19 +15,24 @@ export interface MessageListProps {
 }
 
 export const MessageList = React.forwardRef<HTMLDivElement, MessageListProps>(
-  ({ 
-    children, 
-    loading = false, 
-    autoScroll = true, 
-    showTyping = false, 
-    typingUsers = [], 
-    emptyState,
-    className, 
-    ...props 
-  }, ref) => {
+  (
+    {
+      children,
+      loading = false,
+      autoScroll = true,
+      showTyping = false,
+      typingUsers = [],
+      emptyState,
+      className,
+      ...props
+    },
+    ref
+  ) => {
     const scrollRef = useRef<HTMLDivElement>(null);
-    const composedClassName = ['gn-MessageList', className].filter(Boolean).join(' ');
-    
+    const composedClassName = ["gn-MessageList", className]
+      .filter(Boolean)
+      .join(" ");
+
     // Check if children is empty (no messages)
     const hasMessages = React.Children.count(children) > 0;
 
@@ -42,7 +47,7 @@ export const MessageList = React.forwardRef<HTMLDivElement, MessageListProps>(
     // Set ref
     useEffect(() => {
       if (scrollRef.current && ref) {
-        if (typeof ref === 'function') {
+        if (typeof ref === "function") {
           ref(scrollRef.current);
         } else {
           ref.current = scrollRef.current;
@@ -63,11 +68,7 @@ export const MessageList = React.forwardRef<HTMLDivElement, MessageListProps>(
     );
 
     return (
-      <div 
-        ref={scrollRef}
-        className={composedClassName}
-        {...props}
-      >
+      <div ref={scrollRef} className={composedClassName} {...props}>
         <div className="gn-MessageList__content">
           {loading && (
             <div className="gn-MessageList__loading">
@@ -88,4 +89,4 @@ export const MessageList = React.forwardRef<HTMLDivElement, MessageListProps>(
   }
 );
 
-MessageList.displayName = 'MessageList';
+MessageList.displayName = "MessageList";

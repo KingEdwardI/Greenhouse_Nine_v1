@@ -7,7 +7,7 @@ export default {
   title: "Feedback - Vine Spinner",
 };
 
-export const Playground: Story<VineSpinnerProps> = (args) => (
+export const Playground: Story<VineSpinnerProps> = args => (
   <div
     style={{
       padding: "60px",
@@ -202,10 +202,12 @@ export const PresetCombinations: Story = () => {
             onClick={() => setActivePreset(key as PresetKey)}
             style={{
               padding: "8px 16px",
-              background: activePreset === key ? "var(--accent-9)" : "var(--gray-3)",
+              background:
+                activePreset === key ? "var(--accent-9)" : "var(--gray-3)",
               color: activePreset === key ? "white" : "var(--gray-12)",
               border: "1px solid",
-              borderColor: activePreset === key ? "var(--accent-10)" : "var(--gray-6)",
+              borderColor:
+                activePreset === key ? "var(--accent-10)" : "var(--gray-6)",
               borderRadius: "6px",
               cursor: "pointer",
               transition: "all 0.2s",
@@ -262,7 +264,9 @@ export const PresetCombinations: Story = () => {
             color: "var(--gray-11)",
           }}
         >
-          <div style={{ marginBottom: "8px", color: "var(--gray-10)" }}>Configuration:</div>
+          <div style={{ marginBottom: "8px", color: "var(--gray-10)" }}>
+            Configuration:
+          </div>
           {Object.entries(presets[activePreset].props).map(([key, value]) => (
             <div key={key} style={{ lineHeight: "1.6" }}>
               <span style={{ color: "var(--accent-9)" }}>{key}</span>:{" "}
@@ -284,7 +288,7 @@ export const ProgressDemo: Story = () => {
   useEffect(() => {
     if (isRunning) {
       const interval = setInterval(() => {
-        setProgress((prev) => {
+        setProgress(prev => {
           if (prev >= 100) {
             setIsRunning(false);
             return 100;
@@ -417,7 +421,13 @@ export const ProgressDemo: Story = () => {
         </div>
 
         {/* Manual progress control */}
-        <div style={{ marginTop: "32px", paddingTop: "24px", borderTop: "1px solid var(--gray-5)" }}>
+        <div
+          style={{
+            marginTop: "32px",
+            paddingTop: "24px",
+            borderTop: "1px solid var(--gray-5)",
+          }}
+        >
           <label
             style={{
               display: "block",
@@ -434,7 +444,7 @@ export const ProgressDemo: Story = () => {
             min="0"
             max="100"
             value={progress}
-            onChange={(e) => {
+            onChange={e => {
               setProgress(Number(e.target.value));
               setIsRunning(false);
             }}
@@ -470,7 +480,9 @@ export const SizeComparison: Story = () => (
       }}
     >
       <VineSpinner size="sm" showBlossoms variant="spring" />
-      <p style={{ color: "var(--gray-11)", marginTop: "16px", fontSize: "14px" }}>
+      <p
+        style={{ color: "var(--gray-11)", marginTop: "16px", fontSize: "14px" }}
+      >
         Small (32px)
       </p>
     </div>
@@ -483,7 +495,9 @@ export const SizeComparison: Story = () => (
       }}
     >
       <VineSpinner size="md" showBlossoms variant="summer" />
-      <p style={{ color: "var(--gray-11)", marginTop: "16px", fontSize: "14px" }}>
+      <p
+        style={{ color: "var(--gray-11)", marginTop: "16px", fontSize: "14px" }}
+      >
         Medium (48px)
       </p>
     </div>
@@ -496,7 +510,9 @@ export const SizeComparison: Story = () => (
       }}
     >
       <VineSpinner size="lg" showBlossoms variant="autumn" />
-      <p style={{ color: "var(--gray-11)", marginTop: "16px", fontSize: "14px" }}>
+      <p
+        style={{ color: "var(--gray-11)", marginTop: "16px", fontSize: "14px" }}
+      >
         Large (72px)
       </p>
     </div>

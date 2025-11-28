@@ -20,6 +20,7 @@ pnpm run generate:css   # Generate radix-overrides.css from color tokens
 ### Export Structure (`src/index.ts`)
 
 The library has a deliberate export order to handle naming conflicts:
+
 1. Custom components export first (take precedence)
 2. ThemeProvider
 3. Design tokens
@@ -28,6 +29,7 @@ The library has a deliberate export order to handle naming conflicts:
 ### Component Pattern
 
 Components wrap Radix UI primitives with custom styling. Standard structure:
+
 ```
 src/components/ComponentName/
 ├── ComponentName.tsx      # Main component
@@ -37,6 +39,7 @@ src/components/ComponentName/
 ```
 
 Components follow this pattern:
+
 - Extend Radix props with custom additions
 - Map custom props (e.g., `color="accent"` → `"green"`)
 - Use `gn-` prefix for CSS classes (e.g., `gn-Button`, `gn-Button--glass`)
@@ -45,6 +48,7 @@ Components follow this pattern:
 ### Color System (`src/tokens/colors.ts` → CSS)
 
 Colors are defined in `src/tokens/colors.ts` and transformed into CSS custom properties:
+
 1. Edit `colors.ts` with new/changed colors
 2. Run `pnpm run generate:css` (or it runs automatically before build/ladle)
 3. This generates `src/theme/radix-overrides.css` with Radix color scale overrides
