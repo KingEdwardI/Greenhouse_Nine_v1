@@ -9,7 +9,10 @@ export interface ChatLayoutMessage extends Omit<MessageProps, "children"> {
   content: React.ReactNode;
 }
 
-export interface ChatLayoutProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
+export interface ChatLayoutProps extends Omit<
+  React.HTMLAttributes<HTMLDivElement>,
+  "title"
+> {
   messages?: ChatLayoutMessage[];
   onSend?: (message: string) => void;
   title?: React.ReactNode;

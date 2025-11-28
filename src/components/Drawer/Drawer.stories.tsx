@@ -30,12 +30,7 @@ export const Basic = () => {
 
             <Flex direction="column" gap="3" flexGrow="1">
               <div>
-                <Text
-                  as="label"
-                  size="2"
-                  weight="medium"
-                  mb="2"
-                >
+                <Text as="label" size="2" weight="medium" mb="2">
                   Full Name
                 </Text>
                 <TextField.Root
@@ -45,12 +40,7 @@ export const Basic = () => {
               </div>
 
               <div>
-                <Text
-                  as="label"
-                  size="2"
-                  weight="medium"
-                  mb="2"
-                >
+                <Text as="label" size="2" weight="medium" mb="2">
                   Username
                 </Text>
                 <TextField.Root
@@ -139,7 +129,7 @@ export const LeftSide = () => {
               <Text as="div" size="2" weight="bold" mb="2" color="gray">
                 Account
               </Text>
-              <Button variant="ghost"  size="3" color="red">
+              <Button variant="ghost" size="3" color="red">
                 <svg
                   width="16"
                   height="16"
@@ -206,10 +196,7 @@ export const Sizes = () => {
                   </div>
                 </div>
 
-                <Flex
-                  gap="3"
-                  pt="4"
-                >
+                <Flex gap="3" pt="4">
                   <Drawer.Close asChild>
                     <Button variant="soft" color="gray">
                       Close
@@ -250,12 +237,7 @@ export const Glass = () => {
 
             <Flex direction="column" gap="3" flexGrow="1">
               <div>
-                <Text
-                  as="label"
-                  size="2"
-                  weight="medium"
-                  mb="2"
-                >
+                <Text as="label" size="2" weight="medium" mb="2">
                   Full Name
                 </Text>
                 <TextField.Root
@@ -265,12 +247,7 @@ export const Glass = () => {
               </div>
 
               <div>
-                <Text
-                  as="label"
-                  size="2"
-                  weight="medium"
-                  mb="2"
-                >
+                <Text as="label" size="2" weight="medium" mb="2">
                   Username
                 </Text>
                 <TextField.Root
@@ -280,12 +257,7 @@ export const Glass = () => {
               </div>
 
               <div>
-                <Text
-                  as="label"
-                  size="2"
-                  weight="medium"
-                  mb="2"
-                >
+                <Text as="label" size="2" weight="medium" mb="2">
                   Email
                 </Text>
                 <TextField.Root
@@ -395,7 +367,7 @@ export const GlassLeft = () => {
               <Text as="div" size="2" weight="bold" mb="2" color="gray">
                 Account
               </Text>
-              <Button variant="ghost"  size="3" color="red">
+              <Button variant="ghost" size="3" color="red">
                 <svg
                   width="16"
                   height="16"
@@ -465,22 +437,14 @@ export const GlassSizes = () => {
 
                 <Flex direction="column" gap="3" flexGrow="1">
                   <div>
-                    <Text
-                      as="label"
-                      size="2"
-                      weight="medium"
-                      mb="2"
-                    >
+                    <Text as="label" size="2" weight="medium" mb="2">
                       Sample Field
                     </Text>
                     <TextField.Root placeholder="Enter something..." />
                   </div>
                 </Flex>
 
-                <Flex
-                  gap="3"
-                  pt="4"
-                >
+                <Flex gap="3" pt="4">
                   <Drawer.Close asChild>
                     <Button variant="soft" color="gray">
                       Close
