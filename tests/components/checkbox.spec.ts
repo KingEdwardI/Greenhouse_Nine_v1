@@ -1,39 +1,36 @@
 import { test, expect } from "@playwright/test";
-import { extractTextFromPage, containsText } from "../utils/ocr";
 
 test.describe("Checkbox Component", () => {
   test("renders default checkbox with label", async ({ page }) => {
     await page.goto("/?story=forms---checkbox--default");
-    await page.waitForTimeout(500);
+    await page.waitForSelector('button[role="checkbox"]');
 
-    const ocrResult = await extractTextFromPage(page);
-
-    expect(containsText(ocrResult, "Check")).toBe(true);
+    await expect(page.getByText("Check me")).toBeVisible();
+    await expect(page.getByRole("checkbox")).toBeVisible();
   });
 
   test("renders size variants", async ({ page }) => {
     await page.goto("/?story=forms---checkbox--sizes");
-    await page.waitForTimeout(500);
+    await page.waitForSelector('button[role="checkbox"]');
 
-    const ocrResult = await extractTextFromPage(page);
-
-    // Should show Size labels for different sizes
-    expect(containsText(ocrResult, "Size")).toBe(true);
+    await expect(page.getByText("Size 1")).toBeVisible();
+    await expect(page.getByText(/Size 2/)).toBeVisible();
+    await expect(page.getByText("Size 3")).toBeVisible();
+    // Should have 3 checkboxes
+    await expect(page.getByRole("checkbox")).toHaveCount(3);
   });
 
-  test("checkbox can be toggled and state changes visually", async ({
-    page,
-  }) => {
+  test("checkbox can be toggled and state changes visually", async ({ page }) => {
     await page.goto("/?story=forms---checkbox--default");
     await page.waitForSelector('button[role="checkbox"]');
 
-    // Get initial visual state
-    const checkbox = page.locator('button[role="checkbox"]');
+    const checkbox = page.getByRole("checkbox");
+
+    // Initially unchecked
+    await expect(checkbox).toHaveAttribute("aria-checked", "false");
 
     // Click to toggle
     await checkbox.click();
-
-    // Verify the checkbox is now checked via aria attribute
     await expect(checkbox).toHaveAttribute("aria-checked", "true");
 
     // Click again to uncheck
