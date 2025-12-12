@@ -20,7 +20,9 @@ test.describe("Checkbox Component", () => {
     await expect(page.getByRole("checkbox")).toHaveCount(3);
   });
 
-  test("checkbox can be toggled and state changes visually", async ({ page }) => {
+  test("checkbox can be toggled and state changes visually", async ({
+    page,
+  }) => {
     await page.goto("/?story=forms---checkbox--default");
     await page.waitForSelector('button[role="checkbox"]');
 

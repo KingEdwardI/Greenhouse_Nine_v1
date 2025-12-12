@@ -59,7 +59,9 @@ test.describe("ProportionBar Component", () => {
     await page.waitForSelector(".gn-ProportionBar");
 
     // Find a clickable segment
-    const segment = page.locator(".gn-ProportionBar__segment--clickable").first();
+    const segment = page
+      .locator(".gn-ProportionBar__segment--clickable")
+      .first();
     await expect(segment).toBeVisible();
 
     // Set up dialog handler

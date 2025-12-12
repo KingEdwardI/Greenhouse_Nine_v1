@@ -5,7 +5,9 @@ test.describe("Heading Component", () => {
     await page.goto("/?story=typography---heading--default");
     await page.waitForSelector("h1, h2, h3, h4, h5, h6");
 
-    await expect(page.getByRole("heading", { name: "Default Heading" })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Default Heading" })
+    ).toBeVisible();
   });
 
   test("renders all size variants", async ({ page }) => {

@@ -15,7 +15,9 @@ test.describe("TextArea Component", () => {
 
     const textarea = page.locator("textarea").first();
     await textarea.fill("Hello, this is a multiline\ntext input test.");
-    await expect(textarea).toHaveValue("Hello, this is a multiline\ntext input test.");
+    await expect(textarea).toHaveValue(
+      "Hello, this is a multiline\ntext input test."
+    );
   });
 
   test("renders size variants", async ({ page }) => {

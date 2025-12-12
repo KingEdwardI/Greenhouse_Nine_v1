@@ -6,7 +6,9 @@ test.describe("Button Component", () => {
     await page.waitForSelector("button");
 
     // Use Playwright's built-in text assertion
-    await expect(page.getByRole("button", { name: "Default Button" })).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Default Button" })
+    ).toBeVisible();
   });
 
   test("renders all variant buttons", async ({ page }) => {
@@ -41,7 +43,9 @@ test.describe("Button Component", () => {
     await expect(page.getByRole("button", { name: "Purple" })).toBeVisible();
   });
 
-  test("renders state variants including disabled and loading", async ({ page }) => {
+  test("renders state variants including disabled and loading", async ({
+    page,
+  }) => {
     await page.goto("/?story=forms---button--states");
     await page.waitForSelector("button");
 
@@ -57,9 +61,17 @@ test.describe("Button Component", () => {
     await page.goto("/?story=forms---button--glass");
     await page.waitForSelector("button");
 
-    await expect(page.getByRole("button", { name: "Glass Button" })).toBeVisible();
-    await expect(page.getByRole("button", { name: "Glass Soft" })).toBeVisible();
-    await expect(page.getByRole("button", { name: "Glass Outline" })).toBeVisible();
-    await expect(page.getByRole("button", { name: "Glass Disabled" })).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Glass Button" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Glass Soft" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Glass Outline" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Glass Disabled" })
+    ).toBeVisible();
   });
 });
