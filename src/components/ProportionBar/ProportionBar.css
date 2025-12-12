@@ -1,0 +1,68 @@
+.gn-ProportionBar {
+  display: flex;
+  position: relative;
+  background-color: var(--gray-3);
+}
+
+.gn-ProportionBar__track {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.gn-ProportionBar--horizontal .gn-ProportionBar__track {
+  flex-direction: row;
+}
+
+.gn-ProportionBar--vertical .gn-ProportionBar__track {
+  flex-direction: column;
+}
+
+.gn-ProportionBar__segment {
+  transition:
+    opacity 0.15s ease,
+    filter 0.15s ease;
+}
+
+.gn-ProportionBar__segment--clickable {
+  cursor: pointer;
+}
+
+.gn-ProportionBar__segment:hover {
+  filter: brightness(1.15);
+}
+
+.gn-ProportionBar__tooltip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background-color: var(--gray-1);
+  border: 1px solid var(--gray-6);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 1000;
+  font-size: 12px;
+  color: var(--gray-12);
+}
+
+.gn-ProportionBar__tooltip-color {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.gn-ProportionBar__tooltip-label {
+  font-weight: 500;
+}
+
+.gn-ProportionBar__tooltip-percentage {
+  color: var(--gray-11);
+  margin-left: 4px;
+}

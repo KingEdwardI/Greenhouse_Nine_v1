@@ -93,3 +93,6 @@ export type { BreadcrumbsProps, BreadcrumbItem } from "./Breadcrumbs";
 
 export { Drawer } from "./Drawer";
 export type { DrawerProps } from "./Drawer";
+
+export { ProportionBar } from "./ProportionBar";
+export type { ProportionBarProps, ProportionBarSegment } from "./ProportionBar";
