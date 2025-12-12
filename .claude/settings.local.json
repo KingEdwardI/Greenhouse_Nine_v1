@@ -14,7 +14,9 @@
       "Bash(pnpm install:*)",
       "Bash(yalc publish:*)",
       "Read(//Users/eddie/workspace/Highwind/**)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(fd:*)"
     ],
     "deny": [],
     "ask": []

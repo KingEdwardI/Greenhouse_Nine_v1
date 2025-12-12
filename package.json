@@ -1,7 +1,7 @@
 {
   "name": "@highwind/greenhouse-nine",
   "description": "Core design system for the Highwind project",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "author": "Edward Vetter-Drake",
   "scripts": {
@@ -14,7 +14,11 @@
     "generate:css": "tsx scripts/generateRadixCSS.ts",
     "preladle": "pnpm run generate:css",
     "prebuild": "pnpm run generate:css",
-    "prepack": "pnpm run build"
+    "prepack": "pnpm run build",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -52,6 +56,7 @@
   "devDependencies": {
     "@eslint/js": "^9.33.0",
     "@ladle/react": "^5.0.3",
+    "@playwright/test": "^1.57.0",
     "@types/node": "^24.3.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
@@ -64,6 +69,7 @@
     "globals": "^16.3.0",
     "husky": "^9.1.7",
     "prettier": "^3.7.1",
+    "tesseract.js": "^6.0.1",
     "tsx": "^4.20.5",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",
