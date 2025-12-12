@@ -38,3 +38,10 @@ temp_*
 *.sln
 *.sw?
 .claude
+
+# Playwright
+playwright-report/
+test-results/
+
+# Tesseract OCR data
+*.traineddata
