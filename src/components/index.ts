@@ -96,3 +96,7 @@ export type { DrawerProps } from "./Drawer";
 
 export { ProportionBar } from "./ProportionBar";
 export type { ProportionBarProps, ProportionBarSegment } from "./ProportionBar";
+
+export { DiffViewer } from "./DiffViewer";
+export { ErrorBoundary, SectionErrorBoundary } from "./ErrorBoundary";
+export { FeedbackButtons } from "./FeedbackButtons";
