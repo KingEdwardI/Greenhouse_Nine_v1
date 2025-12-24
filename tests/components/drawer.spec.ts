@@ -11,8 +11,12 @@ test.describe("Drawer Component", () => {
     await triggerButton.click();
 
     // Check drawer content is visible
-    await expect(page.getByRole("heading", { name: "Edit Profile" })).toBeVisible();
-    await expect(page.getByText(/Make changes to your profile here/)).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Edit Profile" })
+    ).toBeVisible();
+    await expect(
+      page.getByText(/Make changes to your profile here/)
+    ).toBeVisible();
 
     // Check form fields
     await expect(page.getByPlaceholder("Enter your full name")).toBeVisible();
@@ -20,7 +24,9 @@ test.describe("Drawer Component", () => {
 
     // Check action buttons
     await expect(page.getByRole("button", { name: "Cancel" })).toBeVisible();
-    await expect(page.getByRole("button", { name: "Save changes" })).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Save changes" })
+    ).toBeVisible();
   });
 
   test("closes drawer when cancel is clicked", async ({ page }) => {
@@ -28,26 +34,34 @@ test.describe("Drawer Component", () => {
 
     // Open drawer
     await page.getByRole("button", { name: "Open Drawer" }).click();
-    await expect(page.getByRole("heading", { name: "Edit Profile" })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Edit Profile" })
+    ).toBeVisible();
 
     // Click cancel
     await page.getByRole("button", { name: "Cancel" }).click();
 
     // Drawer should be closed
-    await expect(page.getByRole("heading", { name: "Edit Profile" })).not.toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Edit Profile" })
+    ).not.toBeVisible();
   });
 
   test("renders left side drawer", async ({ page }) => {
     await page.goto("/?story=overlays---drawer--left-side");
 
-    const triggerButton = page.getByRole("button", { name: "Open Left Drawer" });
+    const triggerButton = page.getByRole("button", {
+      name: "Open Left Drawer",
+    });
     await expect(triggerButton).toBeVisible();
 
     // Open drawer
     await triggerButton.click();
 
     // Check drawer content
-    await expect(page.getByRole("heading", { name: "Navigation" })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Navigation" })
+    ).toBeVisible();
     await expect(page.getByText("Quick navigation menu")).toBeVisible();
 
     // Check menu items
@@ -70,29 +84,41 @@ test.describe("Drawer Component", () => {
   test("renders glass variant drawer", async ({ page }) => {
     await page.goto("/?story=overlays---drawer--glass");
 
-    const triggerButton = page.getByRole("button", { name: "Open Glass Drawer" });
+    const triggerButton = page.getByRole("button", {
+      name: "Open Glass Drawer",
+    });
     await expect(triggerButton).toBeVisible();
 
     // Open glass drawer
     await triggerButton.click();
 
     // Check glass drawer content
-    await expect(page.getByRole("heading", { name: "Glass Effect" })).toBeVisible();
-    await expect(page.getByText(/This drawer features the glassmorphism effect/)).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Glass Effect" })
+    ).toBeVisible();
+    await expect(
+      page.getByText(/This drawer features the glassmorphism effect/)
+    ).toBeVisible();
   });
 
   test("renders glass left drawer", async ({ page }) => {
     await page.goto("/?story=overlays---drawer--glass-left");
 
-    const triggerButton = page.getByRole("button", { name: "Open Glass Left Drawer" });
+    const triggerButton = page.getByRole("button", {
+      name: "Open Glass Left Drawer",
+    });
     await expect(triggerButton).toBeVisible();
 
     // Open drawer
     await triggerButton.click();
 
     // Check content
-    await expect(page.getByRole("heading", { name: "Navigation" })).toBeVisible();
-    await expect(page.getByText("Glass navigation with modern styling")).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Navigation" })
+    ).toBeVisible();
+    await expect(
+      page.getByText("Glass navigation with modern styling")
+    ).toBeVisible();
   });
 
   test("renders glass drawer sizes", async ({ page }) => {

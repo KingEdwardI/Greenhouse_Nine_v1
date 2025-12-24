@@ -57,9 +57,7 @@ test.describe("Message Component", () => {
     await expect(assistantMessage.locator(".gn-Message__username")).toHaveText(
       "Assistant"
     );
-    await expect(assistantMessage).toContainText(
-      "Assistant response message"
-    );
+    await expect(assistantMessage).toContainText("Assistant response message");
   });
 
   test("renders conversation with user and assistant messages", async ({
@@ -94,9 +92,7 @@ test.describe("Message Component", () => {
     await expect(
       page.getByText("Arrays are ordered collections")
     ).toBeVisible();
-    await expect(
-      page.getByText("Define your data structure")
-    ).toBeVisible();
+    await expect(page.getByText("Define your data structure")).toBeVisible();
 
     // Check text formatting
     await expect(page.locator("strong")).toContainText("shape");
@@ -141,7 +137,9 @@ test.describe("Message Component", () => {
     await expect(
       page.locator(".gn-Message--glass-secondary").first()
     ).toBeVisible();
-    await expect(page.locator(".gn-Message--glass-accent").first()).toBeVisible();
+    await expect(
+      page.locator(".gn-Message--glass-accent").first()
+    ).toBeVisible();
     await expect(
       page.locator(".gn-Message--glass-success").first()
     ).toBeVisible();

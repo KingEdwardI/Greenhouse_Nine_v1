@@ -6,7 +6,9 @@ test.describe("MarkdownRenderer Component", () => {
     await page.waitForSelector("h1, p");
 
     // Check heading
-    await expect(page.getByRole("heading", { name: "Hello World" })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Hello World" })
+    ).toBeVisible();
 
     // Check text formatting
     await expect(page.getByText(/bold/)).toBeVisible();
@@ -18,7 +20,9 @@ test.describe("MarkdownRenderer Component", () => {
     await page.waitForSelector("h1");
 
     // Check heading
-    await expect(page.getByRole("heading", { name: "Code Example" })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Code Example" })
+    ).toBeVisible();
 
     // Check inline code (use locator for code element)
     await expect(page.locator("code").first()).toBeVisible();
@@ -33,9 +37,15 @@ test.describe("MarkdownRenderer Component", () => {
     await page.waitForSelector("h1");
 
     // Check headings (use exact match to avoid ambiguity)
-    await expect(page.getByRole("heading", { name: "Lists", exact: true })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Unordered List", exact: true })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Ordered List", exact: true })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Lists", exact: true })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Unordered List", exact: true })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Ordered List", exact: true })
+    ).toBeVisible();
 
     // Check list items
     await expect(page.getByText("Item 1", { exact: true })).toBeVisible();
@@ -49,9 +59,15 @@ test.describe("MarkdownRenderer Component", () => {
     await page.waitForSelector("table");
 
     // Check table headers
-    await expect(page.getByRole("columnheader", { name: "Feature" })).toBeVisible();
-    await expect(page.getByRole("columnheader", { name: "Supported" })).toBeVisible();
-    await expect(page.getByRole("columnheader", { name: "Notes" })).toBeVisible();
+    await expect(
+      page.getByRole("columnheader", { name: "Feature" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("columnheader", { name: "Supported" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("columnheader", { name: "Notes" })
+    ).toBeVisible();
 
     // Check table cells
     await expect(page.getByRole("cell", { name: "Headers" })).toBeVisible();
@@ -77,10 +93,14 @@ test.describe("MarkdownRenderer Component", () => {
     await page.waitForSelector("li");
 
     // Check heading
-    await expect(page.getByRole("heading", { name: "Task List", exact: true })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Task List", exact: true })
+    ).toBeVisible();
 
     // Check task list items exist
-    await expect(page.getByText("Completed task", { exact: true })).toBeVisible();
+    await expect(
+      page.getByText("Completed task", { exact: true })
+    ).toBeVisible();
     await expect(page.getByText(/Incomplete task/).first()).toBeVisible();
   });
 
@@ -89,12 +109,20 @@ test.describe("MarkdownRenderer Component", () => {
     await page.waitForSelector("h1");
 
     // Check main heading
-    await expect(page.getByRole("heading", { name: "Comprehensive Example" })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Comprehensive Example" })
+    ).toBeVisible();
 
     // Check subheadings
-    await expect(page.getByRole("heading", { name: "Introduction" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Text Formatting" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Code Blocks" })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Introduction" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Text Formatting" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Code Blocks" })
+    ).toBeVisible();
 
     // Check various content types are present
     await expect(page.getByText(/Bold text/)).toBeVisible();
@@ -103,11 +131,17 @@ test.describe("MarkdownRenderer Component", () => {
     await expect(page.getByText(/interface User/)).toBeVisible();
 
     // Check table is present
-    await expect(page.getByRole("columnheader", { name: "Name" })).toBeVisible();
-    await expect(page.getByRole("columnheader", { name: "Role" })).toBeVisible();
+    await expect(
+      page.getByRole("columnheader", { name: "Name" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("columnheader", { name: "Role" })
+    ).toBeVisible();
 
     // Check blockquote
-    await expect(page.getByText(/best way to predict the future/)).toBeVisible();
+    await expect(
+      page.getByText(/best way to predict the future/)
+    ).toBeVisible();
 
     // Check horizontal rule and ending text
     await expect(page.getByText(/That's all folks/)).toBeVisible();

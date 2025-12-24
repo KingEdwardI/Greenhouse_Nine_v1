@@ -44,7 +44,9 @@ test.describe("Dropdown Component", () => {
 
     // All size trigger buttons should be visible
     await expect(page.getByRole("button", { name: "Size 1" })).toBeVisible();
-    await expect(page.getByRole("button", { name: "Size 2 (default)" })).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Size 2 (default)" })
+    ).toBeVisible();
     await expect(page.getByRole("button", { name: "Size 3" })).toBeVisible();
   });
 
@@ -53,8 +55,12 @@ test.describe("Dropdown Component", () => {
     await page.waitForSelector("button");
 
     // All alignment trigger buttons should be visible
-    await expect(page.getByRole("button", { name: "Start Align" })).toBeVisible();
-    await expect(page.getByRole("button", { name: "Center Align" })).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Start Align" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Center Align" })
+    ).toBeVisible();
     await expect(page.getByRole("button", { name: "End Align" })).toBeVisible();
   });
 
@@ -85,8 +91,14 @@ test.describe("Dropdown Component", () => {
     await page.goto("/?story=forms---dropdown--glass");
     await page.waitForSelector("button");
 
-    await expect(page.getByRole("button", { name: "Glass dropdown" })).toBeVisible();
-    await expect(page.getByRole("button", { name: "Aligned glass" })).toBeVisible();
-    await expect(page.getByRole("button", { name: "Side glass" })).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Glass dropdown" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Aligned glass" })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Side glass" })
+    ).toBeVisible();
   });
 });

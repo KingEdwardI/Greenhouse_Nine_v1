@@ -1,7 +1,9 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("DatePicker Component", () => {
-  test("renders default datepicker with placeholder and calendar icon", async ({ page }) => {
+  test("renders default datepicker with placeholder and calendar icon", async ({
+    page,
+  }) => {
     await page.goto("/?story=forms---datepicker--default");
     await page.waitForSelector("input");
 

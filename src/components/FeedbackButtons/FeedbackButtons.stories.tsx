@@ -15,11 +15,12 @@ export const Default: Story = () => {
       <Card style={{ maxWidth: "400px" }}>
         <Box p="4">
           <Text size="2" mb="3">
-            Current feedback: {feedback === 1 ? "Liked" : feedback === -1 ? "Disliked" : "None"}
+            Current feedback:{" "}
+            {feedback === 1 ? "Liked" : feedback === -1 ? "Disliked" : "None"}
           </Text>
           <FeedbackButtons
             value={feedback}
-            onFeedback={(reward) => setFeedback(reward)}
+            onFeedback={reward => setFeedback(reward)}
           />
         </Box>
       </Card>
@@ -128,7 +129,7 @@ export const Interactive: Story = () => {
   const handleFeedback = async (reward: 1 | -1) => {
     setBusy(true);
     // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise(resolve => setTimeout(resolve, 1000));
     setFeedback(reward);
     setBusy(false);
   };
@@ -139,9 +140,20 @@ export const Interactive: Story = () => {
         <Box p="4">
           <Flex direction="column" gap="3">
             <Text size="2">
-              Status: {busy ? "Processing..." : feedback === 1 ? "Liked" : feedback === -1 ? "Disliked" : "No feedback"}
+              Status:{" "}
+              {busy
+                ? "Processing..."
+                : feedback === 1
+                  ? "Liked"
+                  : feedback === -1
+                    ? "Disliked"
+                    : "No feedback"}
             </Text>
-            <FeedbackButtons value={feedback} onFeedback={handleFeedback} busy={busy} />
+            <FeedbackButtons
+              value={feedback}
+              onFeedback={handleFeedback}
+              busy={busy}
+            />
           </Flex>
         </Box>
       </Card>
@@ -150,7 +162,11 @@ export const Interactive: Story = () => {
 };
 
 export const InMessageContext: Story = () => {
-  const messages: Array<{ id: number; content: string; feedback: 1 | -1 | null }> = [
+  const messages: Array<{
+    id: number;
+    content: string;
+    feedback: 1 | -1 | null;
+  }> = [
     { id: 1, content: "Hello! How can I help you today?", feedback: null },
     { id: 2, content: "I can assist with various tasks.", feedback: 1 },
     { id: 3, content: "Let me know if you need anything else.", feedback: -1 },
@@ -159,7 +175,7 @@ export const InMessageContext: Story = () => {
   return (
     <div style={{ padding: "20px", background: "var(--gray-1)" }}>
       <Flex direction="column" gap="3" style={{ maxWidth: "500px" }}>
-        {messages.map((msg) => (
+        {messages.map(msg => (
           <Card key={msg.id}>
             <Box p="3">
               <Flex justify="between" align="center">
@@ -272,7 +288,8 @@ export const ToggleBehavior: Story = () => {
         <Box p="4">
           <Flex direction="column" gap="3">
             <Text size="2">
-              Current: {feedback === 1 ? "Liked" : feedback === -1 ? "Disliked" : "None"}
+              Current:{" "}
+              {feedback === 1 ? "Liked" : feedback === -1 ? "Disliked" : "None"}
             </Text>
             <Text size="1" color="gray">
               Click the same button again to deselect

@@ -1,6 +1,6 @@
-import { memo } from 'react';
-import { Flex, IconButton } from '@radix-ui/themes';
-import { ThumbsUp, ThumbsDown } from 'lucide-react';
+import { memo } from "react";
+import { Flex, IconButton } from "@radix-ui/themes";
+import { ThumbsUp, ThumbsDown } from "lucide-react";
 
 interface FeedbackButtonsProps {
   disabled?: boolean;
@@ -10,7 +10,12 @@ interface FeedbackButtonsProps {
 }
 
 export const FeedbackButtons = memo(
-  ({ disabled = false, busy = false, value = null, onFeedback }: FeedbackButtonsProps) => {
+  ({
+    disabled = false,
+    busy = false,
+    value = null,
+    onFeedback,
+  }: FeedbackButtonsProps) => {
     const handleClick = (reward: 1 | -1) => () => {
       if (disabled || busy) {
         return;
@@ -24,8 +29,8 @@ export const FeedbackButtons = memo(
     return (
       <Flex gap="1" align="center">
         <IconButton
-          variant={likeActive ? 'solid' : 'ghost'}
-          color={likeActive ? 'green' : 'gray'}
+          variant={likeActive ? "solid" : "ghost"}
+          color={likeActive ? "green" : "gray"}
           size="1"
           aria-label="Like response"
           title="Like response"
@@ -35,8 +40,8 @@ export const FeedbackButtons = memo(
           <ThumbsUp size={14} />
         </IconButton>
         <IconButton
-          variant={dislikeActive ? 'solid' : 'ghost'}
-          color={dislikeActive ? 'red' : 'gray'}
+          variant={dislikeActive ? "solid" : "ghost"}
+          color={dislikeActive ? "red" : "gray"}
           size="1"
           aria-label="Dislike response"
           title="Dislike response"
@@ -47,7 +52,7 @@ export const FeedbackButtons = memo(
         </IconButton>
       </Flex>
     );
-  },
+  }
 );
 
-FeedbackButtons.displayName = 'FeedbackButtons';
+FeedbackButtons.displayName = "FeedbackButtons";

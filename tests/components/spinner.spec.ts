@@ -15,9 +15,15 @@ test.describe("RingSpinner Component", () => {
     await page.waitForSelector("svg");
 
     // Check labels for different sizes
-    await expect(page.getByText("Small", { exact: true }).first()).toBeVisible();
-    await expect(page.getByText("Medium", { exact: true }).first()).toBeVisible();
-    await expect(page.getByText("Large", { exact: true }).first()).toBeVisible();
+    await expect(
+      page.getByText("Small", { exact: true }).first()
+    ).toBeVisible();
+    await expect(
+      page.getByText("Medium", { exact: true }).first()
+    ).toBeVisible();
+    await expect(
+      page.getByText("Large", { exact: true }).first()
+    ).toBeVisible();
 
     // Check multiple spinners are present
     const spinners = page.locator("svg");
@@ -86,9 +92,15 @@ test.describe("OrbitalSpinner Component", () => {
     await page.goto("/?story=feedback---orbital-spinner--sizes");
     await page.waitForSelector("svg");
 
-    await expect(page.getByText("Small", { exact: true }).first()).toBeVisible();
-    await expect(page.getByText("Medium", { exact: true }).first()).toBeVisible();
-    await expect(page.getByText("Large", { exact: true }).first()).toBeVisible();
+    await expect(
+      page.getByText("Small", { exact: true }).first()
+    ).toBeVisible();
+    await expect(
+      page.getByText("Medium", { exact: true }).first()
+    ).toBeVisible();
+    await expect(
+      page.getByText("Large", { exact: true }).first()
+    ).toBeVisible();
 
     const spinners = page.locator("svg");
     const count = await spinners.count();
@@ -137,9 +149,15 @@ test.describe("DotMatrixSpinner Component", () => {
     await page.goto("/?story=feedback---dot-matrix-spinner--colors");
     await page.waitForSelector("svg");
 
-    await expect(page.getByText("Primary", { exact: true }).first()).toBeVisible();
-    await expect(page.getByText("Accent", { exact: true }).first()).toBeVisible();
-    await expect(page.getByText("Danger", { exact: true }).first()).toBeVisible();
+    await expect(
+      page.getByText("Primary", { exact: true }).first()
+    ).toBeVisible();
+    await expect(
+      page.getByText("Accent", { exact: true }).first()
+    ).toBeVisible();
+    await expect(
+      page.getByText("Danger", { exact: true }).first()
+    ).toBeVisible();
     await expect(page.getByText("Info", { exact: true }).first()).toBeVisible();
   });
 

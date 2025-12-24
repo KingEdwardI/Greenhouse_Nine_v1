@@ -14,7 +14,9 @@ test.describe("ContextMenu Component", () => {
     await expect(page.getByRole("menuitem", { name: /Copy/ })).toBeVisible();
     await expect(page.getByRole("menuitem", { name: /Paste/ })).toBeVisible();
     await expect(page.getByRole("menuitem", { name: /Cut/ })).toBeVisible();
-    await expect(page.getByRole("menuitem", { name: /Duplicate/ })).toBeVisible();
+    await expect(
+      page.getByRole("menuitem", { name: /Duplicate/ })
+    ).toBeVisible();
     await expect(page.getByRole("menuitem", { name: /Delete/ })).toBeVisible();
   });
 
@@ -33,7 +35,9 @@ test.describe("ContextMenu Component", () => {
   test("renders context menu with submenus", async ({ page }) => {
     await page.goto("/?story=overlays---contextmenu--with-submenus");
 
-    const trigger = page.getByText("Right-click me for context menu with submenus");
+    const trigger = page.getByText(
+      "Right-click me for context menu with submenus"
+    );
     await expect(trigger).toBeVisible();
 
     // Right-click to open context menu
@@ -43,13 +47,17 @@ test.describe("ContextMenu Component", () => {
     await expect(page.getByRole("menuitem", { name: /New/ })).toBeVisible();
     await expect(page.getByRole("menuitem", { name: /Edit/ })).toBeVisible();
     await expect(page.getByRole("menuitem", { name: /Share/ })).toBeVisible();
-    await expect(page.getByRole("menuitem", { name: /Download/ })).toBeVisible();
+    await expect(
+      page.getByRole("menuitem", { name: /Download/ })
+    ).toBeVisible();
   });
 
   test("can hover and open submenu", async ({ page }) => {
     await page.goto("/?story=overlays---contextmenu--with-submenus");
 
-    const trigger = page.getByText("Right-click me for context menu with submenus");
+    const trigger = page.getByText(
+      "Right-click me for context menu with submenus"
+    );
     await trigger.click({ button: "right" });
 
     // Hover over "New" to open submenu
@@ -77,13 +85,17 @@ test.describe("ContextMenu Component", () => {
     await page.waitForTimeout(300);
 
     // Check at least one file operation is available
-    await expect(page.getByRole("menuitem", { name: /Open/ }).first()).toBeVisible();
+    await expect(
+      page.getByRole("menuitem", { name: /Open/ }).first()
+    ).toBeVisible();
   });
 
   test("renders context menu with disabled items", async ({ page }) => {
     await page.goto("/?story=overlays---contextmenu--with-disabled-items");
 
-    const trigger = page.getByText("Right-click me for context menu with disabled items");
+    const trigger = page.getByText(
+      "Right-click me for context menu with disabled items"
+    );
     await trigger.click({ button: "right" });
 
     // Check that disabled items are present but disabled

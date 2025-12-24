@@ -46,9 +46,9 @@ test.describe("ChatLayout Component", () => {
 
     // Check sidebar is present
     await expect(page.locator(".gn-ChatLayout__sidebar")).toBeVisible();
-    await expect(
-      page.locator(".gn-ChatLayout__sidebar")
-    ).toContainText("Participants");
+    await expect(page.locator(".gn-ChatLayout__sidebar")).toContainText(
+      "Participants"
+    );
 
     // Check toolbar buttons
     await expect(page.getByRole("button", { name: "Share" })).toBeVisible();
@@ -73,9 +73,9 @@ test.describe("ChatLayout Component", () => {
     );
 
     // Check sidebar content
-    await expect(
-      page.locator(".gn-ChatLayout__sidebar")
-    ).toContainText("Concierge Tips");
+    await expect(page.locator(".gn-ChatLayout__sidebar")).toContainText(
+      "Concierge Tips"
+    );
     await expect(
       page.getByRole("button", { name: "Summarize Thread" })
     ).toBeVisible();

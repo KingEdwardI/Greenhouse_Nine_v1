@@ -59,13 +59,25 @@ test.describe("ColorPalette Component", () => {
     await expect(page.getByText("Brand & Semantic Colors")).toBeVisible();
 
     // Check brand color labels (use exact match)
-    await expect(page.getByText("Primary", { exact: true }).first()).toBeVisible();
-    await expect(page.getByText("Secondary", { exact: true }).first()).toBeVisible();
-    await expect(page.getByText("Accent", { exact: true }).first()).toBeVisible();
-    await expect(page.getByText("Warning", { exact: true }).first()).toBeVisible();
-    await expect(page.getByText("Danger", { exact: true }).first()).toBeVisible();
+    await expect(
+      page.getByText("Primary", { exact: true }).first()
+    ).toBeVisible();
+    await expect(
+      page.getByText("Secondary", { exact: true }).first()
+    ).toBeVisible();
+    await expect(
+      page.getByText("Accent", { exact: true }).first()
+    ).toBeVisible();
+    await expect(
+      page.getByText("Warning", { exact: true }).first()
+    ).toBeVisible();
+    await expect(
+      page.getByText("Danger", { exact: true }).first()
+    ).toBeVisible();
     await expect(page.getByText("Info", { exact: true }).first()).toBeVisible();
-    await expect(page.getByText("Success", { exact: true }).first()).toBeVisible();
+    await expect(
+      page.getByText("Success", { exact: true }).first()
+    ).toBeVisible();
 
     // Check hex values for brand colors
     await expect(page.getByText("#2E8B57")).toBeVisible(); // primary

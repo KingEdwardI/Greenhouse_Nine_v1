@@ -7,10 +7,7 @@ test.describe("MessageInput Component", () => {
 
     const textarea = page.locator(".gn-MessageInput__textarea textarea");
     await expect(textarea).toBeVisible();
-    await expect(textarea).toHaveAttribute(
-      "placeholder",
-      "Type a message..."
-    );
+    await expect(textarea).toHaveAttribute("placeholder", "Type a message...");
 
     const sendButton = page.getByRole("button", { name: "Send" });
     await expect(sendButton).toBeVisible();
@@ -65,10 +62,7 @@ test.describe("MessageInput Component", () => {
     await page.waitForSelector(".gn-MessageInput");
 
     const textarea = page.locator(".gn-MessageInput__textarea textarea");
-    await expect(textarea).toHaveAttribute(
-      "placeholder",
-      "Ask me anything..."
-    );
+    await expect(textarea).toHaveAttribute("placeholder", "Ask me anything...");
   });
 
   test("interactive input shows help text and accepts input", async ({
@@ -81,7 +75,9 @@ test.describe("MessageInput Component", () => {
     await expect(
       page.getByText(/Try typing a message and press Enter/)
     ).toBeVisible();
-    await expect(page.getByText(/Use Shift\+Enter for new lines/)).toBeVisible();
+    await expect(
+      page.getByText(/Use Shift\+Enter for new lines/)
+    ).toBeVisible();
 
     const textarea = page.locator(".gn-MessageInput__textarea textarea");
     const sendButton = page.getByRole("button", { name: "Send" });
@@ -102,9 +98,7 @@ test.describe("MessageInput Component", () => {
     const initialHeight = initialBox?.height || 0;
 
     // Type multiple lines
-    await textarea.fill(
-      "Line 1\nLine 2\nLine 3\nLine 4\nLine 5"
-    );
+    await textarea.fill("Line 1\nLine 2\nLine 3\nLine 4\nLine 5");
 
     // Wait for resize
     await page.waitForTimeout(100);

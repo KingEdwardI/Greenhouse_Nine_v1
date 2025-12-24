@@ -9,9 +9,15 @@ test.describe("DataTable Component", () => {
     const hasTable = await page.locator("table").count();
     if (hasTable > 0) {
       // Check table headers
-      await expect(page.getByRole("columnheader", { name: "Name" })).toBeVisible();
-      await expect(page.getByRole("columnheader", { name: "Role" })).toBeVisible();
-      await expect(page.getByRole("columnheader", { name: "Status" })).toBeVisible();
+      await expect(
+        page.getByRole("columnheader", { name: "Name" })
+      ).toBeVisible();
+      await expect(
+        page.getByRole("columnheader", { name: "Role" })
+      ).toBeVisible();
+      await expect(
+        page.getByRole("columnheader", { name: "Status" })
+      ).toBeVisible();
 
       // Check table cells
       await expect(page.getByText("Alice Johnson")).toBeVisible();
@@ -40,7 +46,9 @@ test.describe("DataTable Component", () => {
 
     // Check some content is present
     await expect(page.getByText("TASK-001")).toBeVisible();
-    await expect(page.getByText(/Implement the new authentication/)).toBeVisible();
+    await expect(
+      page.getByText(/Implement the new authentication/)
+    ).toBeVisible();
     await expect(page.getByText(/Fix the memory leak/)).toBeVisible();
   });
 
@@ -59,7 +67,9 @@ test.describe("DataTable Component", () => {
     await page.waitForTimeout(1000);
 
     // Check some data is present (use exact to avoid matching "Data Point 10", etc)
-    await expect(page.getByText("Data Point 1", { exact: true }).first()).toBeVisible();
+    await expect(
+      page.getByText("Data Point 1", { exact: true }).first()
+    ).toBeVisible();
   });
 
   test("renders ghost variant table", async ({ page }) => {
