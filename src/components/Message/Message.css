@@ -38,6 +38,34 @@
   line-height: 1.4;
 }
 
+/* Copy button - hidden by default, visible on hover */
+.gn-Message__copy-btn {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-1);
+  background: var(--gray-3);
+  border: 1px solid var(--gray-6);
+  border-radius: var(--radius-1);
+  color: var(--gray-11);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 150ms ease, background 150ms ease, color 150ms ease;
+  z-index: 1;
+}
+
+.gn-Message__bubble:hover .gn-Message__copy-btn {
+  opacity: 1;
+}
+
+.gn-Message__copy-btn:hover {
+  background: var(--gray-4);
+  color: var(--gray-12);
+}
+
 .gn-Message__status-wrapper {
   display: flex;
   justify-content: flex-end;
@@ -110,6 +138,17 @@
 
 .gn-Message--glass .gn-Message__timestamp {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Glass variant copy button */
+.gn-Message--glass .gn-Message__copy-btn {
+  background: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--gray-12);
+}
+
+.gn-Message--glass .gn-Message__copy-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
 }
 
 /* Glass color variants - using token-based approach */
