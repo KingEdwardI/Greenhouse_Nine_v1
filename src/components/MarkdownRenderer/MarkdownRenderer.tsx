@@ -2,6 +2,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
+import { CodeBlock } from "./CodeBlock";
 import "./MarkdownRenderer.css";
 
 export interface MarkdownRendererProps {
@@ -23,6 +24,9 @@ export const MarkdownRenderer = React.forwardRef<
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeHighlight]}
         components={{
+          pre: ({ children, ...preProps }) => (
+            <CodeBlock {...preProps}>{children}</CodeBlock>
+          ),
           table: ({ children }) => (
             <div className="gn-MarkdownRenderer__table-wrapper">
               <table>{children}</table>
