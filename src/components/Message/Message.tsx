@@ -143,7 +143,7 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
         {rawContent && (
           <button
             className="gn-Message__copy-btn"
-            onClick={(e) => {
+            onClick={e => {
               e.stopPropagation();
               handleCopyMessage();
             }}
@@ -171,7 +171,7 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
         {rawContent ? (
           <ContextMenu
             items={contextMenuItems}
-            onItemSelect={(id) => id === "copy-message" && handleCopyMessage()}
+            onItemSelect={id => id === "copy-message" && handleCopyMessage()}
             glass={glass}
           >
             {renderCard()}
