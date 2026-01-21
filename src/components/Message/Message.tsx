@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
+import { Copy, Check } from "lucide-react";
 import { Card } from "../Card";
 import { Text } from "../Text";
 import { MarkdownRenderer } from "../MarkdownRenderer";
+import { ContextMenu, type ContextMenuItemData } from "../ContextMenu";
 import "./Message.css";
 
 export interface MessageProps {
@@ -21,6 +23,8 @@ export interface MessageProps {
     | "success"
     | "info"
     | "warning";
+  /** Optional callback when message is copied */
+  onCopy?: () => void;
 }
 
 export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
@@ -35,10 +39,39 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
       markdown = true,
       glass = false,
       glassColor = "default",
+      onCopy,
       ...props
     },
     ref
   ) => {
+    const [copied, setCopied] = useState(false);
+
+    // Extract raw content for copying - only works when children is a string
+    const rawContent = typeof children === "string" ? children : "";
+
+    const handleCopyMessage = useCallback(async () => {
+      if (!rawContent) return;
+      try {
+        await navigator.clipboard.writeText(rawContent);
+        setCopied(true);
+        onCopy?.();
+        setTimeout(() => setCopied(false), 2000);
+      } catch (err) {
+        console.error("Failed to copy message:", err);
+      }
+    }, [rawContent, onCopy]);
+
+    const contextMenuItems: ContextMenuItemData[] = rawContent
+      ? [
+          {
+            id: "copy-message",
+            label: "Copy message",
+            icon: <Copy size={16} />,
+            shortcut: "\u2318C",
+          },
+        ]
+      : [];
+
     const composedClassName = [
       "gn-Message",
       `gn-Message--${variant}`,
@@ -100,6 +133,34 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
       );
     };
 
+    const renderCard = () => (
+      <Card
+        variant={variant === "user" ? "classic" : "surface"}
+        size="1"
+        className="gn-Message__bubble"
+        glass={glass}
+      >
+        {rawContent && (
+          <button
+            className="gn-Message__copy-btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleCopyMessage();
+            }}
+            aria-label={copied ? "Copied" : "Copy message"}
+          >
+            {copied ? <Check size={14} /> : <Copy size={14} />}
+          </button>
+        )}
+        {renderContent()}
+        {status && (
+          <div className="gn-Message__status-wrapper">
+            <div className="gn-Message__status" data-status={status} />
+          </div>
+        )}
+      </Card>
+    );
+
     return (
       <div ref={ref} className={composedClassName} {...props}>
         {username && variant !== "user" && (
@@ -107,19 +168,17 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
             {username}
           </Text>
         )}
-        <Card
-          variant={variant === "user" ? "classic" : "surface"}
-          size="1"
-          className="gn-Message__bubble"
-          glass={glass}
-        >
-          {renderContent()}
-          {status && (
-            <div className="gn-Message__status-wrapper">
-              <div className="gn-Message__status" data-status={status} />
-            </div>
-          )}
-        </Card>
+        {rawContent ? (
+          <ContextMenu
+            items={contextMenuItems}
+            onItemSelect={(id) => id === "copy-message" && handleCopyMessage()}
+            glass={glass}
+          >
+            {renderCard()}
+          </ContextMenu>
+        ) : (
+          renderCard()
+        )}
         {timestamp && (
           <Text size="1" className="gn-Message__timestamp">
             {timestamp}
