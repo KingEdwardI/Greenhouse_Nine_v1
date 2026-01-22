@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import { CodeBlock } from "./CodeBlock";
+import { Tooltip } from "../Tooltip";
 import "./MarkdownRenderer.css";
 
 export interface MarkdownRendererProps {
@@ -31,6 +32,11 @@ export const MarkdownRenderer = React.forwardRef<
             <div className="gn-MarkdownRenderer__table-wrapper">
               <table>{children}</table>
             </div>
+          ),
+          a: ({ href, children }) => (
+            <Tooltip content={href}>
+              <a href={href}>{children}</a>
+            </Tooltip>
           ),
         }}
       >
