@@ -1,6 +1,20 @@
 import React, { useState } from "react";
 import { Copy, Check } from "lucide-react";
 
+// Recursively extract text content from React nodes
+// This handles syntax-highlighted code where tokens are wrapped in <span> elements
+function extractTextContent(node: React.ReactNode): string {
+  if (node == null) return "";
+  if (typeof node === "string") return node;
+  if (typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(extractTextContent).join("");
+  if (React.isValidElement(node)) {
+    const props = node.props as { children?: React.ReactNode };
+    return extractTextContent(props.children);
+  }
+  return "";
+}
+
 export interface CodeBlockProps {
   children?: React.ReactNode;
   className?: string;
@@ -25,10 +39,10 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
   const languageMatch = codeClassName.match(/language-(\w+)/);
   const language = languageMatch ? languageMatch[1] : null;
 
-  // Extract raw code content
-  const rawCode = String(
-    (codeElement?.props as { children?: React.ReactNode })?.children ?? ""
-  ).replace(/\n$/, "");
+  // Extract raw code content by recursively getting text from highlighted spans
+  const codeChildren = (codeElement?.props as { children?: React.ReactNode })
+    ?.children;
+  const rawCode = extractTextContent(codeChildren).replace(/\n$/, "");
 
   const handleCopy = async (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -44,9 +58,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
   return (
     <div className="gn-CodeBlock">
       <div className="gn-CodeBlock__header">
-        {language && (
-          <span className="gn-CodeBlock__language">{language}</span>
-        )}
+        {language && <span className="gn-CodeBlock__language">{language}</span>}
         <button
           type="button"
           className="gn-CodeBlock__copy-btn"
