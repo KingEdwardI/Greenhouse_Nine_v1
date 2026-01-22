@@ -66,7 +66,7 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
           {
             id: "copy-message",
             label: "Copy message",
-            icon: <Copy size={16} />,
+            icon: <Copy size={14} />,
             shortcut: "\u2318C",
           },
         ]
