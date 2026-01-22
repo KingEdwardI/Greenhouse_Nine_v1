@@ -10,8 +10,9 @@ export interface DialogProps extends Omit<RadixDialogNS.RootProps, "children"> {
   size?: RadixDialogNS.ContentProps["size"];
   /**
    * Element that opens the dialog when interacted with.
+   * Optional for programmatic dialogs controlled via open/onOpenChange.
    */
-  trigger: React.ReactNode;
+  trigger?: React.ReactNode;
   /**
    * Optional dialog title, rendered inside the content.
    */
@@ -52,10 +53,11 @@ const DialogBase: React.FC<DialogProps> = ({
 
   return (
     <RadixDialog.Root {...rootProps}>
-      <RadixDialog.Trigger>
-        {/* Consumers typically pass a Button here */}
-        <span>{trigger}</span>
-      </RadixDialog.Trigger>
+      {trigger ? (
+        <RadixDialog.Trigger>
+          <span>{trigger}</span>
+        </RadixDialog.Trigger>
+      ) : null}
       <RadixDialog.Content size={size} className={contentClassName}>
         {title ? <RadixDialog.Title>{title}</RadixDialog.Title> : null}
         {description ? (
